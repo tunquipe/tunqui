@@ -1,10 +1,4 @@
 <?php
-
-/**
- * Template Name: Inicio Home
- * Template Post Type: post, page
- */
-
 get_header();
 $sliders = tunqui_get_slider();
 

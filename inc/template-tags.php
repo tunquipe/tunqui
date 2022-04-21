@@ -50,6 +50,7 @@ function tunqui_site_logo( $args = array(), $echo = true ) {
      * @param string $classname Class name based on current view, home or single.
      * @param string $contents  HTML for site title or logo.
      */
+
     $html = apply_filters( 'tunqui_site_logo', $html, $args, $classname, $contents );
 
     if ( ! $echo ) {

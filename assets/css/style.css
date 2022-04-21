@@ -106,7 +106,7 @@ h1, h2, h3, h4, h5, h6 {
   border-top: 8px solid #311F7E;
 }
 #header.header-scrolled, #header.header-inner-pages {
-  background: rgba(62, 41, 158, 0.9);
+  background: rgba(62, 41, 158, 1);
 }
 #header .logo {
   font-size: 30px;
