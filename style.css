@@ -1,0 +1,20 @@
+/*
+Theme Name: Tunqui Agencia
+Text Domain: tunqui.pe
+Version: 1.9
+Requires PHP: 5.2.4
+Description: Theme para sitio web de agencia Tunqui
+Author: the WordPress team
+Author URI: https://tunqui.pe/
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+All files, unless otherwise stated, are released under the GNU General Public
+License version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
+*/
+
+@import "assets/css/style.css";
+.custom-logo{
+    width: 170px;
+    height: 42px;
+}
