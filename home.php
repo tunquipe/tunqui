@@ -36,9 +36,15 @@ $sliders = tunqui_get_slider();
                                             <h1><?php echo $item['slider_title']; ?></h1>
                                             <h2><?php echo $item['slider_description']; ?></h2>
                                             <div class="d-flex justify-content-center justify-content-lg-start">
+                                                <?php if($item['slider_url_target']): ?>
                                                 <a href="<?php echo $item['slider_url_target']; ?>" class="btn-get-started scrollto">Conoce el servicio</a>
+                                                <?php endif; ?>
+                                                <?php if($item['slider_url_target']): ?>
                                                 <a href="<?php echo $item['slider_url_video']; ?>"
-                                                   class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Video informativo</span></a>
+                                                   class="glightbox btn-watch-video">
+                                                    <i class="bi bi-play-circle"></i><span>Video informativo</span>
+                                                </a>
+                                                <?php endif; ?>
                                             </div>
                                         </div>
 
