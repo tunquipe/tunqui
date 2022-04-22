@@ -455,8 +455,11 @@ h1, h2, h3, h4, h5, h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding: 25px 0;
   overflow: hidden;
+}
+section.page-home{
+  padding: 60px 0;
 }
 
 .section-bg {
