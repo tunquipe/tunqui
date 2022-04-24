@@ -26,7 +26,7 @@ wp_body_open();
         </div>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-        <div class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
+        <div class="d-inline-flex mt-2 mt-md-0 ms-auto">
             <nav id="navbar" class="navbar">
                 <?php
                     if ( has_nav_menu( 'primary' ) ) {

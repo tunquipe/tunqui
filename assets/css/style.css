@@ -265,7 +265,7 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
   left: 0;
   bottom: 0;
-  background: rgba(40, 58, 90, 0.9);
+  background: rgba(62, 41, 158, 0.9);
   transition: 0.3s;
   z-index: 999;
 }
@@ -290,7 +290,7 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-mobile a, .navbar-mobile a:focus {
   padding: 10px 20px;
   font-size: 15px;
-  color: #37517e;
+  color: #3E299E;
 }
 .navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
   color: #47b2e4;
@@ -339,6 +339,12 @@ h1, h2, h3, h4, h5, h6 {
   background: url("../img/bg-hero.png") no-repeat center top ;
   background-size: cover;
 }
+#hero .item-content{
+  text-align: right;
+  padding-left: 4.5rem;
+  padding-right: 2rem;
+  padding-top: 2rem;
+}
 #hero-page {
   width: 100%;
   height: 60vh;
@@ -368,7 +374,7 @@ h1, h2, h3, h4, h5, h6 {
 #hero h2 {
   color: rgba(255, 255, 255, 0.6);
   margin-bottom: 50px;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 400;
 }
 #hero .btn-get-started {
@@ -404,6 +410,9 @@ h1, h2, h3, h4, h5, h6 {
 #hero .btn-watch-video:hover i {
   color: #47b2e4;
 }
+#hero .carousel-indicators{
+  bottom: -5rem;
+}
 #hero .animated {
   animation: up-down 2s ease-in-out infinite alternate-reverse both;
 }
@@ -438,12 +447,45 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 @media (max-width: 575px) {
+  #header{
+    padding: 0;
+  }
   #hero .hero-img img {
     width: 80%;
+  }
+  #hero .item-content{
+    text-align: center;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
   #hero .btn-get-started {
     font-size: 16px;
     padding: 10px 24px 11px 24px;
+  }
+  #hero h1 {
+    font-size: 26px;
+    line-height: 30px;
+  }
+  #hero h2 {
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 15px;
+  }
+  #hero .carousel-indicators{
+    display: none;
+  }
+  .carousel-control-next, .carousel-control-prev{
+    width: 10%;
+  }
+  .custom-logo {
+    width: 160px;
+    height: 70px;
+  }
+  #hero-page{
+    height: 100vh;
+  }
+  section.page-home{
+    padding: 40px 0;
   }
 }
 
@@ -1115,7 +1157,6 @@ section.page-home{
   padding: 12px 35px;
   border-radius: 50px;
   color: #47b2e4;
-  transition: none;
   font-size: 16px;
   font-weight: 500;
   transition: 0.3s;
@@ -1350,7 +1391,6 @@ section.page-home{
   padding-bottom: 8px;
 }
 .contact .php-email-form input, .contact .php-email-form textarea {
-  border-radius: 0;
   box-shadow: none;
   font-size: 14px;
   border-radius: 4px;
@@ -1478,7 +1518,7 @@ section.page-home{
   color: #fff;
   transition: 0.3s;
   border-radius: 50px;
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 #footer .footer-newsletter form input[type=submit]:hover {
   background: #ff1a00;

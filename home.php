@@ -32,10 +32,10 @@ $sliders = tunqui_get_slider();
                                 <div class="row">
                                     <div class="col-lg-7 d-flex flex-column justify-content-center pt-2 pt-lg-0 order-2 order-lg-1"
                                          data-aos="fade-up" data-aos-delay="200">
-                                        <div class="text-right p-5">
+                                        <div class="item-content">
                                             <h1><?php echo $item['slider_title']; ?></h1>
                                             <h2><?php echo $item['slider_description']; ?></h2>
-                                            <div class="d-flex justify-content-center justify-content-lg-end">
+                                            <div class="d-grid gap-2 d-md-flex justify-content-center justify-content-lg-end">
                                                 <?php if($item['slider_url_target']): ?>
                                                 <a href="<?php echo $item['slider_url_target']; ?>" class="btn-get-started scrollto">Conoce el servicio</a>
                                                 <?php endif; ?>
