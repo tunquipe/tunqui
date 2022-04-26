@@ -200,3 +200,88 @@ function theme_slug_setup() {
     add_theme_support( 'title-tag' );
 }
 add_action( 'after_setup_theme', 'theme_slug_setup' );
+
+//Detectamos el plugin
+if ( ! function_exists( 'is_plugin_active' ) ){
+    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+}
+function tunqui_portfolio (){
+if ( is_plugin_active( 'portfolio-post-type/portfolio-post-type.php' ) ){
+    $terms = get_terms('portfolio_category');
+    $args = array(
+        'post_type' => 'portfolio',
+        'posts_per_page' => -1,
+        'orderby'=> 'rand'
+    );
+    $row = new WP_Query($args);
+    $data = $row->get_posts();
+    $posts = null;
+    $counter = 0;
+    foreach ($data as $item){
+        $counter++;
+        $tmp['id'] = $item->ID;
+        $tmp['project_author'] = $item->post_author;
+        $tmp['project_date'] = $item->post_date;
+        $tmp['project_title'] = $item->post_title;
+        $tmp['project_excerpt'] = $item->post_excerpt;
+        $tmp['project_url'] = get_permalink($item->ID);
+        $categories = get_the_terms($item->ID,'portfolio_category');
+        $categorySlug = $categories[0]->slug;
+        $tmp['project_category_id'] = $categories[0]->term_id;
+        $tmp['project_category_slug'] = $categorySlug;
+        $tmp['project_category_name'] = $categories[0]->name;
+        $thumbID = get_post_thumbnail_id($item->ID);
+        $tmp['project_image_medium'] = wp_get_attachment_image_src( $thumbID, 'thumbnail' );
+        $tmp['project_image_full'] = wp_get_attachment_image_src( $thumbID, 'full' );
+        if($counter==1){
+            $tmp['active'] = 'active';
+        }else{
+            $tmp['active'] = null;
+        }
+        $posts[] = $tmp;
+    }
+?>
+    <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+        <div class="container" data-aos="fade-up">
+
+            <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                <li data-filter="*" class="filter-active">Todo</li>
+                <?php foreach ($terms as $term) : ?>
+                <li data-filter=".filter-<?php echo $term->term_id; ?>"><?php echo $term->name;  ?></li>
+                <?php endforeach; ?>
+            </ul>
+
+            <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+                <?php foreach ($posts as $project) :?>
+                <div class="col-lg-4 col-md-6 portfolio-item filter-<?php echo $project['project_category_id'] ?>">
+                    <div class="portfolio-img">
+                        <img src="<?php echo $project['project_image_full'][0] ?>" class="img-fluid" alt="">
+                    </div>
+                    <div class="portfolio-info">
+                        <h4><?php echo $project['project_title']; ?></h4>
+                        <p><?php echo $project['project_excerpt']; ?></p>
+                        <a href="<?php echo $project['project_image_full'][0] ?>" data-gallery="portfolioGallery"
+                           class="portfolio-lightbox preview-link" title="<?php echo $project['project_title']; ?>">
+                            <i class="bx bx-plus"></i>
+                        </a>
+                        <a href="<?php echo $project['project_url']; ?>" class="details-link" title="Ver más detalles">
+                            <i class="bx bx-link"></i>
+                        </a>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+
+        </div>
+    </section><!-- End Portfolio Section -->
+<?php
+} else {
+    return "El plugin no esta activo";
+}
+
+}
+function wpc_elementor_shortcode_portfolio( $atts ) {
+    tunqui_portfolio();
+}
+add_shortcode( 'portfolio', 'wpc_elementor_shortcode_portfolio');

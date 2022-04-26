@@ -93,3 +93,4 @@ function tunqui_slider_post() {
     register_post_type( 'slider', $args );
 }
 add_action( 'init', 'tunqui_slider_post' );
+
