@@ -1,6 +1,6 @@
 <!-- ======= Footer ======= -->
 <footer id="footer">
-
+    <?php if (is_front_page()): ?>
     <div class="footer-newsletter">
         <div class="container">
             <div class="row justify-content-center">
@@ -14,7 +14,7 @@
             </div>
         </div>
     </div>
-
+    <?php endif; ?>
     <div class="footer-top">
         <div class="container">
             <div class="row">
