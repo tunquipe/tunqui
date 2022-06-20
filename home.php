@@ -11,6 +11,8 @@ $sliders = tunqui_get_slider();
 ?>
 <?php if (is_front_page()): ?>
     <!-- ======= Hero Section ======= -->
+    <div id="videotv" data-vbg="https://www.youtube.com/watch?v=ZvDISppG654"></div>
+        <div class="_pattern-overlay"></div>
     <section id="hero" class="d-flex align-items-center">
         <div class="container">
             <div class="row">
@@ -72,7 +74,14 @@ $sliders = tunqui_get_slider();
             </div>
         </div>
     </section><!-- End Hero -->
-
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+            jQuery('[data-vbg]').youtube_background();
+            jQuery("#videotv").height('620px');
+            let altura = jQuery("#videotv").height();
+            console.log(altura);
+        });
+    </script>
 <?php endif; ?>
     <main id="main">
         <div class="container">
@@ -87,6 +96,7 @@ $sliders = tunqui_get_slider();
             </section>
         </div>
     </main><!-- End #main -->
+    
 
 <?php
 get_footer();

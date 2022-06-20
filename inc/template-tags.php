@@ -5,13 +5,15 @@ function tunqui_site_logo( $args = array(), $echo = true ) {
     $site_title = get_bloginfo( 'name' );
     $contents   = '';
     $classname  = '';
-
+    if(empty($logo)){
+        $logo = '<img width="180px" src="'.get_template_directory_uri().'/assets/img/blenderperu.svg'.'" >';
+    }
     $defaults = array(
         'logo'        => '%1$s<span class="screen-reader-text">%2$s</span>',
         'logo_class'  => 'site-logo',
         'title'       => '<a href="%1$s">%2$s</a>',
         'title_class' => 'site-title',
-        'home_wrap'   => '<h1 class="%1$s">%2$s</h1>',
+        'home_wrap'   => '<div class="%1$s">%2$s</div>',
         'single_wrap' => '<div class="%1$s faux-heading">%2$s</div>',
         'condition'   => ( is_front_page() || is_home() ) && ! is_page(),
     );
@@ -27,13 +29,14 @@ function tunqui_site_logo( $args = array(), $echo = true ) {
      * @param array $defaults Function's default arguments.
      */
     $args = apply_filters( 'tunqui_site_logo_args', $args, $defaults );
-
+    
     if ( has_custom_logo() ) {
         $contents  = sprintf( $args['logo'], $logo, esc_html( $site_title ) );
         $classname = $args['logo_class'];
     } else {
-        $contents  = sprintf( $args['title'], esc_url( get_home_url( null, '/' ) ), esc_html( $site_title ) );
-        $classname = $args['title_class'];
+        $contents  = sprintf( $args['logo'], $logo, esc_html( $site_title ) );
+        //$contents  = sprintf( $args['title'], esc_url( get_home_url( null, '/' ) ), esc_html( $site_title ) );
+        $classname = $args['logo_class'];
     }
 
     $wrap = $args['condition'] ? 'home_wrap' : 'single_wrap';

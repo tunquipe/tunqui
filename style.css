@@ -1,11 +1,11 @@
 /*
-Theme Name: Tunqui Agencia
-Text Domain: tunqui.pe
+Theme Name: Blender Perú
+Text Domain: blender.pe
 Version: 1.9
 Requires PHP: 5.2.4
-Description: Theme para sitio web de agencia Tunqui
+Description: Theme para sitio web de Blender Perú
 Author: the WordPress team
-Author URI: https://tunqui.pe/
+Author URI: https://blender.pe/
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,3 +18,27 @@ License version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
     width: 200px;
     height: 70px;
 }
+iframe {
+    transition: opacity 500ms ease-in-out;
+    transition-delay: 250ms;
+}
+/*/////////////////////////////*/
+.fullscreen-video-background {
+    background: #000;
+    position: relative;
+    width: 100%;
+    z-index: -99;
+    overflow: hidden;
+    height: 70hv;
+  }
+  ._pattern-overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    opacity: 0.3;
+    bottom: 0;
+    background-image: url(https://cdnjs.cloudflare.com/ajax/libs/vegas/2.3.1/overlays/03.png);
+    z-index: 2;
+    height: 620px;
+  }
+  

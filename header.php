@@ -21,9 +21,13 @@ wp_body_open();
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
-        <div>
-            <?php tunqui_site_logo(); ?>
-        </div>
+       
+            <?php 
+            
+            tunqui_site_logo();
+            
+            ?>
+
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
         <div class="d-inline-flex mt-2 mt-md-0 ms-auto">

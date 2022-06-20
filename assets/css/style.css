@@ -76,7 +76,7 @@ h1, h2, h3, h4, h5, h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #FE4B35;
+  background: #ff5555;
   width: 40px;
   height: 40px;
   border-radius: 50px;
@@ -103,10 +103,10 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.5s;
   z-index: 997;
   padding: 15px 0;
-  border-top: 8px solid #311F7E;
+  border-top: 1px solid #FF5555;
 }
 #header.header-scrolled, #header.header-inner-pages {
-  background: rgba(62, 41, 158, 1);
+  background: rgba(5,37,94);
 }
 #header .logo {
   font-size: 30px;
@@ -165,7 +165,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff;
 }
 .navbar .getstarted{
-  background: #FE4B35;
+  background: #ff5555;
 }
 .navbar .getstarted, .navbar .getstarted:focus {
   padding: 0;
@@ -353,10 +353,12 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero {
   width: 100%;
-  height: 520px;
+  height: 620px;
   /* background: #3E299E; */
   background: url("../img/bg-hero.png") no-repeat center bottom;
   background-size: cover;
+  z-index: 99;
+  position: relative;
 }
 #hero .item-content{
   text-align: right;
@@ -603,7 +605,12 @@ section.page-home{
     max-width: 40%;
   }
 }
-
+.widget_block .wp-block-group h2{
+  font-size: 16px;
+  font-weight: bold;
+  color: #05255e;
+  padding-bottom: 12px;
+}
 /*--------------------------------------------------------------
 # About Us
 --------------------------------------------------------------*/
@@ -1533,18 +1540,18 @@ section.page-home{
   background: none;
   font-size: 16px;
   padding: 0 20px;
-  background: #FE4B35;
+  background: #ff5555;
   color: #fff;
   transition: 0.3s;
   border-radius: 50px;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 #footer .footer-newsletter form input[type=submit]:hover {
-  background: #ff1a00;
+  background: #ff5555;
 }
 #footer .footer-top {
   padding: 2rem 0 1rem 0;
-  background: #3e299e;
+  background: #00a3e3;
 }
 #footer .footer-top .footer-contact {
   margin-bottom: 30px;
@@ -1567,7 +1574,7 @@ section.page-home{
 #footer .footer-top h4 {
   font-size: 16px;
   font-weight: bold;
-  color: #fe4b35;
+  color: #05255e;
   position: relative;
   padding-bottom: 12px;
 }
@@ -1626,7 +1633,7 @@ section.page-home{
   padding-top: 1rem;
   padding-bottom: 1rem;
   color: #fff;
-  background: #311F7E;
+  background: #05255e;
 }
 #footer .copyright {
   float: left;
