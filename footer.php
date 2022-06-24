@@ -71,7 +71,7 @@
 <script type="text/javascript">
     jQuery(document).ready(function() {
         jQuery('[data-vbg]').youtube_background();
-        jQuery("#videotv").height('620px');
+        jQuery("#videotv").height('588px');
         //let altura = jQuery("#videotv").height();
         //console.log(altura);
         jQuery(".list-courses").owlCarousel({
