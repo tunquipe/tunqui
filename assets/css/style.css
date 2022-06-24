@@ -438,6 +438,21 @@ h1, h2, h3, h4, h5, h6 {
 #hero .animated {
   animation: up-down 2s ease-in-out infinite alternate-reverse both;
 }
+.owl-theme .owl-nav{
+  position: absolute;
+  top: -60px;
+  right: 0;
+  color: #05245E;
+}
+.owl-theme .owl-nav .owl-prev,
+.owl-theme .owl-nav .owl-next
+{
+  background: #fff !important;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  transition: all 0.4s;
+}
 @media (max-width: 991px) {
   #hero {
     height: 100vh;

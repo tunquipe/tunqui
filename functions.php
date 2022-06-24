@@ -4,84 +4,92 @@
  * REQUIRED FILES
  * Include required files.
  */
-require get_template_directory() . '/inc/template-tags.php';
 
-function tunqui_register_styles() {
-    $theme_version = wp_get_theme()->get( 'Version' );
+require 'inc/template-tags.php';
+
+function tunqui_register_styles()
+{
+    $theme_version = wp_get_theme()->get('Version');
     //añadiendo css
-    wp_enqueue_style( 'aos-css', get_template_directory_uri() .'/assets/vendor/aos/aos.css', '', $theme_version);
-    wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() .'/assets/vendor/bootstrap/css/bootstrap.min.css', '', $theme_version);
-    wp_enqueue_style( 'bootstrap-icons-css', get_template_directory_uri() .'/assets/vendor/bootstrap-icons/bootstrap-icons.css', '', $theme_version);
-    wp_enqueue_style( 'boxicons-css', get_template_directory_uri() .'/assets/vendor/boxicons/css/boxicons.min.css', '', $theme_version);
-    wp_enqueue_style( 'glightbox-css', get_template_directory_uri() .'/assets/vendor/glightbox/css/glightbox.min.css', '', $theme_version);
-    wp_enqueue_style( 'remixicon-css', get_template_directory_uri() .'/assets/vendor/remixicon/remixicon.css', '', $theme_version);
-    wp_enqueue_style( 'swiper-bundle-css', get_template_directory_uri() .'/assets/vendor/swiper/swiper-bundle.min.css', '', $theme_version);
+    wp_enqueue_style('aos-css', get_template_directory_uri() . '/assets/vendor/aos/aos.css', '', $theme_version);
+    wp_enqueue_style('bootstrap-css', get_template_directory_uri() . '/assets/vendor/bootstrap/css/bootstrap.min.css', '', $theme_version);
+    wp_enqueue_style('bootstrap-icons-css', get_template_directory_uri() . '/assets/vendor/bootstrap-icons/bootstrap-icons.css', '', $theme_version);
+    wp_enqueue_style('boxicons-css', get_template_directory_uri() . '/assets/vendor/boxicons/css/boxicons.min.css', '', $theme_version);
+    wp_enqueue_style('glightbox-css', get_template_directory_uri() . '/assets/vendor/glightbox/css/glightbox.min.css', '', $theme_version);
+    wp_enqueue_style('remixicon-css', get_template_directory_uri() . '/assets/vendor/remixicon/remixicon.css', '', $theme_version);
+    wp_enqueue_style('swiper-bundle-css', get_template_directory_uri() . '/assets/vendor/swiper/swiper-bundle.min.css', '', $theme_version);
+    wp_enqueue_style('owlcarousel-css', get_template_directory_uri() . '/assets/vendor/owlcarousel/dist/assets/owl.carousel.min.css', '', $theme_version);
+    wp_enqueue_style('owlcarousel-default-css', get_template_directory_uri() . '/assets/vendor/owlcarousel/dist/assets/owl.theme.default.css', '', $theme_version);
+    wp_enqueue_style('tunqui-style', get_stylesheet_uri(), array(), $theme_version);
+    wp_enqueue_style('animate-css', get_template_directory_uri() . '/assets/css/animate.min.css', '', $theme_version);
+    wp_enqueue_style('hover-css', get_template_directory_uri() . '/assets/vendor/hover/css/hover-min.css', '', $theme_version);
 
-    wp_enqueue_style( 'tunqui-style', get_stylesheet_uri(), array(), $theme_version );
     //añadiendo css print
-    wp_enqueue_style( 'tunqui-print-style', get_template_directory_uri() . '/print.css', null, $theme_version, 'print' );
-
+    wp_enqueue_style('tunqui-print-style', get_template_directory_uri() . '/print.css', null, $theme_version, 'print');
 }
-add_action( 'wp_enqueue_scripts', 'tunqui_register_styles' );
+add_action('wp_enqueue_scripts', 'tunqui_register_styles');
 
-function tunqui_register_scripts() {
-    $theme_version = wp_get_theme()->get( 'Version' );
+function tunqui_register_scripts()
+{
+    $theme_version = wp_get_theme()->get('Version');
     wp_enqueue_script('jquery');
-    wp_enqueue_script( 'aos-js', get_template_directory_uri() . '/assets/vendor/aos/aos.js', array(), $theme_version, true );
-    wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/vendor/bootstrap/js/bootstrap.bundle.min.js', array(), $theme_version, true );
-    wp_enqueue_script( 'glightbox-js', get_template_directory_uri() . '/assets/vendor/glightbox/js/glightbox.min.js', array(), $theme_version, true );
-    wp_enqueue_script( 'isotope-js', get_template_directory_uri() . '/assets/vendor/isotope-layout/isotope.pkgd.min.js', array(), $theme_version, true );
-    wp_enqueue_script( 'swiper-js', get_template_directory_uri() . '/assets/vendor/swiper/swiper-bundle.min.js', array(), $theme_version, true );
-    wp_enqueue_script( 'noframework-waypoints-js', get_template_directory_uri() . '/assets/vendor/waypoints/noframework.waypoints.js', array(), $theme_version, true );
-    wp_enqueue_script( 'validate-js', get_template_directory_uri() . '/assets/vendor/php-email-form/validate.js', array(), $theme_version, true );
-    wp_enqueue_script( 'youtube-background', get_template_directory_uri() . '/assets/vendor/youtube-background/jquery.youtube-background.js', array(), $theme_version, true );
-    wp_enqueue_script( 'tunqui-js', get_template_directory_uri() . '/assets/js/main.js', array(), $theme_version, true );
+    wp_enqueue_script('aos-js', get_template_directory_uri() . '/assets/vendor/aos/aos.js', array(), $theme_version, true);
+    wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/assets/vendor/bootstrap/js/bootstrap.bundle.min.js', array(), $theme_version, true);
+    wp_enqueue_script('glightbox-js', get_template_directory_uri() . '/assets/vendor/glightbox/js/glightbox.min.js', array(), $theme_version, true);
+    wp_enqueue_script('isotope-js', get_template_directory_uri() . '/assets/vendor/isotope-layout/isotope.pkgd.min.js', array(), $theme_version, true);
+    wp_enqueue_script('swiper-js', get_template_directory_uri() . '/assets/vendor/swiper/swiper-bundle.min.js', array(), $theme_version, true);
+    wp_enqueue_script('noframework-waypoints-js', get_template_directory_uri() . '/assets/vendor/waypoints/noframework.waypoints.js', array(), $theme_version, true);
+    wp_enqueue_script('validate-js', get_template_directory_uri() . '/assets/vendor/php-email-form/validate.js', array(), $theme_version, true);
+    wp_enqueue_script('owlcarousel-js', get_template_directory_uri() . '/assets/vendor/owlcarousel/dist/owl.carousel.min.js', array(), $theme_version, true);
+    wp_enqueue_script('youtube-background', get_template_directory_uri() . '/assets/vendor/youtube-background/jquery.youtube-background.js', array(), $theme_version, true);
+    wp_enqueue_script('tunqui-js', get_template_directory_uri() . '/assets/js/main.js', array(), $theme_version, true);
 }
-add_action( 'wp_enqueue_scripts', 'tunqui_register_scripts' );
+add_action('wp_enqueue_scripts', 'tunqui_register_scripts');
 
 //Agregamos los menus
-function tunqui_menus() {
+function tunqui_menus()
+{
     $locations = array(
-        'primary'  => __( 'Desktop Horizontal Menu', 'tunqui' ),
-        'expanded' => __( 'Desktop Expanded Menu', 'tunqui' ),
-        'mobile'   => __( 'Mobile Menu', 'tunqui' ),
-        'footer'   => __( 'Footer Menu', 'tunqui' ),
-        'social'   => __( 'Social Menu', 'tunqui' ),
+        'primary'  => __('Desktop Horizontal Menu', 'tunqui'),
+        'expanded' => __('Desktop Expanded Menu', 'tunqui'),
+        'mobile'   => __('Mobile Menu', 'tunqui'),
+        'footer'   => __('Footer Menu', 'tunqui'),
+        'social'   => __('Social Menu', 'tunqui'),
     );
-    register_nav_menus( $locations );
+    register_nav_menus($locations);
 }
-add_action( 'init', 'tunqui_menus' );
+add_action('init', 'tunqui_menus');
 
 //Agregamos logo
-add_theme_support( 'custom-logo' );
+add_theme_support('custom-logo');
 
-register_sidebar( array(
-    'name'          => __( 'Footer Izquierda', 'tunqui' ),
+register_sidebar(array(
+    'name'          => __('Footer Izquierda', 'tunqui'),
     'id'            => 'footer-left',
     'description'   => 'Footer Lado Izquierdo',
     'before_widget' => '<div id="footer-%1$s" class="widget box-img %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h4 class="title-section">',
     'after_title'   => '</h4>',
-) );
-register_sidebar( array(
-    'name'          => __( 'Footer Derecha', 'tunqui' ),
+));
+register_sidebar(array(
+    'name'          => __('Footer Derecha', 'tunqui'),
     'id'            => 'footer-right',
     'description'   => 'Footer Lado Derecho',
     'before_widget' => '<div id="footer-%1$s" class="widget box-img %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h4 class="title-section">',
     'after_title'   => '</h4>',
-) );
-register_sidebar( array(
-    'name'          => __( 'Footer Descripción', 'tunqui' ),
+));
+register_sidebar(array(
+    'name'          => __('Footer Descripción', 'tunqui'),
     'id'            => 'footer-description',
     'description'   => 'Descripción del sitio',
     'before_widget' => '<div id="footer-%1$s" class="widget box-img %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h4 class="title-section">',
     'after_title'   => '</h4>',
-) );
+));
 
 // bootstrap 5 wp_nav_menu walker
 class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu
@@ -160,35 +168,36 @@ class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu
     }
 }
 
-function tunqui_get_slider(){
+function tunqui_get_slider()
+{
     $args = array(
         'post_type' => 'slider',
         'posts_per_page' => 3,
-        'orderby'=> 'rand'
+        'orderby' => 'rand'
     );
     $row = new WP_Query($args);
     $data = $row->get_posts();
     $post = null;
     $counter = 0;
-    foreach ($data as $item){
+    foreach ($data as $item) {
         $counter++;
         $tmp['id'] = $item->ID;
         $tmp['slider_author'] = $item->post_author;
         $tmp['slider_date'] = $item->post_date;
         $tmp['slider_title'] = $item->post_title;
         $tmp['slider_description'] = $item->post_content;
-        $tmp['slider_url_target'] = get_post_meta($item->ID,'slider_url_target', true);
-        $tmp['slider_url_video'] = get_post_meta($item->ID,'slider_url_video', true);
+        $tmp['slider_url_target'] = get_post_meta($item->ID, 'slider_url_target', true);
+        $tmp['slider_url_video'] = get_post_meta($item->ID, 'slider_url_video', true);
         //$tmp['slider_target'] = get_post_meta($item->ID,'slider_target', true);
-        $imageID = get_post_meta($item->ID,'slider_url_image', true);
+        $imageID = get_post_meta($item->ID, 'slider_url_image', true);
         $thumbID = get_post_thumbnail_id($item->ID);
-        $tmp['slider_img_thumbnail'] = wp_get_attachment_image_src( $thumbID, 'thumbnail' );
-        $tmp['slider_img_full'] = wp_get_attachment_image_src( $thumbID, 'full' );
-        $tmp['slider_url_image'] = wp_get_attachment_image_src( $imageID, 'full' );
+        $tmp['slider_img_thumbnail'] = wp_get_attachment_image_src($thumbID, 'thumbnail');
+        $tmp['slider_img_full'] = wp_get_attachment_image_src($thumbID, 'full');
+        $tmp['slider_url_image'] = wp_get_attachment_image_src($imageID, 'full');
 
-        if($counter==1){
+        if ($counter == 1) {
             $tmp['active'] = 'active';
-        }else{
+        } else {
             $tmp['active'] = null;
         }
         $post[] = $tmp;
@@ -196,94 +205,161 @@ function tunqui_get_slider(){
     return  $post;
 }
 
-add_theme_support( 'post-thumbnails' );
+add_theme_support('post-thumbnails');
 
-function theme_slug_setup() {
-    add_theme_support( 'title-tag' );
+function theme_slug_setup()
+{
+    add_theme_support('title-tag');
 }
-add_action( 'after_setup_theme', 'theme_slug_setup' );
+add_action('after_setup_theme', 'theme_slug_setup');
 
 //Detectamos el plugin
-if ( ! function_exists( 'is_plugin_active' ) ){
-    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+if (!function_exists('is_plugin_active')) {
+    include_once(ABSPATH . 'wp-admin/includes/plugin.php');
 }
-function tunqui_portfolio (){
-if ( is_plugin_active( 'portfolio-post-type/portfolio-post-type.php' ) ){
-    $terms = get_terms('portfolio_category');
+function tunqui_portfolio()
+{
+    if (is_plugin_active('portfolio-post-type/portfolio-post-type.php')) {
+        $terms = get_terms('portfolio_category');
+        $args = array(
+            'post_type' => 'portfolio',
+            'posts_per_page' => -1,
+            'orderby' => 'rand'
+        );
+        $row = new WP_Query($args);
+        $data = $row->get_posts();
+        $posts = null;
+        $counter = 0;
+        foreach ($data as $item) {
+            $counter++;
+            $tmp['id'] = $item->ID;
+            $tmp['project_author'] = $item->post_author;
+            $tmp['project_date'] = $item->post_date;
+            $tmp['project_title'] = $item->post_title;
+            $tmp['project_excerpt'] = $item->post_excerpt;
+            $tmp['project_url'] = get_permalink($item->ID);
+            $categories = get_the_terms($item->ID, 'portfolio_category');
+            $categorySlug = $categories[0]->slug;
+            $tmp['project_category_id'] = $categories[0]->term_id;
+            $tmp['project_category_slug'] = $categorySlug;
+            $tmp['project_category_name'] = $categories[0]->name;
+            $thumbID = get_post_thumbnail_id($item->ID);
+            $tmp['project_image_medium'] = wp_get_attachment_image_src($thumbID, 'thumbnail');
+            $tmp['project_image_full'] = wp_get_attachment_image_src($thumbID, 'full');
+            if ($counter == 1) {
+                $tmp['active'] = 'active';
+            } else {
+                $tmp['active'] = null;
+            }
+            $posts[] = $tmp;
+        }
+?>
+        <!-- ======= Portfolio Section ======= -->
+        <section id="portfolio" class="portfolio">
+            <div class="container" data-aos="fade-up">
+
+                <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+                    <li data-filter="*" class="filter-active">Todo</li>
+                    <?php foreach ($terms as $term) : ?>
+                        <li data-filter=".filter-<?php echo $term->term_id; ?>"><?php echo $term->name;  ?></li>
+                    <?php endforeach; ?>
+                </ul>
+
+                <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+                    <?php foreach ($posts as $project) : ?>
+                        <div class="col-lg-4 col-md-6 portfolio-item filter-<?php echo $project['project_category_id'] ?>">
+                            <div class="portfolio-img">
+                                <img src="<?php echo $project['project_image_full'][0] ?>" class="img-fluid" alt="">
+                            </div>
+                            <div class="portfolio-info">
+                                <h4><?php echo $project['project_title']; ?></h4>
+                                <p><?php echo $project['project_excerpt']; ?></p>
+                                <a href="<?php echo $project['project_image_full'][0] ?>" data-gallery="portfolioGallery" class="portfolio-lightbox preview-link" title="<?php echo $project['project_title']; ?>">
+                                    <i class="bx bx-plus"></i>
+                                </a>
+                                <a href="<?php echo $project['project_url']; ?>" class="details-link" title="Ver más detalles">
+                                    <i class="bx bx-link"></i>
+                                </a>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+
+            </div>
+        </section><!-- End Portfolio Section -->
+        <?php
+    } else {
+        return "El plugin no esta activo";
+    }
+}
+function getPriceCourse($id)
+{
+    $product_id = tutor_utils()->get_course_product_id($id);
+    $product = wc_get_product($product_id);
+    $html = null;
+
+    if ($product) {
+        if (tutor_utils()->is_course_added_to_cart($product_id, true)) {
+
+        } else {
+            $sale_price = $product->get_sale_price();
+            $regular_price = $product->get_regular_price();
+            $html = '<div class="price">
+                    <span class="tutor-fs-4 tutor-fw-bold">'.
+                    wc_price($sale_price ? $sale_price : $regular_price).'
+                </span>';
+        if ($regular_price && $sale_price && $sale_price != $regular_price) {
+            $html .= '<del class="tutor-fs-7 tutor-ml-8">'.
+                    wc_price($regular_price).'
+                    </del>';
+        }
+        $html .='</div>';
+        }
+    }
+    return $html;
+}
+function wpc_elementor_shortcode_portfolio($atts)
+{
+    tunqui_portfolio();
+}
+add_shortcode('portfolio', 'wpc_elementor_shortcode_portfolio');
+
+function tunqui_courses()
+{
     $args = array(
-        'post_type' => 'portfolio',
+        'post_type' => 'courses',
         'posts_per_page' => -1,
-        'orderby'=> 'rand'
+        'orderby' => 'rand'
     );
     $row = new WP_Query($args);
     $data = $row->get_posts();
-    $posts = null;
+    $courses = null;
     $counter = 0;
-    foreach ($data as $item){
+    foreach ($data as $item) {
         $counter++;
         $tmp['id'] = $item->ID;
-        $tmp['project_author'] = $item->post_author;
-        $tmp['project_date'] = $item->post_date;
-        $tmp['project_title'] = $item->post_title;
-        $tmp['project_excerpt'] = $item->post_excerpt;
-        $tmp['project_url'] = get_permalink($item->ID);
-        $categories = get_the_terms($item->ID,'portfolio_category');
+        $tmp['course_level'] = get_tutor_course_level($item->ID);
+        $tmp['course_duration'] = get_tutor_course_duration_context($item->ID);
+        $tmp['course_author'] = $item->post_author;
+        $tmp['course_date'] = $item->post_date;
+        $tmp['course_title'] = $item->post_title;
+        $tmp['course_excerpt'] = $item->post_excerpt;
+        $tmp['course_url'] = get_permalink($item->ID);
+        $categories = get_the_terms($item->ID, 'course-category');
         $categorySlug = $categories[0]->slug;
-        $tmp['project_category_id'] = $categories[0]->term_id;
-        $tmp['project_category_slug'] = $categorySlug;
-        $tmp['project_category_name'] = $categories[0]->name;
+        $tmp['course_category_id'] = $categories[0]->term_id;
+        $tmp['course_category_slug'] = $categorySlug;
+        $tmp['course_category_name'] = $categories[0]->name;
         $thumbID = get_post_thumbnail_id($item->ID);
-        $tmp['project_image_medium'] = wp_get_attachment_image_src( $thumbID, 'thumbnail' );
-        $tmp['project_image_full'] = wp_get_attachment_image_src( $thumbID, 'full' );
-        if($counter==1){
+        $tmp['course_image_medium'] = wp_get_attachment_image_src($thumbID, 'thumbnail');
+        $tmp['course_image_full'] = wp_get_attachment_image_src($thumbID, 'full');
+
+        if ($counter == 1) {
             $tmp['active'] = 'active';
-        }else{
+        } else {
             $tmp['active'] = null;
         }
-        $posts[] = $tmp;
+        $courses[] = $tmp;
     }
-?>
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
-        <div class="container" data-aos="fade-up">
-
-            <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
-                <li data-filter="*" class="filter-active">Todo</li>
-                <?php foreach ($terms as $term) : ?>
-                <li data-filter=".filter-<?php echo $term->term_id; ?>"><?php echo $term->name;  ?></li>
-                <?php endforeach; ?>
-            </ul>
-
-            <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-                <?php foreach ($posts as $project) :?>
-                <div class="col-lg-4 col-md-6 portfolio-item filter-<?php echo $project['project_category_id'] ?>">
-                    <div class="portfolio-img">
-                        <img src="<?php echo $project['project_image_full'][0] ?>" class="img-fluid" alt="">
-                    </div>
-                    <div class="portfolio-info">
-                        <h4><?php echo $project['project_title']; ?></h4>
-                        <p><?php echo $project['project_excerpt']; ?></p>
-                        <a href="<?php echo $project['project_image_full'][0] ?>" data-gallery="portfolioGallery"
-                           class="portfolio-lightbox preview-link" title="<?php echo $project['project_title']; ?>">
-                            <i class="bx bx-plus"></i>
-                        </a>
-                        <a href="<?php echo $project['project_url']; ?>" class="details-link" title="Ver más detalles">
-                            <i class="bx bx-link"></i>
-                        </a>
-                    </div>
-                </div>
-                <?php endforeach; ?>
-            </div>
-
-        </div>
-    </section><!-- End Portfolio Section -->
-<?php
-} else {
-    return "El plugin no esta activo";
+    return $courses;
 }
-
-}
-function wpc_elementor_shortcode_portfolio( $atts ) {
-    tunqui_portfolio();
-}
-add_shortcode( 'portfolio', 'wpc_elementor_shortcode_portfolio');

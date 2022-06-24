@@ -14,14 +14,17 @@ License version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
 */
 
 @import "assets/css/style.css";
-.custom-logo{
+
+.custom-logo {
     width: 200px;
     height: 70px;
 }
+
 iframe {
     transition: opacity 500ms ease-in-out;
     transition-delay: 250ms;
 }
+
 /*/////////////////////////////*/
 .fullscreen-video-background {
     background: #000;
@@ -29,9 +32,10 @@ iframe {
     width: 100%;
     z-index: -99;
     overflow: hidden;
-    height: 70hv;
-  }
-  ._pattern-overlay {
+    height: 70vh;
+}
+
+._pattern-overlay {
     position: absolute;
     top: 0;
     width: 100%;
@@ -40,5 +44,72 @@ iframe {
     background-image: url(https://cdnjs.cloudflare.com/ajax/libs/vegas/2.3.1/overlays/03.png);
     z-index: 2;
     height: 620px;
-  }
-  
+}
+.courses{
+    background: rgb(5,36,94);
+    background: linear-gradient(180deg, rgba(5,36,94,1) 0%, rgba(9,9,121,1) 45%, rgba(246,253,255,1) 45%);
+}
+.section-course-title{
+    color: #FFF;
+    font-size: 2.1rem;
+    font-weight: 600;
+}
+.section-course-sub-title{
+    color: #FFF;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+.course-item{
+    background: #FFFFFF;
+    box-shadow: 3px 3px 10px rgba(3, 20, 81, 0.20) !important;
+    margin: 1rem;
+}
+.course-item .course-img{
+    position: relative;
+    z-index: 1;
+}
+.course-item .course-img .price{
+    display: inline-block;
+    color: #FFF;
+    position: absolute;
+    right: 0;
+    border-radius: 10px 0 0 0;
+    bottom: 0;
+    padding: 7px 20px 5px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
+    background-color: #fe4a55;
+}
+.course-item .course-info {
+    padding: 2rem;
+}
+
+.course-item .course-info h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+.course-item .course-info h4 a{
+    color: #48494E;
+}
+.course-item .course-info p{
+    color: #48494E;
+    font-size: 14px;
+}
+.course-item .course-info .tutor-d-flex span{
+    margin-right: 5px;
+}
+.course-item .course-info .tutor-ul{
+    margin-bottom: .5rem;
+}
+.course-item .course-info .tutor-ul li{
+    font-size: 13px;
+    color: #00A2E2;
+    margin-right: 1rem;
+    font-weight: 500;
+}
+.course-item .course-info .tutor-color-secondary {
+    color: #00A2E2;
+}
