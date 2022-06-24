@@ -70,7 +70,7 @@ $courses = tunqui_courses();
 
 <?php endif; ?>
 
-<section id="courses" class="courses">
+<section id="courses" class="section-courses">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">

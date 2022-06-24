@@ -62,7 +62,11 @@
     </div>
 </footer><!-- End Footer -->
 
-<div id="preloader"></div>
+<div id="preloader">
+    <div class="icon-blender">
+        <img width="64px" height="64px" src="<?php echo get_template_directory_uri().'/assets/img/icon_blenderperu.svg'; ?>">
+    </div>
+</div>
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 <script type="text/javascript">
     jQuery(document).ready(function() {

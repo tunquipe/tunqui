@@ -45,7 +45,7 @@ iframe {
     z-index: 2;
     height: 620px;
 }
-.courses{
+.section-courses{
     background: rgb(5,36,94);
     background: linear-gradient(180deg, rgba(5,36,94,1) 0%, rgba(9,9,121,1) 45%, rgba(246,253,255,1) 45%);
 }

@@ -19,7 +19,15 @@
 wp_body_open();
 ?>
 <!-- ======= Header ======= -->
-<header id="header" class="fixed-top ">
+<?php
+    $css_header = null;
+    if(is_front_page() && is_page()){
+        $css_header = 'page-home';
+    } else {
+        $css_header = 'page-internal';
+    }
+?>
+<header id="header" class="<?php echo $css_header; ?> fixed-top ">
     <div class="container d-flex align-items-center">
        
             <?php 

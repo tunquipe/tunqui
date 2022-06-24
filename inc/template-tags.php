@@ -5,8 +5,9 @@ function tunqui_site_logo( $args = array(), $echo = true ) {
     $site_title = get_bloginfo( 'name' );
     $contents   = '';
     $classname  = '';
+    $urlhome = esc_url( get_home_url( null, '/' ) );
     if(empty($logo)){
-        $logo = '<img width="180px" src="'.get_template_directory_uri().'/assets/img/blenderperu.svg'.'" >';
+        $logo = '<a href="'.$urlhome.'"><img width="180px" src="'.get_template_directory_uri().'/assets/img/blenderperu.svg'.'" ></a>';
     }
     $defaults = array(
         'logo'        => '%1$s<span class="screen-reader-text">%2$s</span>',

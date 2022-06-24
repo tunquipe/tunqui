@@ -31,20 +31,27 @@ h1, h2, h3, h4, h5, h6 {
   bottom: 0;
   z-index: 9999;
   overflow: hidden;
-  background: #3E299E;
+  background: #05245E;
 }
-
+#preloader .icon-blender{
+  background: transparent;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  color: #FFF;
+}
 #preloader:before {
   content: "";
   position: fixed;
-  top: calc(50% - 30px);
-  left: calc(50% - 30px);
-  border: 6px solid #3E299E;
+  top: calc(50% - 75px);
+  left: calc(50% - 75px);
+  border: 6px solid #05245E;
   border-top-color: #fff;
   border-bottom-color: #fff;
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: 150px;
+  height: 150px;
   -webkit-animation: animate-preloader 1s linear infinite;
   animation: animate-preloader 1s linear infinite;
 }
@@ -125,6 +132,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 .carousel-indicators [data-bs-target]{
   border-radius: 0;
+}
+#header.page-internal{
+  background-color: #05245E;
 }
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -353,7 +363,7 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero {
   width: 100%;
-  height: 620px;
+  height: 588px;
   /* background: #3E299E; */
   background: url("../img/bg-hero.png") no-repeat center bottom;
   background-size: cover;
@@ -553,7 +563,17 @@ section {
 section.page-home{
   padding: 60px 0;
 }
-
+#sub-header.page-internal{
+  padding-top: 6.2rem;
+  padding-bottom: 30px;
+  background-color: #FF5555;
+}
+#sub-header .page-title{
+  color: #FFF;
+}
+#sub-header .page-title h1{
+  font-weight: 700;
+}
 .section-bg {
   background-color: #f3f5fa;
 }
