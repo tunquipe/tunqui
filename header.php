@@ -22,12 +22,12 @@ wp_body_open();
 <?php
     $css_header = null;
     if(is_front_page() && is_page()){
-        $css_header = 'page-home';
+        $css_header = 'page-home fixed-top';
     } else {
         $css_header = 'page-internal';
     }
 ?>
-<header id="header" class="<?php echo $css_header; ?> fixed-top ">
+<header id="header" class="<?php echo $css_header; ?>  ">
     <div class="container d-flex align-items-center">
        
             <?php 
