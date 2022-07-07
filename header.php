@@ -55,10 +55,20 @@ wp_body_open();
                             'walker' => new bootstrap_5_wp_nav_menu_walker()
                         ));
                         ?>
-                <!--<ul>
-
-                    <li><a class="getstarted scrollto" href="#about">Area de clientes</a></li>
-                </ul>-->
+                <ul>
+                    <?php if(is_user_logged_in()): ?>
+                        <li>
+                            <a class="btn-login" href="/escritorio">Mi cuenta</a>
+                        </li>
+                    <?php else: ?>
+                    <li>
+                        <a id="login-modal" class="btn-login" href="#" >Iniciar sesión</a>
+                    </li>
+                    <li>
+                        <a class="btn-register" href="/register">Registrate</a>
+                    </li>
+                    <?php endif; ?>
+                </ul>
                 <?php } ?>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>

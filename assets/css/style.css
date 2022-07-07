@@ -174,19 +174,21 @@ h1, h2, h3, h4, h5, h6 {
 .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
   color: #fff;
 }
-.navbar .getstarted{
+.navbar .btn-login{
   background: #ff5555;
-}
-.navbar .getstarted, .navbar .getstarted:focus {
-  padding: 0;
-  margin-left: 30px;
-  border-radius: 50px;
   color: #fff;
   font-size: 14px;
-  border: 2px solid #FE4B35;
-  font-weight: 600;
+  border: 1px solid #FE4B35;
+  border-radius: 50px;
 }
-.navbar .getstarted:hover, .navbar .getstarted:focus:hover {
+.navbar .btn-register{
+  border: 1px solid #fff;
+  margin-left: 1rem;
+  background: rgba(5,37,94);
+  font-size: 14px;
+  border-radius: 50px;
+}
+.navbar .btn-login:hover, .navbar .bt-login:focus:hover {
   color: #fff;
   background: #ff1a00;
 }

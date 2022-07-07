@@ -69,6 +69,14 @@
 </div>
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 <script type="text/javascript">
+    jQuery('#login-modal').on("click", function(e) {
+        e.preventDefault();
+        jQuery(".tutor-modal").addClass('tutor-is-active');
+    });
+    jQuery('.tutor-modal-overlay').on("click", function(e) {
+        e.preventDefault();
+        jQuery(".tutor-modal").removeClass('tutor-is-active');
+    });
     jQuery(document).ready(function() {
         jQuery('[data-vbg]').youtube_background();
         jQuery("#videotv").height('588px');
@@ -91,7 +99,14 @@
         });
     });
 </script>
-<?php wp_footer(); ?>
+<?php
+wp_footer();
+if ( ! is_user_logged_in() ) {
+    tutor_load_template_from_custom_path( tutor()->path . '/views/modal/login.php' );
+}
+
+?>
+
 </body>
 
 </html>
