@@ -52,8 +52,8 @@ function tunqui_menus()
     $locations = array(
         'primary'  => __('Desktop Horizontal Menu', 'tunqui'),
         'expanded' => __('Desktop Expanded Menu', 'tunqui'),
-        'mobile'   => __('Mobile Menu', 'tunqui'),
-        'footer'   => __('Footer Menu', 'tunqui'),
+        'logged'   => __('Logged', 'tunqui'),
+        'not_logged'   => __('Not Logged', 'tunqui'),
         'social'   => __('Social Menu', 'tunqui'),
     );
     register_nav_menus($locations);
