@@ -26,6 +26,7 @@ add_action( 'wp_enqueue_scripts', 'tunqui_register_styles' );
 
 function tunqui_register_scripts() {
     $theme_version = wp_get_theme()->get( 'Version' );
+    wp_enqueue_script('jquery');
     wp_enqueue_script( 'aos-js', get_template_directory_uri() . '/assets/vendor/aos/aos.js', array(), $theme_version, true );
     wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/vendor/bootstrap/js/bootstrap.bundle.min.js', array(), $theme_version, true );
     wp_enqueue_script( 'glightbox-js', get_template_directory_uri() . '/assets/vendor/glightbox/js/glightbox.min.js', array(), $theme_version, true );
@@ -33,6 +34,7 @@ function tunqui_register_scripts() {
     wp_enqueue_script( 'swiper-js', get_template_directory_uri() . '/assets/vendor/swiper/swiper-bundle.min.js', array(), $theme_version, true );
     wp_enqueue_script( 'noframework-waypoints-js', get_template_directory_uri() . '/assets/vendor/waypoints/noframework.waypoints.js', array(), $theme_version, true );
     wp_enqueue_script( 'validate-js', get_template_directory_uri() . '/assets/vendor/php-email-form/validate.js', array(), $theme_version, true );
+    wp_enqueue_script('youtube-background', get_template_directory_uri() . '/assets/vendor/youtube-background/jquery.youtube-background.js', array(), $theme_version, true);
     wp_enqueue_script( 'tunqui-js', get_template_directory_uri() . '/assets/js/main.js', array(), $theme_version, true );
 }
 add_action( 'wp_enqueue_scripts', 'tunqui_register_scripts' );
@@ -177,6 +179,7 @@ function tunqui_get_slider(){
         $tmp['slider_description'] = $item->post_content;
         $tmp['slider_url_target'] = get_post_meta($item->ID,'slider_url_target', true);
         $tmp['slider_url_video'] = get_post_meta($item->ID,'slider_url_video', true);
+        $tmp['slider_text_btn'] = get_post_meta($item->ID,'slider_text_btn', true);
         //$tmp['slider_target'] = get_post_meta($item->ID,'slider_target', true);
         $imageID = get_post_meta($item->ID,'slider_url_image', true);
         $thumbID = get_post_thumbnail_id($item->ID);

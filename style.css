@@ -18,3 +18,23 @@ License version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
     width: 200px;
     height: 70px;
 }
+/*/////////////////////////////*/
+.fullscreen-video-background {
+    background: #000;
+    position: relative;
+    width: 100%;
+    z-index: -99;
+    overflow: hidden;
+    height: 750px;
+}
+
+._pattern-overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    opacity: 0.5;
+    bottom: 0;
+    background-image: url(assets/img/overlays.png);
+    z-index: 2;
+    height: 750px;
+}
