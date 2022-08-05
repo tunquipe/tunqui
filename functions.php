@@ -74,6 +74,15 @@ register_sidebar( array(
     'after_title'   => '</h4>',
 ) );
 register_sidebar( array(
+    'name'          => __( 'Footer Center', 'tunqui' ),
+    'id'            => 'footer-center',
+    'description'   => 'Centro',
+    'before_widget' => '<div id="footer-%1$s" class="widget box-img %2$s">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h4 class="title-section">',
+    'after_title'   => '</h4>',
+) );
+register_sidebar( array(
     'name'          => __( 'Footer Descripción', 'tunqui' ),
     'id'            => 'footer-description',
     'description'   => 'Descripción del sitio',
@@ -288,3 +297,36 @@ function wpc_elementor_shortcode_portfolio( $atts ) {
     tunqui_portfolio();
 }
 add_shortcode( 'portfolio', 'wpc_elementor_shortcode_portfolio');
+
+function twenty_twenty_one_post_thumbnail() {
+    if ( ! twenty_twenty_one_can_show_post_thumbnail() ) {
+        return;
+    }
+    ?>
+
+    <?php if ( is_singular() ) : ?>
+
+        <figure class="post-thumbnail">
+            <?php
+            // Lazy-loading attributes should be skipped for thumbnails since they are immediately in the viewport.
+            the_post_thumbnail( 'post-thumbnail', array( 'loading' => false ) );
+            ?>
+            <?php if ( wp_get_attachment_caption( get_post_thumbnail_id() ) ) : ?>
+                <figcaption class="wp-caption-text"><?php echo wp_kses_post( wp_get_attachment_caption( get_post_thumbnail_id() ) ); ?></figcaption>
+            <?php endif; ?>
+        </figure><!-- .post-thumbnail -->
+
+    <?php else : ?>
+
+        <figure class="post-thumbnail">
+            <a class="post-thumbnail-inner alignwide" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+                <?php the_post_thumbnail( 'post-thumbnail' ); ?>
+            </a>
+            <?php if ( wp_get_attachment_caption( get_post_thumbnail_id() ) ) : ?>
+                <figcaption class="wp-caption-text"><?php echo wp_kses_post( wp_get_attachment_caption( get_post_thumbnail_id() ) ); ?></figcaption>
+            <?php endif; ?>
+        </figure>
+
+    <?php endif; ?>
+    <?php
+}

@@ -2,26 +2,33 @@
 
 get_header();
 $idPost = get_the_ID();
+$featured_image = null;
+$height = get_post_meta($idPost, 'height_header_page', true);
+$position_bg = 'bottom center';
+if($height=='400'){
+    $position_bg = 'center center';
+}
 ?>
-<?php while(have_posts()): the_post(); ?>
+<?php while (have_posts()): the_post(); ?>
 
     <!-- ======= Hero Section ======= -->
-    <section id="hero-page" class="d-flex align-items-center">
-        <div class="container">
-            <div class="row align-items-start justify-content-center">
-                <div class="col-12 col-lg-7 d-flex flex-column justify-content-center pt-2 pt-lg-0 order-2 order-lg-1">
-                    <div class="page-title">
-                        <h1><?php the_title(); ?></h1>
-                        <p><?php echo get_post_meta($idPost,'sub_title', true); ?></p>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-5 order-1 order-lg-2 hero-img">
-                    <?php if ( has_post_thumbnail() ) :
-                        $featured_image = get_the_post_thumbnail_url();
+    <section id="hero-page" class="d-flex align-items-center" style="height: <?php echo $height ?>px;">
 
-                        ?>
-                        <img class="img-fluid" src="<?php echo $featured_image; ?>" />
-                    <?php endif; ?>
+        <div class="container">
+            <?php if (has_post_thumbnail()) :
+            $featured_image = get_the_post_thumbnail_url();
+            endif;
+            ?>
+                <div class="row">
+                    <div class="col-12 justify-content-center">
+                        <div class="bg-image-page" style="height:<?php echo $height ?>px; background: url(<?php echo $featured_image; ?>) <?php echo $position_bg; ?>; background-size: cover;">
+                        <?php if($height == '200') : ?>
+                            <div class="page-title">
+                            <h1><?php the_title(); ?>
+                            <p><?php echo get_post_meta($idPost, 'sub_title_page', true); ?></p>
+                        </div>
+                        <?php endif; ?>
+                    </div>
                 </div>
             </div>
         </div>

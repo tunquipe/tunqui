@@ -14,6 +14,7 @@ License version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
 */
 
 @import "assets/css/style.css";
+
 .custom-logo{
     width: 200px;
     height: 70px;
@@ -36,5 +37,75 @@ License version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
     bottom: 0;
     background-image: url(assets/img/overlays.png);
     z-index: 2;
-    height: 750px;
+    height: 85vh;
 }
+body .wpsw-social-links li .social-icon{
+    width: 35px;
+    padding: 8px;
+    font-size: 19px;
+    height: 35px;
+}
+@font-face {
+    font-family: 'Bariol Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Bariol Regular'), url('assets/font/bariol_regular-webfont.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Bariol Regular Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Bariol Regular Italic'), url('assets/font/bariol_regular_italic-webfont.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Bariol Thin Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Bariol Thin Italic'), url('assets/font/bariol_thin_italic-webfont.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Bariol Thin';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Bariol Thin'), url('assets/font/bariol_thin-webfont.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Bariol Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Bariol Light'), url('assets/font/bariol_light-webfont.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Bariol Light Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Bariol Light Italic'), url('assets/font/bariol_light_italic-webfont.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Bariol Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Bariol Bold'), url('assets/font/bariol_bold-webfont.woff') format('woff');
+}
+
+
+@font-face {
+    font-family: 'Bariol Bold Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Bariol Bold Italic'), url('assets/font/bariol_bold_italic-webfont.woff') format('woff');
+}
+
+

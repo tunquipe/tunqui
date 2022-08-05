@@ -17,7 +17,9 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6 footer-links">
-
+                    <?php if ( is_active_sidebar('footer-center') ) : ?>
+                        <?php dynamic_sidebar('footer-center'); ?>
+                    <?php endif; ?>
                 </div>
 
                 <div class="col-lg-3 col-md-6 footer-links">
@@ -48,7 +50,7 @@
 <script type="text/javascript">
     jQuery(document).ready(function() {
         jQuery('[data-vbg]').youtube_background();
-        jQuery("#videotv").height('750px');
+        jQuery("#videotv").height('85vh');
         jQuery("#videotv iframe").css('top','23%');
         //let altura = jQuery("#videotv").height();
         //console.log(altura);

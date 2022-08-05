@@ -17,16 +17,22 @@
 <body <?php body_class(); ?>>
 <?php
 wp_body_open();
+$css_header = null;
+if (is_front_page() && is_page()) {
+    $css_header = 'page-home fixed-top';
+} else {
+    $css_header = 'page-internal';
+}
 ?>
 <!-- ======= Header ======= -->
-<header id="header" class="fixed-top ">
+<header id="header" class="<?php echo $css_header; ?>  ">
     <div class="container d-flex align-items-center">
         <div>
             <?php tunqui_site_logo(); ?>
         </div>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-        <div class="d-inline-flex mt-2 mt-md-0 ms-auto">
+        <div class="d-inline-flex p-4 ms-auto">
             <nav id="navbar" class="navbar">
                 <?php
                     if ( has_nav_menu( 'primary' ) ) {
