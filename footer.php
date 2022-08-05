@@ -49,8 +49,19 @@
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 <script type="text/javascript">
     jQuery(document).ready(function() {
+        let windowWidth = window.innerWidth;
+        console.log(windowWidth);
         jQuery('[data-vbg]').youtube_background();
-        jQuery("#videotv").height('85vh');
+        if(windowWidth<550){
+            jQuery("#videotv").height('50vh');
+            jQuery(".bg-image-page").height('150px');
+            jQuery("#hero-page").height('100px');
+        } else if(windowWidth>1400){
+            jQuery("#videotv").height('75vh');
+        } else {
+            jQuery("#videotv").height('85vh');
+        }
+
         jQuery("#videotv iframe").css('top','23%');
         //let altura = jQuery("#videotv").height();
         //console.log(altura);

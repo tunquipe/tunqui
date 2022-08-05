@@ -45,6 +45,30 @@ body .wpsw-social-links li .social-icon{
     font-size: 19px;
     height: 35px;
 }
+@media (min-width: 1200px){
+    .container, .container-lg, .container-md, .container-sm, .container-xl {
+        max-width: 1300px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+@media (min-width: 1400px){
+    #hero {
+        height: 75vh;
+    }
+    ._pattern-overlay{
+        height: 74vh;
+    }
+}
+@media (max-width: 575px) {
+    ._pattern-overlay{
+        height: 50vh;
+    }
+    .container{
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
 @font-face {
     font-family: 'Bariol Regular';
     font-style: normal;

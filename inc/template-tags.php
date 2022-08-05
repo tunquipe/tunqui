@@ -7,7 +7,7 @@ function tunqui_site_logo( $args = array(), $echo = true ) {
     $classname  = '';
     $urlhome = esc_url( get_home_url( null, '/' ) );
     if(empty($logo)){
-        $logo = '<a href="'.$urlhome.'"><img width="120px" src="'.get_template_directory_uri().'/assets/img/logo.svg'.'" ></a>';
+        $logo = '<a href="'.$urlhome.'"><img width="100px" src="'.get_template_directory_uri().'/assets/img/logo.svg'.'" ></a>';
     }
     $defaults = array(
         'logo'        => '%1$s<span class="screen-reader-text">%2$s</span>',
