@@ -49,6 +49,10 @@ body .wpsw-social-links li .social-icon{
     font-size: 19px;
     height: 35px;
 }
+.body .social-icon:after{
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
 @media (min-width: 1200px){
     .container, .container-lg, .container-md, .container-sm, .container-xl {
         max-width: 1300px;

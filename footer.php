@@ -31,14 +31,6 @@
             </div>
         </div>
     </div>
-
-    <div class="footer-bottom clearfix">
-        <div class="container">
-            <div class="copyright">
-                &copy; <strong>Tunqui Agencia Creativa EIRL</strong>. Todos los derechos reservados
-            </div>
-        </div>
-    </div>
 </footer><!-- End Footer -->
 
 <div id="preloader">
