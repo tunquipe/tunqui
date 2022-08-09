@@ -14,7 +14,7 @@ if($height=='400'){
     <!-- ======= Hero Section ======= -->
     <section id="hero-page" class="d-flex align-items-center" style="height: <?php echo $height ?>px;">
 
-        <div class="container">
+        <div class="container-fluid">
             <?php if (has_post_thumbnail()) :
             $featured_image = get_the_post_thumbnail_url();
             endif;

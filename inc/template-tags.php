@@ -6,8 +6,13 @@ function tunqui_site_logo( $args = array(), $echo = true ) {
     $contents   = '';
     $classname  = '';
     $urlhome = esc_url( get_home_url( null, '/' ) );
+    $svg = 'logo.svg';
+
     if(empty($logo)){
-        $logo = '<a href="'.$urlhome.'"><img width="100px" src="'.get_template_directory_uri().'/assets/img/logo.svg'.'" ></a>';
+        if(is_page() && !is_front_page()){
+            $svg = 'logo_black.svg';
+        }
+        $logo = '<a href="'.$urlhome.'"><img width="100px" src="'.get_template_directory_uri().'/assets/img/'.$svg.'" ></a>';
     }
     $defaults = array(
         'logo'        => '%1$s<span class="screen-reader-text">%2$s</span>',

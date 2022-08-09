@@ -156,8 +156,8 @@ h1, h2, h3, h4, h5, h6 {
   text-shadow: none;
 }
 #header.page-internal .navbar .active{
-  color: #18AEA5;
-  border-bottom: 2px solid #18AEA5;
+  color: #FFF;
+  border-bottom: 2px solid #FFF;
 }
 #header .logo {
   font-size: 30px;
@@ -420,6 +420,8 @@ h1, h2, h3, h4, h5, h6 {
 #hero .carousel-item-img{
   height: 85vh;
   position: relative;
+  background-size: cover;
+  background-position: center center;
 }
 #hero .carousel-item-text{
   position: absolute;
@@ -1292,6 +1294,9 @@ section.page-home{
     max-width: 100%;
     margin: 0 auto 30px auto;
   }
+  #header .site-logo a img{
+    width: 80px;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1573,7 +1578,7 @@ section.page-home{
 --------------------------------------------------------------*/
 #footer {
   font-size: 14px;
-  background: #18AEA5;
+  background: url(../img/bg-footer.png) #18AEA5 center top;
 }
 #footer .footer-newsletter {
   padding: 50px 0;

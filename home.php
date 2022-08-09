@@ -34,7 +34,7 @@ $sliders = tunqui_get_slider();
                             <?php $counter++; ?>
 
                                 <div  class="carousel-item <?php echo $item['active'] ?>">
-                                    <div class="carousel-item-img" style="background: url('<?php echo $item['slider_img_full'][0]; ?>')">
+                                    <div class="carousel-item-img" style="background-image: url('<?php echo $item['slider_img_full'][0]; ?>')">
                                         <div class="_pattern-overlay"></div>
                                         <div class="carousel-item-text">
                                             <div class="row">
