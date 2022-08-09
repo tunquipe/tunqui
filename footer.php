@@ -50,10 +50,10 @@
 <script type="text/javascript">
     jQuery(document).ready(function() {
         let windowWidth = window.innerWidth;
-        console.log(windowWidth);
-        jQuery('[data-vbg]').youtube_background();
+        /*console.log(windowWidth);*/
+        /*jQuery('[data-vbg]').youtube_background();*/
         if(windowWidth<550){
-            jQuery("#videotv").height('50vh');
+            /*jQuery("#videotv").height('50vh');*/
             jQuery(".bg-image-page").height('150px');
             jQuery("#hero-page").height('100px');
         } else if(windowWidth>1400){

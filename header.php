@@ -26,7 +26,7 @@ if (is_front_page() && is_page()) {
 ?>
 <!-- ======= Header ======= -->
 <header id="header" class="<?php echo $css_header; ?>  ">
-    <div class="container d-flex align-items-center">
+    <div class="container-fluid d-flex align-items-center">
         <div>
             <?php tunqui_site_logo(); ?>
         </div>
