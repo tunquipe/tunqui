@@ -101,16 +101,15 @@ get_footer();
     (function($) {
         $(document).ready(function() {
             $(".vegasHere").vegas({
-                overlay: true,
-                transition: 'fade',
-                transitionDuration: 4000,
+                overlay: false,
+                transition: 'fade2',
+                transitionDuration: 3000,
                 delay: 10000,
-                animation: 'random',
                 animationDuration: 20000,
                 slides: [
                     <?php
                     foreach ($sliders as $item) :
-                        echo "{ src:'" . $item['slider_img_full'][0] . "', fade:1000 }";
+                        echo "{ src:'" . $item['slider_img_full'][0] . "', fade:1000 },";
                     endforeach;
                     ?>
                 ]
