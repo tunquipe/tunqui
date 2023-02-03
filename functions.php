@@ -16,7 +16,7 @@ function tunqui_register_styles() {
     wp_enqueue_style( 'glightbox-css', get_template_directory_uri() .'/assets/vendor/glightbox/css/glightbox.min.css', '', $theme_version);
     wp_enqueue_style( 'remixicon-css', get_template_directory_uri() .'/assets/vendor/remixicon/remixicon.css', '', $theme_version);
     wp_enqueue_style( 'swiper-bundle-css', get_template_directory_uri() .'/assets/vendor/swiper/swiper-bundle.min.css', '', $theme_version);
-
+    wp_enqueue_style( 'vegas-css', get_template_directory_uri() .'/assets/vendor/vegas/vegas.min.css', '', $theme_version);
     wp_enqueue_style( 'tunqui-style', get_stylesheet_uri(), array(), $theme_version );
     //añadiendo css print
     wp_enqueue_style( 'tunqui-print-style', get_template_directory_uri() . '/print.css', null, $theme_version, 'print' );
@@ -33,7 +33,9 @@ function tunqui_register_scripts() {
     wp_enqueue_script( 'swiper-js', get_template_directory_uri() . '/assets/vendor/swiper/swiper-bundle.min.js', array(), $theme_version, true );
     wp_enqueue_script( 'noframework-waypoints-js', get_template_directory_uri() . '/assets/vendor/waypoints/noframework.waypoints.js', array(), $theme_version, true );
     wp_enqueue_script( 'validate-js', get_template_directory_uri() . '/assets/vendor/php-email-form/validate.js', array(), $theme_version, true );
+    wp_enqueue_script( 'vegas-js', get_template_directory_uri() . '/assets/vendor/vegas/vegas.min.js', array(), $theme_version, true );
     wp_enqueue_script( 'tunqui-js', get_template_directory_uri() . '/assets/js/main.js', array(), $theme_version, true );
+    wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js', array(), $theme_version, true);
 }
 add_action( 'wp_enqueue_scripts', 'tunqui_register_scripts' );
 
@@ -62,7 +64,7 @@ register_sidebar( array(
     'before_title'  => '<h4 class="title-section">',
     'after_title'   => '</h4>',
 ) );
-register_sidebar( array(
+/*register_sidebar( array(
     'name'          => __( 'Footer Derecha', 'tunqui' ),
     'id'            => 'footer-right',
     'description'   => 'Footer Lado Derecho',
@@ -70,15 +72,25 @@ register_sidebar( array(
     'after_widget'  => '</div>',
     'before_title'  => '<h4 class="title-section">',
     'after_title'   => '</h4>',
-) );
+) );*/
 register_sidebar( array(
     'name'          => __( 'Footer Descripción', 'tunqui' ),
     'id'            => 'footer-description',
     'description'   => 'Descripción del sitio',
-    'before_widget' => '<div id="footer-%1$s" class="widget box-img %2$s">',
+    'before_widget' => '<div id="footer-%1$s" class="widget widget-box %2$s">',
     'after_widget'  => '</div>',
-    'before_title'  => '<h4 class="title-section">',
+    'before_title'  => '<h4 class="title">',
     'after_title'   => '</h4>',
+) );
+
+register_sidebar( array(
+    'name'          => __( 'Header HTML', 'tunqui' ),
+    'id'            => 'header-html',
+    'description'   => 'Colocar HTML en el header',
+    'before_widget' => '<div id="header-%1$s" class="widget box-header %2$s">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h3 class="title-section">',
+    'after_title'   => '</h3>',
 ) );
 
 // bootstrap 5 wp_nav_menu walker
@@ -156,6 +168,29 @@ class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu
 
         $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
     }
+}
+
+function tunqui_get_slider_img(){
+    $args = array(
+        'post_type' => 'slider',
+        'posts_per_page' => 3,
+        'orderby'=> 'rand'
+    );
+    $row = new WP_Query($args);
+    $data = $row->get_posts();
+    $post = null;
+    $counter = 0;
+    foreach ($data as $item){
+        $counter++;
+        $tmp['id'] = $item->ID;
+        $imageID = get_post_meta($item->ID,'slider_url_image', true);
+        $thumbID = get_post_thumbnail_id($item->ID);
+        $tmp['slider_img_thumbnail'] = wp_get_attachment_image_src( $thumbID, 'thumbnail' );
+        $tmp['slider_img_full'] = wp_get_attachment_image_src( $thumbID, 'full' );
+        $post[] = $tmp;
+    }
+    return  $post;
+
 }
 
 function tunqui_get_slider(){
@@ -285,3 +320,4 @@ function wpc_elementor_shortcode_portfolio( $atts ) {
     tunqui_portfolio();
 }
 add_shortcode( 'portfolio', 'wpc_elementor_shortcode_portfolio');
+

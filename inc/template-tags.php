@@ -61,36 +61,61 @@ function tunqui_site_logo( $args = array(), $echo = true ) {
 
 }
 
-function tunqui_slider_post() {
-    $labels = array(
-        'name'               => __( 'Portadas' ),
-        'singular_name'      => __( 'Portada' ),
-        'add_new'            => __( 'Agregar portada' ),
-        'add_new_item'       => __( 'Agregar portada' ),
-        'edit_item'          => __( 'Editar portada' ),
-        'new_item'           => __( 'Agregar portada' ),
-        'view_item'          => __( 'Visualizar portada' ),
-        'search_items'       => __( 'Buscar portada' ),
-        'not_found'          => __( 'No se encontro portada' ),
-        'not_found_in_trash' => __( 'No se encontro portada en la papelera' )
-    );
-    $supports = array(
-        'title',
-        'editor',
-        'thumbnail',
-        'revisions',
-    );
-    $args = array(
-        'labels'               => $labels,
-        'supports'             => $supports,
-        'public'               => true,
-        'capability_type'      => 'post',
-        'rewrite'              => array( 'slug' => 'slider' ),
-        'has_archive'          => true,
-        'menu_position'        => 30,
-        'menu_icon'            => 'dashicons-images-alt2',
-    );
-    register_post_type( 'slider', $args );
+function cptui_register_my_cpts_slider() {
+
+    /**
+     * Post Type: Portadas.
+     */
+
+    $labels = [
+        "name" => esc_html__( "Portadas", "tunqui.pe" ),
+        "singular_name" => esc_html__( "Portada", "tunqui.pe" ),
+        "menu_name" => esc_html__( "Portada", "tunqui.pe" ),
+        "all_items" => esc_html__( "Todas las portadas", "tunqui.pe" ),
+        "add_new" => esc_html__( "Añadir nueva portada", "tunqui.pe" ),
+        "add_new_item" => esc_html__( "Añadir nueva portada", "tunqui.pe" ),
+        "edit_item" => esc_html__( "Editar portada", "tunqui.pe" ),
+        "new_item" => esc_html__( "Nueva portada", "tunqui.pe" ),
+        "view_item" => esc_html__( "Ver portada", "tunqui.pe" ),
+        "view_items" => esc_html__( "Ver portadas", "tunqui.pe" ),
+        "search_items" => esc_html__( "Buscar portada", "tunqui.pe" ),
+        "not_found" => esc_html__( "No se ha encontrado a portada", "tunqui.pe" ),
+        "not_found_in_trash" => esc_html__( "No se ha encontrado la portada en la papelera", "tunqui.pe" ),
+        "featured_image" => esc_html__( "Imagen destacada de la portada", "tunqui.pe" ),
+    ];
+
+    $args = [
+        "label" => esc_html__( "Portadas", "tunqui.pe" ),
+        "labels" => $labels,
+        "description" => "",
+        "public" => false,
+        "publicly_queryable" => false,
+        "show_ui" => true,
+        "show_in_rest" => true,
+        "rest_base" => "",
+        "rest_controller_class" => "WP_REST_Posts_Controller",
+        "rest_namespace" => "wp/v2",
+        "has_archive" => false,
+        "show_in_menu" => true,
+        "show_in_nav_menus" => true,
+        "delete_with_user" => false,
+        "exclude_from_search" => true,
+        "capability_type" => "post",
+        "map_meta_cap" => true,
+        "hierarchical" => false,
+        "can_export" => false,
+        "rewrite" => [ "slug" => "slider", "with_front" => false ],
+        "query_var" => true,
+        "menu_icon" => "dashicons-format-gallery",
+        "supports" => [ "title", "editor", "thumbnail", "excerpt", "custom-fields", "author", "page-attributes" ],
+        "show_in_graphql" => false,
+    ];
+
+    register_post_type( "slider", $args );
 }
-add_action( 'init', 'tunqui_slider_post' );
+
+add_action( 'init', 'cptui_register_my_cpts_slider' );
+
+
+
 

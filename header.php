@@ -18,6 +18,14 @@
 <?php
 wp_body_open();
 ?>
+<!-- ======= Widget ======= -->
+
+<?php if ( is_active_sidebar('header-html') ) : ?>
+    <div class="widget-header">
+        <?php dynamic_sidebar('header-html'); ?>
+    </div>
+<?php endif; ?>
+
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center">
