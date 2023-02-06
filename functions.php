@@ -93,6 +93,11 @@ register_sidebar( array(
     'after_title'   => '</h3>',
 ) );
 
+/**
+ * Include default theme options.
+ */
+require get_template_directory() . '/inc/customizer.php';
+
 // bootstrap 5 wp_nav_menu walker
 class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu
 {

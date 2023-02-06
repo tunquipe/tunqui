@@ -73,9 +73,28 @@ $sliders = tunqui_get_slider_img();
                 </div>
             </div>
         </div>
-
-
     </section><!-- End Hero -->
+    <section>
+        <div class="container text-center">
+            <div class="advertisements row justify-content-center">
+                <div class="col-12 col-md-4 p-2">
+                    <h1 class="quote"><strong>¡</strong>Cotiza ya<strong>!</strong></h1>
+                </div>
+                <div class="col-12 col-md-4 p-2">
+                    <div class="phone">
+                        <i class="bi bi-phone"></i>
+                        924 980 002
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 p-2">
+                    <div class="d-flex flex-row justify-content-center mb-3">
+                        <div class="p-2 line-left">Separa tu lote desde 90m2</div>
+                        <div class="p-2 line-right">$21.600</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 <?php endif; ?>
     <main id="main">

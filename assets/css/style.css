@@ -112,6 +112,9 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
+.section-css{
+  background: url("../../assets/img/cubes.png") no-repeat top right var(--white-color);
+}
 .admin-bar #header{
   margin-top: 2rem;
 }
@@ -119,7 +122,8 @@ h1, h2, h3, h4, h5, h6 {
   transition: all 0.5s;
   z-index: 997;
   padding: 15px 0;
-  background: var(--white-color);
+  background: url("../../assets/img/cubes.png") no-repeat center right var(--white-color);
+  border-top: 4px solid var(--green-color);
 }
 #header.header-scrolled, #header.header-inner-pages {
   background: var(--white-color);
@@ -195,6 +199,37 @@ body .vegas-container {
 }
 .form-register .form-check{
   display: inline-block;
+}
+.section-title {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  text-align: center;
+  margin-bottom: 50px !important;
+}
+.section-title::before {
+  content: '';
+  position: absolute;
+  background-color: var(--yellow-color);
+  width: 300px;
+  height: 3px;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 10;
+}
+.section-title::after {
+  content: '';
+  position: absolute;
+  background: url("../../assets/img/mark.png") no-repeat;
+  width: 40px;
+  height: 40px;
+  bottom: -30px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 11;
 }
 .btn-green{
   color: #fff;
@@ -581,48 +616,11 @@ section {
   overflow: hidden;
 }
 section.page-home{
-  padding: 60px 0;
+  padding: 3rem 0;
 }
 
 .section-bg {
   background-color: #f3f5fa;
-}
-
-.section-title {
-  text-align: center;
-  padding-bottom: 30px;
-}
-.section-title h2 {
-  font-size: 32px;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  position: relative;
-  color: #37517e;
-}
-.section-title h2::before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 120px;
-  height: 1px;
-  background: #ddd;
-  bottom: 1px;
-  left: calc(50% - 60px);
-}
-.section-title h2::after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 40px;
-  height: 3px;
-  background: #47b2e4;
-  bottom: 0;
-  left: calc(50% - 20px);
-}
-.section-title p {
-  margin-bottom: 0;
 }
 .page-home {
   padding: 1rem 0;
@@ -1701,7 +1699,48 @@ section.page-home{
   margin-right: 1rem;
   margin-left: 1rem;
 }
-
+.advertisements{
+  margin-top: 2rem;
+  padding: 2rem 0;
+}
+.advertisements .quote{
+  font-size: 46px;
+  font-weight: 800;
+  color: var(--green-color);
+  font-style: italic;
+}
+.advertisements .quote strong{
+  color: var(--yellow-color);
+}
+.advertisements .phone{
+  border: 4px solid var(--yellow-color);
+  border-radius: 50px;
+  padding: 0.4rem 1.5rem;
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--green-color);
+  width: 300px;
+  margin: auto;
+}
+.advertisements .line-left{
+  background: var(--yellow-color);
+  color: var(--white-color);
+  font-size: 20px;
+  font-weight: 800;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  width: 175px;
+  text-align: right;
+  line-height: 23px;
+}
+.advertisements .line-right{
+  background: var(--green-color);
+  color: var(--white-color);
+  font-size: 30px;
+  font-weight: 800;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
 @media (max-width: 991px) {
   #hero .animated {
     -webkit-animation: none;
@@ -1750,6 +1789,10 @@ section.page-home{
   }
 }
 @media (max-width: 575px) {
+  .advertisements {
+    margin-top: 0;
+    padding: 1rem 0;
+  }
   #header{
     padding: 0;
   }
