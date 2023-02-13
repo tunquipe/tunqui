@@ -317,6 +317,9 @@ div.wpforms-container-full{
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
+.custom-html-widget h2{
+  margin: 0;
+}
 .wp-block-search label{
   color: var(--orange-color);
 }

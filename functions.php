@@ -94,10 +94,20 @@ register_sidebar( array(
 ) );
 
 register_sidebar( array(
-    'name'          => __( 'Formulario de contacto', 'tunqui' ),
+    'name'          => __( 'Bloque Blanco Portada', 'tunqui' ),
     'id'            => 'form-contact',
-    'description'   => 'Coloca un formulario de contacto',
+    'description'   => 'Coloca un contenido para el bloque blanco',
     'before_widget' => '<div id="form-contact-%1$s" class="widget box-header-form %2$s">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h3 class="title-section">',
+    'after_title'   => '</h3>',
+) );
+
+register_sidebar( array(
+    'name'          => __( 'Bloque Verde Portada', 'tunqui' ),
+    'id'            => 'slider-green',
+    'description'   => 'Coloca un contenido para el bloque verde',
+    'before_widget' => '<div id="slider-green-%1$s" class="widget box-header-green %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h3 class="title-section">',
     'after_title'   => '</h3>',

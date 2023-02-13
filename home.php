@@ -18,16 +18,13 @@ $sliders = tunqui_get_slider_img();
                 <div class="row">
                     <div class="col-md-6">
                         <div class="info">
-                            <h3 class="title">Tu lote en Huaral</h3>
-                            <h2 class="sub-title">Obras terminadas</h2>
-                            <ul class="props">
-                                <li>Titulos de propiedad</li>
-                                <li>Saneamiento completo</li>
-                                <li>Credito directo</li>
-                            </ul>
-                            <div class="ratio ratio-16x9">
-                            <iframe src="https://www.youtube.com/embed/wMl_GVF_9YM" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                            </div>
+
+                            <?php if ( is_active_sidebar('slider-green') ) : ?>
+                                <div class="slider-green-content">
+                                    <?php dynamic_sidebar('slider-green'); ?>
+                                </div>
+                            <?php endif; ?>
+
                         </div>
                     </div>
                     <div class="col-md-6">
