@@ -93,6 +93,16 @@ register_sidebar( array(
     'after_title'   => '</h3>',
 ) );
 
+register_sidebar( array(
+    'name'          => __( 'Formulario de contacto', 'tunqui' ),
+    'id'            => 'form-contact',
+    'description'   => 'Coloca un formulario de contacto',
+    'before_widget' => '<div id="form-contact-%1$s" class="widget box-header-form %2$s">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h3 class="title-section">',
+    'after_title'   => '</h3>',
+) );
+
 /**
  * Include default theme options.
  */

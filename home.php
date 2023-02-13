@@ -14,7 +14,7 @@ $sliders = tunqui_get_slider_img();
         <div class="vegasHere">
         </div>
         <div class="container">
-            <div class="top-header">
+            <div id="header-slider" class="top-header">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="info">
@@ -32,42 +32,11 @@ $sliders = tunqui_get_slider_img();
                     </div>
                     <div class="col-md-6">
                         <div class="form-register">
-                            <h2 class="title">!Quiero que me contacten!</h2>
-                            <div class="description">Estas a un click de tu nuevo lote en Huaral</div>
-                            <form action="">
-                                <div class="mb-3">
-                                    <input type="text" class="form-control" id="name" aria-describedby="name" placeholder="Nombres">
+                            <?php if ( is_active_sidebar('form-contact') ) : ?>
+                                <div class="widget-form">
+                                    <?php dynamic_sidebar('form-contact'); ?>
                                 </div>
-                                <div class="mb-3">
-                                    <input type="text" class="form-control" id="lastname" aria-describedby="lastname" placeholder="Apellidos">
-                                </div>
-                                <div class="mb-3">
-                                    <input type="email" class="form-control" id="email" aria-describedby="email" placeholder="Email">
-                                </div>
-                                <div class="mb-3">
-                                    <input type="text" class="form-control" id="phone" aria-describedby="phone" placeholder="Telefono">
-                                </div>
-                                <div class="mb-3">
-                                    <h2 class="question">¿Visitarás nuestra residencial?</h2>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                            Si
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                                        <label class="form-check-label" for="flexRadioDefault2">
-                                            No
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="mb-3">
-                                    <div class="d-grid gap-2">
-                                        <button type="button" class="btn btn-primary btn-green">Siguiente</button>
-                                    </div>
-                                </div>
-                            </form>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
@@ -119,6 +88,12 @@ get_footer();
 
     (function($) {
         $(document).ready(function() {
+
+            if ( $(".widget-header").length ) {
+                console.log('existe el contenido del widget');
+                $("#header-slider").addClass('p-slider');
+            }
+
             $(".vegasHere").vegas({
                 overlay: false,
                 transition: 'fade2',

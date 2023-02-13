@@ -20,15 +20,17 @@ wp_body_open();
 ?>
 <!-- ======= Widget ======= -->
 
-<?php if ( is_active_sidebar('header-html') ) : ?>
-    <div class="widget-header">
-        <?php dynamic_sidebar('header-html'); ?>
-    </div>
-<?php endif; ?>
+
 
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top ">
-    <div class="container d-flex align-items-center">
+    <?php if ( is_active_sidebar('header-html') ) : ?>
+        <div class="widget-header">
+            <?php dynamic_sidebar('header-html'); ?>
+        </div>
+    <?php endif; ?>
+    <div class="header-menu">
+        <div class="container d-flex align-items-center">
         <div>
             <?php tunqui_site_logo(); ?>
         </div>
@@ -61,5 +63,6 @@ wp_body_open();
         </div>
 
 
+    </div>
     </div>
 </header><!-- End Header -->

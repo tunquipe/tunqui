@@ -116,12 +116,20 @@ h1, h2, h3, h4, h5, h6 {
   background: url("../../assets/img/cubes.png") no-repeat top right var(--white-color);
 }
 .admin-bar #header{
-  margin-top: 2rem;
+  margin-top: 0;
+}
+.header-menu{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.widget-header{
+  text-align: center;
+  background: #1c9546;
 }
 #header {
   transition: all 0.5s;
   z-index: 997;
-  padding: 15px 0;
+  padding: 0;
   background: url("../../assets/img/cubes.png") no-repeat center right var(--white-color);
   border-top: 4px solid var(--green-color);
 }
@@ -143,6 +151,9 @@ h1, h2, h3, h4, h5, h6 {
 #header .logo img {
   max-height: 40px;
 }
+.p-slider{
+  margin-top: 14rem !important;
+}
 .carousel-indicators [data-bs-target]{
   border-radius: 0;
 }
@@ -160,37 +171,68 @@ body .vegas-container {
 }
 .top-header .info{
   background: rgba(22, 119, 27, 0.8);
-  padding: 2rem;
-  border-radius: 4rem;
+  padding: 1.2rem 2rem;
+  border-radius: 1rem;
   margin: 0 3rem 0 3rem;
   color:  var(--white-color);
 }
 .form-register{
   background: var(--white-color);
-  padding: 2rem;
-  border-radius: 4rem;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
   margin: 0 3rem 0 3rem;
 }
-.form-register .title{
+.widget-form .wpforms-title{
   color:  var(--green-color);
   font-weight: 700;
   font-style: italic;
-  font-size: 32px;
+  font-size: 32px !important;
   display: inline-block;
   text-align: center;
-  width: 100%;
-  padding: 0;
-  margin: 0;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
-.form-register .description{
+.widget-form .wpforms-description{
   display: inline-block;
-  width: 100%;
+  width: 100% !important;
   text-align: center;
-  padding-top: 0;
-  padding-bottom: 1rem;
-  font-size: 20px;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  font-size: 20px !important;
   font-weight: 700;
   font-style: italic;
+}
+.widget-form .wpforms-field .wpforms-field-medium{
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: .375rem .75rem !important;
+  font-size: 1rem !important;
+  font-weight: 400;
+  line-height: 1.5 !important;
+  color: #212529 !important;
+  background-color: #fff !important;
+  background-clip: padding-box;
+  border: 1px solid #ced4da !important;
+  appearance: none;
+  border-radius: .25rem !important;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.widget-form .wpforms-field-radio ul li{
+  display: inline-block;
+  margin-right: 1rem !important;
+}
+div.wpforms-container-full {
+  margin: 0;
+}
+div.wpforms-container-full .wpforms-form .wpforms-field{
+  padding: 5px 0 !important;
+}
+div.wpforms-container-full .wpforms-form .wpforms-field-label{
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 14px !important;
 }
 .form-register .question{
   font-size: 18px;
@@ -200,6 +242,7 @@ body .vegas-container {
 .form-register .form-check{
   display: inline-block;
 }
+
 .section-title {
   position: relative;
   display: inline-block;
@@ -231,18 +274,24 @@ body .vegas-container {
   margin: auto;
   z-index: 11;
 }
-.btn-green{
-  color: #fff;
-  background-color: var(--green2-color);
-  border-color:var(--green2-color);
-  border-radius: 50px;
-  font-size: 20px;
+.wpforms-submit{
+  color: #fff !important;
+  background-color: var(--green2-color) !important;
+  border-color:var(--green2-color) !important;
+  border-radius: 50px !important;
+  font-size: 20px !important;
   font-weight: 800;
   font-style: italic;
+  display: inline-block !important;
+  width: 100% !important;
+  padding: 5px 10px !important;
 }
-.btn-green:hover{
+.wpforms-submit:hover{
  background: var(--orange-color);
  border-color: var(--orange-color);
+}
+div.wpforms-container-full{
+  margin: 0 !important;
 }
 .top-header .info .sub-title{
   color: var(--yellow-color);
@@ -616,7 +665,7 @@ section {
   overflow: hidden;
 }
 section.page-home{
-  padding: 3rem 0;
+  padding: 0;
 }
 
 .section-bg {
@@ -1779,16 +1828,17 @@ section.page-home{
   }
   .top-header .info{
     padding: 1rem;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     margin: 0 0 1rem 0;
   }
   .form-register{
     padding: 1rem;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     margin: 0;
   }
 }
 @media (max-width: 575px) {
+
   .advertisements {
     margin-top: 0;
     padding: 1rem 0;
@@ -1848,5 +1898,10 @@ section.page-home{
   }
   .form-register .question {
     font-size: 15px;
+  }
+}
+@media (max-width: 480px) {
+  .p-slider{
+    margin-top: 10rem !important;
   }
 }
