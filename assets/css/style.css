@@ -181,6 +181,7 @@ body .vegas-container {
   padding: 1rem 2rem;
   border-radius: 1rem;
   margin: 0 3rem 0 3rem;
+  height: 495px;
 }
 .widget-form .wpforms-title{
   color:  var(--green-color);
@@ -239,8 +240,13 @@ div.wpforms-container-full .wpforms-form .wpforms-field-label{
   font-style: italic;
   font-weight: 700;
 }
-.form-register .form-check{
-  display: inline-block;
+.wpforms-confirmation-container-full{
+  background: #009a42;
+  border: 1px solid #009a42;
+  box-sizing: border-box;
+  border-radius: 10px;
+  color: #FFF;
+  text-align: center;
 }
 
 .section-title {
