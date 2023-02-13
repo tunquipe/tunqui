@@ -54,8 +54,7 @@
                 </ul>
             </div>
             <div class="credits">
-                &copy; <strong><span>Redisencial Santa Patricia</span></strong>. Todos los derechos reservados /
-                Elaborado por <a href="#">Tunqui Agencia</a> .
+                &copy; <strong><span>Redisencial Santa Patricia</span></strong>. Todos los derechos reservados
             </div>
         </div>
     </div>
