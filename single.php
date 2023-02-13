@@ -1,7 +1,7 @@
 <?php
 get_header();
 ?>
-    <div class="blog-post">
+    <div id="page-single" class="blog-post">
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
@@ -100,4 +100,16 @@ get_header();
         </div>
 
     </div>
+
+    <script>
+        (function($) {
+            $(document).ready(function() {
+
+                if ( $("#page-single").length ) {
+                    $("#header").removeClass('fixed-top');
+                    $("#header").addClass('single');
+                }
+            })
+        })(jQuery);
+    </script>
 <?php get_footer(); ?>

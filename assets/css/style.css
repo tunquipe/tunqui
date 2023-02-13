@@ -467,6 +467,26 @@ div.wpforms-container-full{
   left: 100%;
   visibility: visible;
 }
+.single .header-menu {
+  border-bottom: 1px solid #f3943e;
+  padding-bottom: 2rem;
+}
+.page-title{
+  padding: 2rem 0;
+}
+.page-title h2{
+  font-weight: 800;
+  color: var(--green-color);
+}
+.content-post h1,
+.content-post h2,
+.content-post h3,
+.content-post h4,
+.content-post h5,
+.content-post h6{
+  font-weight: 700;
+  color: var(--green-color);
+}
 @media (max-width: 1366px) {
   .navbar .dropdown .dropdown ul {
     left: -90%;
