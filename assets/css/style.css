@@ -499,6 +499,9 @@ div.wpforms-container-full{
 /**
 * Mobile Navigation 
 */
+.navbar ul.nav-mobile{
+  display: none;
+}
 .mobile-nav-toggle {
   color: #fff;
   font-size: 28px;
@@ -541,11 +544,13 @@ div.wpforms-container-full{
 }
 .navbar-mobile a, .navbar-mobile a:focus {
   padding: 10px 20px;
-  font-size: 15px;
-  color: #3E299E;
+  font-size: 16px;
+  color: #FFF;
+  font-style: normal;
+  text-transform: uppercase;
 }
 .navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
-  color: #47b2e4;
+  color: var(--yellow-color);
 }
 .navbar-mobile .getstarted, .navbar-mobile .getstarted:focus {
   margin: 15px;
@@ -1932,5 +1937,17 @@ section.page-home{
 @media (max-width: 480px) {
   .p-slider{
     margin-top: 10rem !important;
+  }
+  .navbar ul.nav-mobile{
+    display: none;
+  }
+  .navbar.navbar-mobile ul.nav-mobile{
+    display: inline-block;
+  }
+  .navbar-mobile ul {
+    top: 70px;
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
   }
 }

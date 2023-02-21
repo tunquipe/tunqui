@@ -40,29 +40,32 @@ wp_body_open();
             <nav id="navbar" class="navbar">
                 <?php
                     if ( has_nav_menu( 'primary' ) ) {
-                ?>
-
-                        <?php
                         wp_nav_menu(array(
                             'theme_location' => 'primary',
                             'container' => false,
-                            'menu_class' => '',
+                            'menu_class' => 'nav-desktop',
                             'fallback_cb' => '__return_false',
                             'items_wrap' => '<ul id="%1$s" class=" %2$s">%3$s</ul>',
                             'depth' => 2,
                             'walker' => new bootstrap_5_wp_nav_menu_walker()
                         ));
-                        ?>
-                <!--<ul>
+                    }
+                if ( has_nav_menu( 'mobile' ) ) {
+                    wp_nav_menu(array(
+                        'theme_location' => 'mobile',
+                        'container' => false,
+                        'menu_class' => 'nav-mobile',
+                        'fallback_cb' => '__return_false',
+                        'items_wrap' => '<ul id="%1$s" class=" %2$s">%3$s</ul>',
+                        'depth' => 2,
+                        'walker' => new bootstrap_5_wp_nav_menu_walker()
+                    ));
+                }
 
-                    <li><a class="getstarted scrollto" href="#about">Area de clientes</a></li>
-                </ul>-->
-                <?php } ?>
+                    ?>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav>
         </div>
-
-
     </div>
     </div>
 </header><!-- End Header -->
