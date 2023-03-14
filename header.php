@@ -23,65 +23,54 @@ wp_body_open();
 <?php
 $css_header = null;
 if (is_front_page() && is_page()) {
-    $css_header = 'page-home fixed-top';
+    $css_header = 'page-home';
 } else {
     $css_header = 'page-internal';
 }
 ?>
-<header id="header" class="<?php echo $css_header; ?>  ">
-    <div class="container d-flex align-items-center">
+<header id="header" class="<?php echo $css_header; ?> block-menu">
+    <div class="top-header">
+        <div class="container d-flex align-items-center">
+            <?php tunqui_site_logo(); ?>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+            <div class="d-inline-flex mt-2 mt-md-0 ms-auto">
+                <div class="d-flex flex-row mb-3">
+                    <div class="p-2"><a href="#" class="btn btn-primary btn-border"><i class='bx bxs-phone-call'></i> 941 676 068</a></div>
+                    <div class="p-2"><a href="#" class="btn btn-primary btn-border"><i class='bx bx-envelope' ></i> info@mecssol.pe</a></div>
+                    <div class="p-2"><a href="#" class="btn-social"><i class='bx bxl-instagram' ></i></a></div>
+                    <div class="p-2"><a href="#" class="btn-social"><i class='bx bxl-facebook-circle' ></i></a></div>
+                    <div class="p-2"><a href="#" class="btn btn-primary btn-webmail"><i class='bx bx-mail-send' ></i>Webmail</a></div>
+                </div>
 
-        <?php
+            </div>
+        </div>
+    </div>
 
-        tunqui_site_logo();
+    <nav class="navbar navbar-expand-md navbar-light bg-blue">
+        <div class="container">
 
-        ?>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-        <div class="d-inline-flex mt-2 mt-md-0 ms-auto">
-            <nav id="navbar" class="navbar">
+            <div class="collapse navbar-collapse" id="main-menu">
                 <?php
                 if (has_nav_menu('primary')) {
-                    ?>
-
-                    <?php
                     wp_nav_menu(array(
                         'theme_location' => 'primary',
                         'container' => false,
                         'menu_class' => '',
                         'fallback_cb' => '__return_false',
-                        'items_wrap' => '<ul id="%1$s" class=" %2$s">%3$s</ul>',
+                        'items_wrap' => '<ul id="%1$s" class="navbar-nav me-auto mb-2 mb-md-0 %2$s">%3$s</ul>',
                         'depth' => 2,
                         'walker' => new bootstrap_5_wp_nav_menu_walker()
                     ));
-                    ?>
-
-                    <?php if (is_user_logged_in()): ?>
-                        <?php
-                        wp_nav_menu(
-                            array(
-                                'theme_location' => 'logged',
-                                'menu_class' => 'menu-logged'
-                            )
-                        );
-                        ?>
-                    <?php else: ?>
-                        <ul>
-                            <li>
-                                <a id="login-modal" class="btn-login" href="#">Iniciar sesión</a>
-                            </li>
-                            <li>
-                                <a class="btn-register" href="/register">Registrate</a>
-                            </li>
-                        </ul>
-                    <?php endif; ?>
-
-                <?php } ?>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav>
+                }
+                ?>
+            </div>
         </div>
+    </nav>
 
 
-    </div>
 </header><!-- End Header -->

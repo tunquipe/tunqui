@@ -1,7 +1,7 @@
 <!-- ======= Footer ======= -->
 <footer id="footer">
     <?php if (is_front_page()) : ?>
-        <div class="footer-newsletter">
+<!--        <div class="footer-newsletter">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-6">
@@ -13,37 +13,44 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
     <?php endif; ?>
     <div class="footer-top">
         <div class="container">
             <div class="row">
 
-                <div class="col-lg-3 col-md-6 footer-contact">
-                    <?php if (is_active_sidebar('footer-description')) : ?>
-                        <?php dynamic_sidebar('footer-description'); ?>
-                    <?php endif; ?>
+                <div class="col-lg-2 col-md-6">
+                    <div class="logo-footer">
+                        <img width="120px" src="<?php echo get_template_directory_uri().'/assets/img/mecssol.svg'; ?>" alt="">
+                    </div>
+                    <ul class="social">
+                        <li><a href="#" class="btn-social"><i class='bx bxl-instagram'></i></a></li>
+                        <li><a href="#" class="btn-social"><i class='bx bxl-facebook-circle'></i></a></li>
+                    </ul>
                 </div>
 
-                <div class="col-lg-3 col-md-6 footer-links">
-                    <?php if (is_active_sidebar('footer-left')) : ?>
-                        <?php dynamic_sidebar('footer-left'); ?>
-                    <?php endif; ?>
-                </div>
+                <div class="col-lg-10 col-md-6 footer-links">
+                    <div class="d-flex flex-row mb-3">
+                        <div class="p-2"><a href="#" class="btn btn-primary btn-border"><i class='bx bxs-phone-call'></i> 941 676 068</a></div>
+                        <div class="p-2"><a href="#" class="btn btn-primary btn-border"><i class='bx bx-envelope' ></i> info@mecssol.pe</a></div>
+                        <div class="p-2"><a href="#" class="btn btn-primary btn-border"><i class='bx bx-mail-send' ></i>Webmail</a></div>
+                        <div class="p-2"><a href="#" class="btn btn-primary btn-quote">Cotizar aqui <i class='bx bxs-arrow-from-left'></i></a></div>
 
-                <div class="col-lg-3 col-md-6 footer-links">
-                    <?php if (is_active_sidebar('footer-right')) : ?>
-                        <?php dynamic_sidebar('footer-right'); ?>
-                    <?php endif; ?>
-                </div>
+                    </div>
+                    <div class="d-flex flex-row mb-3">
 
-                <div class="col-lg-3 col-md-6 footer-links">
-                    <h4>Siguenos en nuestras redes</h4>
-                    <p>Nos encanta trabajar con clientes apasionados y atrevidos.</p>
-                    <div class="social-links mt-3">
-                        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-                        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-                        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                        <?php if (is_active_sidebar('footer-schedule')) : ?>
+                            <?php dynamic_sidebar('footer-schedule'); ?>
+                        <?php endif; ?>
+
+                        <?php if (is_active_sidebar('footer-address')) : ?>
+                            <?php dynamic_sidebar('footer-address'); ?>
+                        <?php endif; ?>
+
+                        <div class="p-2"><a href="#" class="btn btn-primary btn-book">Libro de Reclamaciones</a></div>
+                    </div>
+                    <div class="d-flex flex-row mb-3">
+
                     </div>
                 </div>
 
@@ -54,13 +61,19 @@
     <div class="footer-bottom clearfix">
         <div class="container">
             <div class="copyright">
-                &copy; <strong><span>Tunqui Agencia Creativa EIRL</span></strong>. Todos los derechos reservados
-            </div>
-            <div class="credits">
+                &copy; Sitio web elaborado por <strong><span>Tunqui Agencia Creativa EIRL</span></strong>.
             </div>
         </div>
     </div>
 </footer><!-- End Footer -->
+
+
+<a href="#" class="download-pdf">
+    <img width="100px" src="<?php echo get_template_directory_uri().'/assets/img/brochure.png'; ?>" alt="">
+</a>
+<a href="#" class="btn-wathsapp">
+    <img width="100px" src="<?php echo get_template_directory_uri().'/assets/img/wathsapp.png'; ?>" alt="">
+</a>
 
 <div id="preloader">
     <div class="icon-blender">
@@ -78,8 +91,6 @@
         jQuery(".tutor-modal").removeClass('tutor-is-active');
     });
     jQuery(document).ready(function() {
-        jQuery('[data-vbg]').youtube_background();
-        jQuery("#videotv").height('588px');
         //let altura = jQuery("#videotv").height();
         //console.log(altura);
         jQuery(".list-courses").owlCarousel({
@@ -101,10 +112,6 @@
 </script>
 <?php
 wp_footer();
-if ( ! is_user_logged_in() ) {
-    tutor_load_template_from_custom_path( tutor()->path . '/views/modal/login.php' );
-}
-
 ?>
 
 </body>

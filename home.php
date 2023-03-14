@@ -12,12 +12,14 @@ $courses = tunqui_courses();
 ?>
 <?php if (is_front_page()) : ?>
     <!-- ======= Hero Section ======= -->
-    <div id="videotv" data-vbg="https://www.youtube.com/watch?v=ZvDISppG654"></div>
-    <div class="_pattern-overlay"></div>
+
     <section id="hero" class="d-flex align-items-center">
         <div class="container">
             <div class="row">
                 <div id="carousel_slider" class="carousel slide" data-bs-ride="carousel">
+                    <div class="stripe">
+
+                    </div>
                     <div class="carousel-indicators">
                         <?php $counter = -1; ?>
                         <?php foreach ($sliders as $item) : ?>
@@ -29,27 +31,24 @@ $courses = tunqui_courses();
                         <?php $counter = -1; ?>
                         <?php foreach ($sliders as $item) : ?>
                             <?php $counter++; ?>
-                            <div class="carousel-item <?php echo $item['active'] ?>">
+                            <div class="carousel-item <?php echo $item['active'] ?>" style="background: url('<?php echo $item['slider_img_full'][0]; ?>') center center">
                                 <div class="row">
-                                    <div class="col-lg-7 d-flex flex-column justify-content-center pt-2 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+                                    <div class="col-lg-6 d-flex flex-column justify-content-center pt-2 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
                                         <div class="item-content">
+                                            <h2><?php echo $item['slider_sub_title']; ?></h2>
                                             <h1><?php echo $item['slider_title']; ?></h1>
-                                            <h2><?php echo $item['slider_description']; ?></h2>
-                                            <div class="d-grid gap-2 d-md-flex justify-content-center justify-content-lg-end">
+                                            <div class="d-grid gap-2 d-md-flex justify-content-center justify-content-lg-start">
                                                 <?php if ($item['slider_url_target']) : ?>
-                                                    <a href="<?php echo $item['slider_url_target']; ?>" class="btn-get-started scrollto">Conoce el servicio</a>
-                                                <?php endif; ?>
-                                                <?php if ($item['slider_url_target']) : ?>
-                                                    <a href="<?php echo $item['slider_url_video']; ?>" class="glightbox btn-watch-video">
-                                                        <i class="bi bi-play-circle"></i><span>Video informativo</span>
+                                                    <a href="<?php echo $item['slider_url_target']; ?>" class="btn-get-started scrollto">
+                                                        <?php echo $item['slider_text_button']; ?>
                                                     </a>
                                                 <?php endif; ?>
                                             </div>
                                         </div>
 
                                     </div>
-                                    <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-                                        <img src="<?php echo $item['slider_img_full'][0]; ?>" class="img-fluid animated" alt="">
+                                    <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+
                                     </div>
                                 </div>
                             </div>
@@ -72,12 +71,6 @@ $courses = tunqui_courses();
 
 <section id="courses" class="section-courses">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h4 class="section-course-sub-title">Cursos</h4>
-                <h2 class="section-course-title">Encuentra el curso ideal para ti</h2>
-            </div>
-        </div>
         <div class="row">
             <div class="list-courses owl-carousel owl-theme">
             <?php foreach ($courses as $course) : ?>

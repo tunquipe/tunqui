@@ -64,32 +64,24 @@ add_action('init', 'tunqui_menus');
 add_theme_support('custom-logo');
 
 register_sidebar(array(
-    'name'          => __('Footer Izquierda', 'tunqui'),
-    'id'            => 'footer-left',
-    'description'   => 'Footer Lado Izquierdo',
+    'name'          => __('Direccion', 'tunqui'),
+    'id'            => 'footer-address',
+    'description'   => 'Aqui escribe la direccion de la empresa',
     'before_widget' => '<div id="footer-%1$s" class="widget box-img %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h4 class="title-section">',
     'after_title'   => '</h4>',
 ));
 register_sidebar(array(
-    'name'          => __('Footer Derecha', 'tunqui'),
-    'id'            => 'footer-right',
-    'description'   => 'Footer Lado Derecho',
+    'name'          => __('Horarios', 'tunqui'),
+    'id'            => 'footer-schedule',
+    'description'   => 'Aca escribe el horario de la empresa',
     'before_widget' => '<div id="footer-%1$s" class="widget box-img %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h4 class="title-section">',
     'after_title'   => '</h4>',
 ));
-register_sidebar(array(
-    'name'          => __('Footer Descripción', 'tunqui'),
-    'id'            => 'footer-description',
-    'description'   => 'Descripción del sitio',
-    'before_widget' => '<div id="footer-%1$s" class="widget box-img %2$s">',
-    'after_widget'  => '</div>',
-    'before_title'  => '<h4 class="title-section">',
-    'after_title'   => '</h4>',
-));
+
 
 // bootstrap 5 wp_nav_menu walker
 class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu
@@ -113,14 +105,14 @@ class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu
     function start_lvl(&$output, $depth = 0, $args = null)
     {
         $dropdown_menu_class[] = '';
-        foreach ($this->current_item->classes as $class) {
-            if (in_array($class, $this->dropdown_menu_alignment_values)) {
+        foreach($this->current_item->classes as $class) {
+            if(in_array($class, $this->dropdown_menu_alignment_values)) {
                 $dropdown_menu_class[] = $class;
             }
         }
         $indent = str_repeat("\t", $depth);
         $submenu = ($depth > 0) ? ' sub-menu' : '';
-        $output .= "\n$indent<ul class=\"dropdown-menu$submenu " . esc_attr(implode(" ", $dropdown_menu_class)) . " depth_$depth\">\n";
+        $output .= "\n$indent<ul class=\"dropdown-menu$submenu " . esc_attr(implode(" ",$dropdown_menu_class)) . " depth_$depth\">\n";
     }
 
     function start_el(&$output, $item, $depth = 0, $args = null, $id = 0)
@@ -132,7 +124,7 @@ class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu
         $li_attributes = '';
         $class_names = $value = '';
 
-        $classes = empty($item->classes) ? array() : (array)$item->classes;
+        $classes = empty($item->classes) ? array() : (array) $item->classes;
 
         $classes[] = ($args->walker->has_children) ? 'dropdown' : '';
         $classes[] = 'nav-item';
@@ -141,7 +133,7 @@ class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu
             $classes[] = 'dropdown-menu dropdown-menu-end';
         }
 
-        $class_names = join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));
+        $class_names =  join(' ', apply_filters('nav_menu_css_class', array_filter($classes), $item, $args));
         $class_names = ' class="' . esc_attr($class_names) . '"';
 
         $id = apply_filters('nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args);
@@ -155,8 +147,8 @@ class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu
         $attributes .= !empty($item->url) ? ' href="' . esc_attr($item->url) . '"' : '';
 
         $active_class = ($item->current || $item->current_item_ancestor || in_array("current_page_parent", $item->classes, true) || in_array("current-post-ancestor", $item->classes, true)) ? 'active' : '';
-        $nav_link_class = ($depth > 0) ? 'dropdown-item ' : 'nav-link ';
-        $attributes .= ($args->walker->has_children) ? ' class="' . $nav_link_class . $active_class . ' dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"' : ' class="' . $nav_link_class . $active_class . '"';
+        $nav_link_class = ( $depth > 0 ) ? 'dropdown-item ' : 'nav-link ';
+        $attributes .= ( $args->walker->has_children ) ? ' class="'. $nav_link_class . $active_class . ' dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"' : ' class="'. $nav_link_class . $active_class . '"';
 
         $item_output = $args->before;
         $item_output .= '<a' . $attributes . '>';
@@ -167,6 +159,8 @@ class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu
         $output .= apply_filters('walker_nav_menu_start_el', $item_output, $item, $depth, $args);
     }
 }
+// register a new menu
+register_nav_menu('main-menu', 'Main menu');
 
 function tunqui_get_slider()
 {
@@ -185,9 +179,10 @@ function tunqui_get_slider()
         $tmp['slider_author'] = $item->post_author;
         $tmp['slider_date'] = $item->post_date;
         $tmp['slider_title'] = $item->post_title;
+        $tmp['slider_sub_title'] = get_post_meta($item->ID, 'slider_sub_title', true);
         $tmp['slider_description'] = $item->post_content;
         $tmp['slider_url_target'] = get_post_meta($item->ID, 'slider_url_target', true);
-        $tmp['slider_url_video'] = get_post_meta($item->ID, 'slider_url_video', true);
+        $tmp['slider_text_button'] = get_post_meta($item->ID, 'slider_text_button', true);
         //$tmp['slider_target'] = get_post_meta($item->ID,'slider_target', true);
         $imageID = get_post_meta($item->ID, 'slider_url_image', true);
         $thumbID = get_post_thumbnail_id($item->ID);
