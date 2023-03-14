@@ -2,6 +2,9 @@
 
 get_header();
 $idPost = get_the_ID();
+$thumbID = get_post_thumbnail_id($idPost);
+$imagePage = wp_get_attachment_image_src($thumbID, 'full');
+
 ?>
 <?php while(have_posts()): the_post(); ?>
     <section id="sub-header" class="page-internal">
@@ -11,6 +14,9 @@ $idPost = get_the_ID();
                     <div class="page-title">
                         <h5><?php echo get_post_meta($idPost,'sub_title', true); ?></h5>
                         <h1><?php the_title(); ?></h1>
+                    </div>
+                    <div class="image-page">
+                        <img class="img-fluid" src="<?php echo $imagePage[0]; ?>" alt="">
                     </div>
                 </div>
             </div>

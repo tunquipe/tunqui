@@ -618,7 +618,8 @@ section.page-home{
 #sub-header.page-internal{
   padding-top: 1.3rem;
   padding-bottom: 30px;
-  background-color: #0055d4;
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,1) 40%, rgba(0,85,212,1) 40%);
 }
 #sub-header .page-title{
   color: #FFF;
