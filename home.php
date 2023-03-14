@@ -40,7 +40,7 @@ $courses = tunqui_courses();
                                             <div class="d-grid gap-2 d-md-flex justify-content-center justify-content-lg-start">
                                                 <?php if ($item['slider_url_target']) : ?>
                                                     <a href="<?php echo $item['slider_url_target']; ?>" class="btn-get-started scrollto">
-                                                        <?php echo $item['slider_text_button']; ?>
+                                                        <?php echo $item['slider_text_button']; ?> <i class='bx bxs-arrow-from-left'></i>
                                                     </a>
                                                 <?php endif; ?>
                                             </div>

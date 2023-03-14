@@ -34,7 +34,7 @@ if (is_front_page() && is_page()) {
             <?php tunqui_site_logo(); ?>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-            <div class="d-inline-flex mt-2 mt-md-0 ms-auto">
+            <div class="d-inline-flex mt-2 mt-md-0 ms-auto social-header">
                 <div class="d-flex flex-row mb-3">
                     <div class="p-2"><a href="#" class="btn btn-primary btn-border"><i class='bx bxs-phone-call'></i> 941 676 068</a></div>
                     <div class="p-2"><a href="#" class="btn btn-primary btn-border"><i class='bx bx-envelope' ></i> info@mecssol.pe</a></div>

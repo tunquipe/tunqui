@@ -30,14 +30,14 @@
                 </div>
 
                 <div class="col-lg-10 col-md-6 footer-links">
-                    <div class="d-flex flex-row mb-3">
+                    <div class="d-lg-flex flex-row mb-3">
                         <div class="p-2"><a href="#" class="btn btn-primary btn-border"><i class='bx bxs-phone-call'></i> 941 676 068</a></div>
                         <div class="p-2"><a href="#" class="btn btn-primary btn-border"><i class='bx bx-envelope' ></i> info@mecssol.pe</a></div>
                         <div class="p-2"><a href="#" class="btn btn-primary btn-border"><i class='bx bx-mail-send' ></i>Webmail</a></div>
                         <div class="p-2"><a href="#" class="btn btn-primary btn-quote">Cotizar aqui <i class='bx bxs-arrow-from-left'></i></a></div>
 
                     </div>
-                    <div class="d-flex flex-row mb-3">
+                    <div class="d-lg-flex flex-row mb-3">
 
                         <?php if (is_active_sidebar('footer-schedule')) : ?>
                             <?php dynamic_sidebar('footer-schedule'); ?>
@@ -77,7 +77,7 @@
 
 <div id="preloader">
     <div class="icon-blender">
-        <img width="64px" height="64px" src="<?php echo get_template_directory_uri().'/assets/img/icon_blenderperu.svg'; ?>">
+        <img width="64px" height="64px" src="<?php echo get_template_directory_uri().'/assets/img/icon_mecssol.svg'; ?>">
     </div>
 </div>
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

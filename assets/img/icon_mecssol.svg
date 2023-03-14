@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="64"
+   height="64"
+   viewBox="0 0 16.933333 16.933334"
+   version="1.1"
+   id="svg1008"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="icon_mecssol.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1010"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="5.1241863"
+     inkscape:cx="42.055458"
+     inkscape:cy="19.027411"
+     inkscape:window-width="1862"
+     inkscape:window-height="1016"
+     inkscape:window-x="58"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1005" />
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#ffffff;stroke-width:1.19255;stroke-linecap:round;stroke-linejoin:round;opacity:0"
+       id="rect1120"
+       width="16.933332"
+       height="16.933332"
+       x="0"
+       y="0"
+       inkscape:export-filename="/var/www/mecssol.pe/wp-content/themes/mecssol/assets/icon_mecssol.png"
+       inkscape:export-xdpi="96.041496"
+       inkscape:export-ydpi="96.041496" />
+    <g
+       id="g1572"
+       transform="matrix(0.6317433,0,0,0.6317433,-4.6740067,-1.9283805)"
+       inkscape:export-filename="/var/www/mecssol.pe/wp-content/themes/mecssol/assets/icon_mecssol.png"
+       inkscape:export-xdpi="96.041496"
+       inkscape:export-ydpi="96.041496">
+      <g
+         id="g856"
+         transform="matrix(0.19425703,0,0,-0.19425703,21.121252,15.060122)">
+        <path
+           d="m 0,0 c -7.367,0 -14.734,-4.766 -31.234,-14.293 -22.324,-12.887 -28.734,-15.672 -30.547,-27.91 h 23.094 c 3.066,3.093 8.261,5.902 17.187,11.058 22.719,13.113 20.285,13.113 43.004,0 8.926,-5.156 14.125,-7.965 17.188,-11.058 H 61.778 C 59.965,-29.965 53.559,-27.18 31.235,-14.293 14.735,-4.766 7.367,0 0,0"
+           style="fill:#ffcc00;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path858" />
+      </g>
+      <g
+         id="g860"
+         transform="matrix(0.19425703,0,0,-0.19425703,21.121252,8.9015914)">
+        <path
+           d="m 0,0 c -7.367,0 -14.734,-4.766 -31.234,-14.293 -33,-19.051 -31.238,-15.992 -31.238,-54.098 0,-2.105 0,-3.676 -0.004,-5.515 h 19.465 c 0.003,1.761 0.003,3.41 0.003,5.515 0,26.235 -1.214,24.125 21.504,37.246 22.719,13.114 20.289,13.114 43.008,0 22.715,-13.121 21.5,-11.011 21.5,-37.246 0,-2.031 0.004,-3.808 0.008,-5.515 h 19.461 c -0.004,1.839 -0.004,3.41 -0.004,5.515 0,38.106 1.77,35.047 -31.23,54.098 C 14.739,-4.766 7.371,0 0.004,0 Z"
+           style="fill:#0055d4;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path862" />
+      </g>
+    </g>
+  </g>
+</svg>
