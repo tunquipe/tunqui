@@ -37,9 +37,14 @@ wp_body_open();
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
         <div class="d-inline-flex mt-2 mt-md-0 ms-auto">
-            <nav id="navbar" class="navbar">
+
                 <?php
-                    if ( has_nav_menu( 'primary' ) ) {
+
+                if (is_single()) {
+                    echo '<a class="btn-home" href="'.home_url().'"><i class="bx bxs-left-arrow"></i>Regresar</a>';
+                } else {
+                    echo '<nav id="navbar" class="navbar">';
+                    if (has_nav_menu('primary')) {
                         wp_nav_menu(array(
                             'theme_location' => 'primary',
                             'container' => false,
@@ -50,21 +55,22 @@ wp_body_open();
                             'walker' => new bootstrap_5_wp_nav_menu_walker()
                         ));
                     }
-                if ( has_nav_menu( 'mobile' ) ) {
-                    wp_nav_menu(array(
-                        'theme_location' => 'mobile',
-                        'container' => false,
-                        'menu_class' => 'nav-mobile',
-                        'fallback_cb' => '__return_false',
-                        'items_wrap' => '<ul id="%1$s" class=" %2$s">%3$s</ul>',
-                        'depth' => 2,
-                        'walker' => new bootstrap_5_wp_nav_menu_walker()
-                    ));
+                    if (has_nav_menu('mobile')) {
+                        wp_nav_menu(array(
+                            'theme_location' => 'mobile',
+                            'container' => false,
+                            'menu_class' => 'nav-mobile',
+                            'fallback_cb' => '__return_false',
+                            'items_wrap' => '<ul id="%1$s" class=" %2$s">%3$s</ul>',
+                            'depth' => 2,
+                            'walker' => new bootstrap_5_wp_nav_menu_walker()
+                        ));
+                    }
+                    echo '<i class="bi bi-list mobile-nav-toggle"></i>';
+                    echo '</nav>';
                 }
 
-                    ?>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav>
+                ?>
         </div>
     </div>
     </div>
