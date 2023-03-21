@@ -24,8 +24,8 @@
                         <img width="120px" src="<?php echo get_template_directory_uri().'/assets/img/mecssol.svg'; ?>" alt="">
                     </div>
                     <ul class="social">
-                        <li><a href="#" class="btn-social"><i class='bx bxl-instagram'></i></a></li>
-                        <li><a href="#" class="btn-social"><i class='bx bxl-facebook-circle'></i></a></li>
+                        <li><a href="<?php echo get_theme_mod('cd_instagram_contact'); ?>" target="_blank" class="btn-social"><i class='bx bxl-instagram'></i></a></li>
+                        <li><a href="<?php echo get_theme_mod('cd_facebook_contact'); ?>" target="_blank" class="btn-social"><i class='bx bxl-facebook-circle'></i></a></li>
                     </ul>
                 </div>
 
