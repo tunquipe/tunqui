@@ -36,11 +36,11 @@ if (is_front_page() && is_page()) {
             <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
             <div class="d-inline-flex mt-2 mt-md-0 ms-auto social-header">
                 <div class="d-flex flex-row mb-3">
-                    <div class="p-2"><a href="#" class="btn btn-primary btn-border"><i class='bx bxs-phone-call'></i> 941 676 068</a></div>
-                    <div class="p-2"><a href="#" class="btn btn-primary btn-border"><i class='bx bx-envelope' ></i> info@mecssol.pe</a></div>
-                    <div class="p-2"><a href="#" class="btn-social"><i class='bx bxl-instagram' ></i></a></div>
-                    <div class="p-2"><a href="#" class="btn-social"><i class='bx bxl-facebook-circle' ></i></a></div>
-                    <div class="p-2"><a href="#" class="btn btn-primary btn-webmail"><i class='bx bx-mail-send' ></i>Webmail</a></div>
+                    <div class="p-2"><a href="<?php echo get_theme_mod('cd_phone_contact'); ?>" class="btn btn-primary btn-border"><i class='bx bxs-phone-call'></i> <?php echo get_theme_mod('cd_phone_contact'); ?></a></div>
+                    <div class="p-2"><a href="mailto:<?php echo get_theme_mod('cd_mail_contact'); ?>" class="btn btn-primary btn-border"><i class='bx bx-envelope' ></i> <?php echo get_theme_mod('cd_mail_contact'); ?></a></div>
+                    <div class="p-2"><a target="_blank" href="<?php echo get_theme_mod('cd_instagram_contact'); ?>" class="btn-social"><i class='bx bxl-instagram' ></i></a></div>
+                    <div class="p-2"><a target="_blank" href="<?php echo get_theme_mod('cd_facebook_contact'); ?>" class="btn-social"><i class='bx bxl-facebook-circle' ></i></a></div>
+                    <div class="p-2"><a target="_blank" href="<?php echo get_theme_mod('cd_url_webmail'); ?>" class="btn btn-primary btn-webmail"><i class='bx bx-mail-send' ></i>Webmail</a></div>
                 </div>
 
             </div>
@@ -50,11 +50,11 @@ if (is_front_page() && is_page()) {
     <nav class="navbar navbar-expand-md navbar-light bg-blue">
         <div class="container">
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-root" aria-controls="menu-root" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="main-menu">
+            <div class="collapse navbar-collapse" id="menu-root">
                 <?php
                 if (has_nav_menu('primary')) {
                     wp_nav_menu(array(

@@ -7,7 +7,6 @@
 
 get_header();
 $sliders = tunqui_get_slider();
-$courses = tunqui_courses();
 
 ?>
 <?php if (is_front_page()) : ?>
@@ -69,43 +68,43 @@ $courses = tunqui_courses();
 
 <?php endif; ?>
 
-<section id="courses" class="section-courses">
+<!--<section id="courses" class="section-courses">
     <div class="container">
         <div class="row">
             <div class="list-courses owl-carousel owl-theme">
-            <?php foreach ($courses as $course) : ?>
+            <?php /*foreach ($courses as $course) : */?>
                 
                     <div class="course-item hvr-float">
                         <div class="course-img">
-                            <?php echo getPriceCourse($course['id']); ?>
-                            <img src="<?php echo $course['course_image_full'][0]; ?>" class="img-fluid" alt="">
+                            <?php /*echo getPriceCourse($course['id']); */?>
+                            <img src="<?php /*echo $course['course_image_full'][0]; */?>" class="img-fluid" alt="">
                         </div>
                         <div class="course-info">
                             <ul class="tutor-ul tutor-d-flex">
                                 <li class="tutor-d-flex">
                                     <span class="tutor-icon-level tutor-mt-4"></span>
-                                    <?php echo $course['course_level']; ?>
+                                    <?php /*echo $course['course_level']; */?>
                                 </li>
                                 <li class="tutor-d-flex">
                                     <span class="tutor-icon-clock-line tutor-mt-4"></span>
-                                    <?php echo $course['course_duration']; ?>
+                                    <?php /*echo $course['course_duration']; */?>
                                 </li>
                             </ul>
                             <h4>
-                                <a href="<?php echo $course['course_url']; ?>" class="link" title="<?php echo $course['course_title']; ?>">
-                                    <?php echo $course['course_title']; ?>
+                                <a href="<?php /*echo $course['course_url']; */?>" class="link" title="<?php /*echo $course['course_title']; */?>">
+                                    <?php /*echo $course['course_title']; */?>
                                 </a>
                             </h4>
-                            <p><?php echo $course['course_excerpt']; ?></p>
+                            <p><?php /*echo $course['course_excerpt']; */?></p>
                         </div>
                     </div>
                 
-            <?php endforeach; ?>                                     
+            <?php /*endforeach; */?>
             </div>
             
         </div>
     </div>
-</section>
+</section>-->
 <!-- End Course Section -->
 
     <main id="main">

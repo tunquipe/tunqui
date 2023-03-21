@@ -31,9 +31,9 @@
 
                 <div class="col-lg-10 col-md-6 footer-links">
                     <div class="d-lg-flex flex-row mb-3">
-                        <div class="p-2"><a href="#" class="btn btn-primary btn-border"><i class='bx bxs-phone-call'></i> 941 676 068</a></div>
-                        <div class="p-2"><a href="#" class="btn btn-primary btn-border"><i class='bx bx-envelope' ></i> info@mecssol.pe</a></div>
-                        <div class="p-2"><a href="#" class="btn btn-primary btn-border"><i class='bx bx-mail-send' ></i>Webmail</a></div>
+                        <div class="p-2"><a href="<?php echo getUrlWhatsapp(); ?>" target="_blank" class="btn btn-primary btn-border"><i class='bx bxs-phone-call'></i> <?php echo get_theme_mod('cd_phone_contact'); ?></a></div>
+                        <div class="p-2"><a href="mailto:<?php echo get_theme_mod('cd_mail_contact'); ?>" class="btn btn-primary btn-border"><i class='bx bx-envelope' ></i> <?php echo get_theme_mod('cd_mail_contact'); ?></a></div>
+                        <div class="p-2"><a target="_blank" href="<?php echo get_theme_mod('cd_url_webmail'); ?>" class="btn btn-primary btn-border"><i class='bx bx-mail-send' ></i>Webmail</a></div>
                         <div class="p-2"><a href="#" class="btn btn-primary btn-quote">Cotizar aqui <i class='bx bxs-arrow-from-left'></i></a></div>
 
                     </div>
@@ -47,7 +47,7 @@
                             <?php dynamic_sidebar('footer-address'); ?>
                         <?php endif; ?>
 
-                        <div class="p-2"><a href="#" class="btn btn-primary btn-book">Libro de Reclamaciones</a></div>
+                        <div class="p-2"><a href="<?php echo get_theme_mod('cd_url_book'); ?>" class="btn btn-primary btn-book">Libro de Reclamaciones</a></div>
                     </div>
                     <div class="d-flex flex-row mb-3">
 
@@ -68,10 +68,10 @@
 </footer><!-- End Footer -->
 
 
-<a href="#" class="download-pdf">
+<a target="_blank" href="<?php echo get_theme_mod('cd_url_brochure'); ?>" class="download-pdf">
     <img width="100px" src="<?php echo get_template_directory_uri().'/assets/img/brochure.png'; ?>" alt="">
 </a>
-<a href="#" class="btn-wathsapp">
+<a target="_blank" href="<?php echo getUrlWhatsapp(); ?>" class="btn-wathsapp">
     <img width="100px" src="<?php echo get_template_directory_uri().'/assets/img/wathsapp.png'; ?>" alt="">
 </a>
 
