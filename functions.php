@@ -331,3 +331,53 @@ function getUrlWhatsapp(): string
     return "https://api.whatsapp.com/send?phone=" . $phone . "&text=" . $message;
 }
 
+function getMetaTagsHeader(){
+    $idPost = get_the_ID();
+    $metaDescription = get_post_meta($idPost, 'meta_description_page', true);
+    $metaTitleSocial = get_post_meta($idPost, 'meta_title_social', true);
+    $metaUrlSocial = get_post_meta($idPost, 'meta_url_social', true);
+    $metaImageSocial = get_post_meta($idPost, 'meta_image_social', true);
+
+    $maxlength = 160;
+
+    if(empty($metaDescription)){
+        $description = get_bloginfo('description');
+        // description of article or page
+        if (is_page() || is_single()) {
+            $description = get_the_excerpt();
+        }
+        // clean description
+        $description = strip_tags($description);
+        $description = trim($description);
+        // limit description to max characters
+        if (strlen($description) > $maxlength) {
+            $subtext = substr($description, 0, $maxlength - 3);
+            $endspace = strrpos($subtext, ' ');
+            $description = substr($subtext, 0, $endspace) . '...';
+        }
+    } else {
+        $description = strip_tags($metaDescription);
+        $description = trim($description);
+    }
+
+    return '
+        <meta name="description" content="'.$description.'" />
+            <!-- Twitter Card data -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@publisher_handle">
+        <meta name="twitter:title" content="'.$metaTitleSocial.'">
+        <meta name="twitter:description" content="'.$description.'">
+        <meta name="twitter:creator" content="@author_handle">
+        
+        <-- Twitter Summary card images. Igual o superar los 200x200px -->
+        <meta name="twitter:image" content=" <a href="'.$metaImageSocial.'">'.$metaImageSocial.'</a>">
+        
+        <!-- Open Graph data -->
+        <meta property="og:title" content="Titulo" />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="'.$metaUrlSocial.'" />
+        <meta property="og:image" content="'.$metaImageSocial.'" />
+        <meta property="og:description" content="'.$description.'" />
+            
+    ';
+}
