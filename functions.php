@@ -362,17 +362,12 @@ function getMetaTagsHeader(){
 
     return '
         <meta name="description" content="'.$description.'" />
-            <!-- Twitter Card data -->
         <meta name="twitter:card" content="summary">
         <meta name="twitter:site" content="@publisher_handle">
         <meta name="twitter:title" content="'.$metaTitleSocial.'">
         <meta name="twitter:description" content="'.$description.'">
         <meta name="twitter:creator" content="@author_handle">
-        
-        <-- Twitter Summary card images. Igual o superar los 200x200px -->
         <meta name="twitter:image" content=" <a href="'.$metaImageSocial.'">'.$metaImageSocial.'</a>">
-        
-        <!-- Open Graph data -->
         <meta property="og:title" content="Titulo" />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="'.$metaUrlSocial.'" />
