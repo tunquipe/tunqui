@@ -368,7 +368,7 @@ function getMetaTagsHeader(){
         <meta name="twitter:description" content="'.$description.'">
         <meta name="twitter:creator" content="@author_handle">
         <meta name="twitter:image" content=" <a href="'.$metaImageSocial.'">'.$metaImageSocial.'</a>">
-        <meta property="og:title" content="Titulo" />
+        <meta property="og:title" content="'.$metaTitleSocial.'" />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="'.$metaUrlSocial.'" />
         <meta property="og:image" content="'.$metaImageSocial.'" />
