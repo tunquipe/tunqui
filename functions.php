@@ -331,6 +331,11 @@ function getUrlWhatsapp(): string
     return "https://api.whatsapp.com/send?phone=" . $phone . "&text=" . $message;
 }
 
+/*function getCodeGoogleAnalytics(){
+    $code = get_theme_mod('cd_google_tag');
+    echo $code;
+}*/
+
 function getMetaTagsHeader(){
     $idPost = get_the_ID();
     $metaDescription = get_post_meta($idPost, 'meta_description_page', true);
@@ -367,7 +372,6 @@ function getMetaTagsHeader(){
         <meta name="twitter:title" content="'.$metaTitleSocial.'">
         <meta name="twitter:description" content="'.$description.'">
         <meta name="twitter:creator" content="@author_handle">
-        <meta name="twitter:image" content=" <a href="'.$metaImageSocial.'">'.$metaImageSocial.'</a>">
         <meta property="og:title" content="'.$metaTitleSocial.'" />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="'.$metaUrlSocial.'" />

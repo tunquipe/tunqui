@@ -96,4 +96,14 @@ function immobilien_customizer_settings($wp_customize)
         'section' => 'cd_template',
         'type' => 'text',
     ));
+
+    /*$wp_customize->add_setting('cd_google_tag', array(
+        'default' => '',
+        'transport' => 'postMessage',
+    ));
+    $wp_customize->add_control('cd_google_tag', array(
+        'label' => 'Código de Google Analytics',
+        'section' => 'cd_template',
+        'type' => 'textarea',
+    ));*/
 }
