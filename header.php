@@ -71,6 +71,9 @@ if (is_front_page() && is_page()) {
                     ));
                 }
                 ?>
+                <button type="button" class="btn btn-primary btn-quote" data-bs-toggle="modal" data-bs-target="#modal-quote">
+                    Cotizar aquí!
+                </button>
             </div>
         </div>
     </nav>

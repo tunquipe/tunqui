@@ -81,35 +81,23 @@
     </div>
 </div>
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-<script type="text/javascript">
-    jQuery('#login-modal').on("click", function(e) {
-        e.preventDefault();
-        jQuery(".tutor-modal").addClass('tutor-is-active');
-    });
-    jQuery('.tutor-modal-overlay').on("click", function(e) {
-        e.preventDefault();
-        jQuery(".tutor-modal").removeClass('tutor-is-active');
-    });
-    jQuery(document).ready(function() {
-        //let altura = jQuery("#videotv").height();
-        //console.log(altura);
-        jQuery(".list-courses").owlCarousel({
-            nav: true,
-            dots: false,
-            responsive: {
-                0: {
-                    items: 1
-                },
-                600: {
-                    items: 3
-                },
-                1000: {
-                    items: 3
-                }
-            }
-        });
-    });
-</script>
+
+<!-- Modal -->
+<div class="modal fade" id="modal-quote" tabindex="-1" aria-labelledby="modal-quote-label" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <?php if (is_active_sidebar('modal-home')) : ?>
+                    <?php dynamic_sidebar('modal-home'); ?>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</div>
+
 <?php
 wp_footer();
 ?>

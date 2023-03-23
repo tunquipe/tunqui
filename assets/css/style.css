@@ -212,12 +212,19 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff;
 }
 
-.navbar .cotiza {
+.navbar .btn-quote {
     background: #FFCC00;
-    font-size: 14px;
     border: 1px solid #FFCC00;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    color: #0055d4;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 0.9rem 2rem;
+}
+.navbar .btn-quote:hover{
+    background: #FFF;
+    border: 1px solid #FFF;
 }
 
 .navbar .cotiza:hover {
@@ -1980,7 +1987,31 @@ section {
 .navbar {
     padding: 0;
 }
-
+.modal-body .wpforms-title{
+    font-size: 16px;
+    font-weight: 600;
+    color: #0055D4;
+}
+.modal-body div.wpforms-container-full .wpforms-form input.wpforms-field-medium{
+    border-radius: 10px;
+}
+.modal-body div.wpforms-container-full .wpforms-form textarea.wpforms-field-medium{
+    border-radius: 10px;
+}
+.modal-body div.wpforms-container-full .wpforms-form button[type=submit]{
+    background-color: #FFCC00;
+    border-radius: 5px;
+    border: 1px solid #FFCC00;
+    font-weight: 600;
+    color: #0055D4;
+    margin: auto;
+    display: flex;
+}
+.modal-body div.wpforms-container-full .wpforms-form button[type=submit]:hover{
+    background-color: #0055D4;
+    border: 1px solid #0055D4;
+    color: #FFF;
+}
 /* Large desktop */
 @media (min-width: 1200px) {
 }

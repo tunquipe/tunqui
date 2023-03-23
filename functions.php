@@ -82,6 +82,16 @@ register_sidebar(array(
     'after_title'   => '</h4>',
 ));
 
+register_sidebar(array(
+    'name'          => __('Modal Home', 'tunqui'),
+    'id'            => 'modal-home',
+    'description'   => 'Coloca el contenido del modal para el home',
+    'before_widget' => '<div id="footer-%1$s" class="widget box-img %2$s">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h4 class="title-section">',
+    'after_title'   => '</h4>',
+));
+
 
 // bootstrap 5 wp_nav_menu walker
 class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu
