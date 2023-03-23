@@ -654,14 +654,41 @@ h1, h2, h3, h4, h5, h6 {
     border-radius: 50px;
     transition: all 0.4s;
 }
-.page-single .page-title{
+
+.page-single .page-title {
     padding: 1rem 0;
     border-bottom: 1px solid #CDCDCD;
     margin-bottom: 2rem;
 }
-.current_page_item .dropdown-item.active, .current_page_item .dropdown-item:active{
+
+.current_page_item .dropdown-item.active, .current_page_item .dropdown-item:active {
     background-color: #fc0;
 }
+
+.page-title-404 {
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    text-transform: uppercase;
+}
+
+.page-title-404 strong {
+    color: #0055D4;
+}
+
+.page-subtitle-404 {
+    text-align: center;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    background-color: #FFCC00;
+    padding: 1rem;
+    color: #0055D4;
+    width: 565px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+}
+
 @-webkit-keyframes up-down {
     0% {
         transform: translateY(10px);
@@ -707,11 +734,12 @@ section {
     background-color: #f3f5fa;
 }
 
-.section-title strong{
+.section-title strong {
     color: #0a53be;
     font-weight: 700;
 }
-.section-subtitle .elementor-heading-title{
+
+.section-subtitle .elementor-heading-title {
     background: #ffcc00;
     width: 350px;
     margin: auto;
@@ -719,6 +747,7 @@ section {
     border-radius: 10px;
     font-size: 1.10rem;
 }
+
 /*--------------------------------------------------------------
 # Clients
 --------------------------------------------------------------*/
@@ -1947,9 +1976,11 @@ section {
     text-align: center;
     font-size: 12px;
 }
-.navbar{
-  padding: 0;
+
+.navbar {
+    padding: 0;
 }
+
 /* Large desktop */
 @media (min-width: 1200px) {
 }
@@ -1986,11 +2017,16 @@ section {
         border-bottom: 1px solid #1e69d9;
     }
 
-  .navbar-light .navbar-toggler{
+    .navbar-light .navbar-toggler {
         background: #fc0;
-  }
-  .navbar{
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-  }
+    }
+
+    .navbar {
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+
+    .page-subtitle-404 {
+        width: 100%;
+    }
 }
