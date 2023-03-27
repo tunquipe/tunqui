@@ -7,7 +7,7 @@ function tunqui_site_logo( $args = array(), $echo = true ) {
     $classname  = '';
     $urlhome = esc_url( get_home_url( null, '/' ) );
     if(empty($logo)){
-        $logo = '<a href="'.$urlhome.'"><img width="220px" src="'.get_template_directory_uri().'/assets/img/logo.svg'.'" ></a>';
+        $logo = '<a href="'.$urlhome.'"><img width="250px" src="'.get_template_directory_uri().'/assets/img/logo.svg'.'" ></a>';
     }
     $defaults = array(
         'logo'        => '%1$s<span class="screen-reader-text">%2$s</span>',
@@ -98,56 +98,3 @@ function tunqui_slider_post() {
 }
 add_action( 'init', 'tunqui_slider_post' );
 
-function cptui_register_my_cpts_service() {
-
-    /**
-     * Post Type: Servicios.
-     */
-
-    $labels = [
-        "name" => esc_html__( "Servicios", "blender.pe" ),
-        "singular_name" => esc_html__( "Servicio", "blender.pe" ),
-        "menu_name" => esc_html__( "Mis servicios", "blender.pe" ),
-        "all_items" => esc_html__( "Todas los servicios", "blender.pe" ),
-        "add_new" => esc_html__( "Añadir nuevo", "blender.pe" ),
-        "add_new_item" => esc_html__( "Añadir nuevo servicio", "blender.pe" ),
-        "edit_item" => esc_html__( "Editar servicio", "blender.pe" ),
-        "new_item" => esc_html__( "Nuevo servicio", "blender.pe" ),
-        "view_item" => esc_html__( "Ver servicio", "blender.pe" ),
-        "view_items" => esc_html__( "Ver servicios", "blender.pe" ),
-        "search_items" => esc_html__( "Buscar servicios", "blender.pe" ),
-        "not_found" => esc_html__( "No se ha encontrado servicio", "blender.pe" ),
-        "not_found_in_trash" => esc_html__( "No se ha encontrado servicios en la papelera", "blender.pe" ),
-    ];
-
-    $args = [
-        "label" => esc_html__( "Servicios", "blender.pe" ),
-        "labels" => $labels,
-        "description" => "",
-        "public" => true,
-        "publicly_queryable" => true,
-        "show_ui" => true,
-        "show_in_rest" => true,
-        "rest_base" => "",
-        "rest_controller_class" => "WP_REST_Posts_Controller",
-        "rest_namespace" => "wp/v2",
-        "has_archive" => false,
-        "show_in_menu" => true,
-        "show_in_nav_menus" => true,
-        "delete_with_user" => false,
-        "exclude_from_search" => false,
-        "capability_type" => "post",
-        "map_meta_cap" => true,
-        "hierarchical" => false,
-        "can_export" => false,
-        "rewrite" => [ "slug" => "service", "with_front" => true ],
-        "query_var" => true,
-        "menu_icon" => "dashicons-admin-generic",
-        "supports" => [ "title", "editor", "thumbnail", "excerpt", "custom-fields", "page-attributes", "post-formats" ],
-        "show_in_graphql" => false,
-    ];
-
-    register_post_type( "service", $args );
-}
-
-add_action( 'init', 'cptui_register_my_cpts_service' );

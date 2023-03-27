@@ -297,32 +297,7 @@ function tunqui_portfolio()
         return "El plugin no esta activo";
     }
 }
-function getPriceCourse($id)
-{
-    $product_id = tutor_utils()->get_course_product_id($id);
-    $product = wc_get_product($product_id);
-    $html = null;
 
-    if ($product) {
-        if (tutor_utils()->is_course_added_to_cart($product_id, true)) {
-
-        } else {
-            $sale_price = $product->get_sale_price();
-            $regular_price = $product->get_regular_price();
-            $html = '<div class="price">
-                    <span class="tutor-fs-4 tutor-fw-bold">'.
-                    wc_price($sale_price ? $sale_price : $regular_price).'
-                </span>';
-        if ($regular_price && $sale_price && $sale_price != $regular_price) {
-            $html .= '<del class="tutor-fs-7 tutor-ml-8">'.
-                    wc_price($regular_price).'
-                    </del>';
-        }
-        $html .='</div>';
-        }
-    }
-    return $html;
-}
 function wpc_elementor_shortcode_portfolio($atts)
 {
     tunqui_portfolio();
