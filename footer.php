@@ -75,11 +75,11 @@
     <img width="100px" src="<?php echo get_template_directory_uri().'/assets/img/wathsapp.png'; ?>" alt="">
 </a>
 
-<div id="preloader">
+<!--<div id="preloader">
     <div class="icon-blender">
-        <img width="64px" height="64px" src="<?php echo get_template_directory_uri().'/assets/img/icon_mecssol.svg'; ?>">
+        <img width="64px" height="64px" src="<?php /*echo get_template_directory_uri().'/assets/img/icon_mecssol.svg'; */?>">
     </div>
-</div>
+</div>-->
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
 <!-- Modal -->
