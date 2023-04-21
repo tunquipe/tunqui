@@ -30,7 +30,7 @@ $sliders = tunqui_get_slider();
                         <?php $counter = -1; ?>
                         <?php foreach ($sliders as $item) : ?>
                             <?php $counter++; ?>
-                            <div class="carousel-item <?php echo $item['active'] ?>" style="background: url('<?php echo $item['slider_img_full'][0]; ?>') center center">
+                            <div class="carousel-item <?php echo $item['active'] ?>">
                                 <div class="row">
                                     <div class="col-lg-6 d-flex flex-column justify-content-center pt-2 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
                                         <div class="item-content">
@@ -47,7 +47,7 @@ $sliders = tunqui_get_slider();
 
                                     </div>
                                     <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-
+                                        <img class="img-fluid" src="<?php echo $item['slider_img_full'][0]; ?>" alt="">
                                     </div>
                                 </div>
                             </div>
