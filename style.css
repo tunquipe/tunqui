@@ -33,7 +33,7 @@ a:hover {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Nunito', sans-serif;
 }
 
 /*--------------------------------------------------------------
@@ -439,31 +439,28 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero h1 {
     margin: 0 0 10px 0;
-    font-size: 40px;
-    font-weight: 600;
+    font-size: 3.2rem;
+    font-weight: 800;
     line-height: 50px;
     color: #fff;
     text-transform: uppercase;
 }
 
 #hero h2 {
-    color: #FFCC00;
-    font-size: 22px;
-    font-weight: 800;
-    text-transform: uppercase;
+    color: #FFF;
+    font-size: 2.2rem;
+    font-weight: 600;
 }
 
 #hero .item-content {
     text-align: left;
     padding-left: 6rem;
     padding-right: 2rem;
-    padding-top: 2rem;
 }
 
 #hero-page {
     width: 100%;
     height: 400px;
-    background: url("../img/bg-hero.png") no-repeat center bottom;
     background-size: cover;
     color: #FFF;
 }
@@ -497,17 +494,21 @@ h1, h2, h3, h4, h5, h6 {
     height: 250px;
     bottom: -85px;
 }
-
+#hero .btn-get-started span{
+    top: -4px;
+    display: inline-block;
+    position: relative;
+}
 #hero .btn-get-started {
     font-weight: 800;
     font-size: 16px;
     display: inline-block;
     padding: 10px 28px 11px 28px;
-    border-radius: 5px;
+    border-radius: 50px;
     transition: 0.5s;
     margin: 10px 0 0 0;
-    color: #0055D4;
-    background: #ffcc00;
+    color: #FFF;
+    background: #F43E29;
     text-transform: uppercase;
 }
 
@@ -536,8 +537,8 @@ h1, h2, h3, h4, h5, h6 {
 
 #hero .carousel-item {
     padding-top: 2rem;
-    padding-bottom: 2rem;
-    height: 500px;
+    padding-bottom: 0;
+    height: 550px;
 }
 
 #hero .carousel-indicators {
