@@ -19,47 +19,46 @@ wp_body_open();
 <?php
 $css_header = null;
 if (is_front_page() && is_page()) {
-    $css_header = 'page-home';
+    $css_header = 'page-primary';
 } else {
     $css_header = 'page-internal';
 }
 ?>
-<header id="header" class="<?php echo $css_header; ?> block-menu">
-    <nav class="navbar navbar-expand-md navbar-light">
-        <div class="container">
-            <?php tunqui_site_logo(); ?>
+<div class="<?php echo $css_header; ?>">
+    <header id="header" >
+        <nav class="navbar navbar-expand-md navbar-light">
+            <div class="container">
+                <?php tunqui_site_logo(); ?>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-root" aria-controls="menu-root" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="menu-root">
-                <?php
-                if (has_nav_menu('primary')) {
-                    wp_nav_menu(array(
-                        'theme_location' => 'primary',
-                        'container' => false,
-                        'menu_class' => '',
-                        'fallback_cb' => '__return_false',
-                        'items_wrap' => '<ul id="%1$s" class="navbar-nav me-auto mb-2 mb-md-0 %2$s">%3$s</ul>',
-                        'depth' => 2,
-                        'walker' => new bootstrap_5_wp_nav_menu_walker()
-                    ));
-                }
-                ?>
-                <div class="d-inline-flex mt-2 mt-md-0 ms-auto">
-                    <div class="d-flex flex-row">
-                        <div class="p-2"><a target="_blank" href="<?php echo get_theme_mod('cd_instagram_contact'); ?>" class="btn-social"><i class='bx bxl-instagram' ></i></a></div>
-                        <div class="p-2"><a target="_blank" href="<?php echo get_theme_mod('cd_facebook_contact'); ?>" class="btn-social"><i class='bx bxl-facebook-circle' ></i></a></div>
-                    </div>
-
-                </div>
-                <button type="button" class="btn btn-primary btn-quote" data-bs-toggle="modal" data-bs-target="#modal-quote">
-                    <span> Empieza Ahora </span> <i class='bx bx-right-arrow-alt bx-sm'></i>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-root" aria-controls="menu-root" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
+
+                <div class="collapse navbar-collapse" id="menu-root">
+                    <?php
+                    if (has_nav_menu('primary')) {
+                        wp_nav_menu(array(
+                            'theme_location' => 'primary',
+                            'container' => false,
+                            'menu_class' => '',
+                            'fallback_cb' => '__return_false',
+                            'items_wrap' => '<ul id="%1$s" class="navbar-nav me-auto mb-2 mb-md-0 %2$s">%3$s</ul>',
+                            'depth' => 2,
+                            'walker' => new bootstrap_5_wp_nav_menu_walker()
+                        ));
+                    }
+                    ?>
+                    <div class="d-inline-flex mt-2 mt-md-0 ms-auto">
+                        <div class="d-flex flex-row">
+                            <div class="p-2"><a target="_blank" href="<?php echo get_theme_mod('cd_instagram_contact'); ?>" class="btn-social"><i class='bx bxl-instagram' ></i></a></div>
+                            <div class="p-2"><a target="_blank" href="<?php echo get_theme_mod('cd_facebook_contact'); ?>" class="btn-social"><i class='bx bxl-facebook-circle' ></i></a></div>
+                        </div>
+
+                    </div>
+                    <button type="button" class="btn btn-primary btn-quote" data-bs-toggle="modal" data-bs-target="#modal-quote">
+                        <span> Empieza Ahora </span> <i class='bx bx-right-arrow-alt bx-sm'></i>
+                    </button>
+                </div>
             </div>
-        </div>
-    </nav>
-
-
-</header><!-- End Header -->
+        </nav>
+    </header><!-- End Header -->

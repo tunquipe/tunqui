@@ -19,7 +19,7 @@ License version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
 body {
     font-family: 'Nunito', sans-serif;
     color: #444444;
-    background: url("assets/img/background.png") no-repeat center top #F5F5F5;
+    background: #F5F5F5;
 }
 
 a {
@@ -35,10 +35,27 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Nunito', sans-serif;
 }
+.page-primary{
+    background: url("assets/img/background.png") no-repeat center top;
+}
+.page-internal{
+    background: url("assets/img/page-bg.png") no-repeat center -150px;
+}
 
-/*--------------------------------------------------------------
-# Preloader
---------------------------------------------------------------*/
+#sub-header .page-image h1 {
+    font-weight: 700;
+    color: #FFF;
+}
+#sub-header .page-image{
+    padding: 4rem 0;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 20px;
+}
+    /*--------------------------------------------------------------
+    # Preloader
+    --------------------------------------------------------------*/
 #preloader {
     position: fixed;
     top: 0;
@@ -147,10 +164,6 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
 }
 
-#header .logo a {
-    color: #fff;
-}
-
 #header .logo img {
     max-height: 40px;
 }
@@ -158,11 +171,6 @@ h1, h2, h3, h4, h5, h6 {
 .carousel-indicators [data-bs-target] {
     border-radius: 0;
 }
-
-#header.page-internal {
-    background-color: #FFF;
-}
-
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
@@ -696,23 +704,8 @@ h1, h2, h3, h4, h5, h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-    padding: 25px 0;
+    padding: 0;
     overflow: hidden;
-}
-
-#sub-header.page-internal {
-    padding-top: 1.3rem;
-    padding-bottom: 30px;
-    background: rgb(255, 255, 255);
-    background: linear-gradient(0deg, rgba(255, 255, 255, 1) 40%, rgba(0, 85, 212, 1) 40%);
-}
-
-#sub-header .page-title {
-    color: #FFF;
-}
-
-#sub-header .page-title h1 {
-    font-weight: 700;
 }
 
 .section-bg {
@@ -1846,7 +1839,6 @@ section {
     padding-top: .5rem;
     padding-bottom: .5rem;
     color: #fff;
-    border-top: 1px solid #FFF;
 }
 
 #footer .btn-border {

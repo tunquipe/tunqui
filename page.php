@@ -11,18 +11,16 @@ $imagePage = wp_get_attachment_image_src($thumbID, 'full');
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="page-title">
-                        <h5><?php echo get_post_meta($idPost,'sub_title', true); ?></h5>
-                        <h1><?php the_title(); ?></h1>
-                    </div>
-                    <div class="image-page">
-                        <img class="img-fluid" src="<?php echo $imagePage[0]; ?>" alt="">
+                    <div class="header-title">
+                        <div class="page-image" style="background-image: url('<?php echo $imagePage[0]; ?>')">
+                            <h1><?php the_title(); ?></h1>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
+    </div>
     <main id="main">
         <div class="container">
             <section id="page-home" class="page-home">

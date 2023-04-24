@@ -11,7 +11,6 @@ $oneSlider = count($sliders);
 ?>
 <?php if (is_front_page()) : ?>
     <!-- ======= Hero Section ======= -->
-
     <section id="hero" class="d-flex align-items-center">
         <div class="container">
             <div class="row">
@@ -36,7 +35,6 @@ $oneSlider = count($sliders);
                                                 <?php endif; ?>
                                             </div>
                                         </div>
-
                                     </div>
                                     <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
                                         <img class="img-fluid" src="<?php echo $item['slider_img_full'][0]; ?>" alt="">
@@ -59,11 +57,11 @@ $oneSlider = count($sliders);
             </div>
         </div>
     </section><!-- End Hero -->
-
+    </div>
 <?php endif; ?>
     <main id="main">
         <div class="container">
-            <section id="page-home" class="page-home">
+            <section id="page-home" class="page-content-home">
                 <div class="container">
                     <?php while (have_posts()) : the_post(); ?>
                         <?php the_content(); ?>

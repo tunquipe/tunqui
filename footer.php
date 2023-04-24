@@ -1,15 +1,13 @@
 <!-- ======= Footer ======= -->
 <footer id="footer">
-    <div class="footer-top">
-        <div class="container">
+    <div class="container">
+        <div class="footer-top">
             <div class="row">
-
                 <div class="col-lg-2 col-md-6">
                     <div class="logo-footer">
                         <img width="180px" src="<?php echo get_template_directory_uri().'/assets/img/logo.svg'; ?>" alt="">
                     </div>
                 </div>
-
                 <div class="col-lg-10 col-md-6 footer-links">
                     <div class="d-lg-flex flex-row mb-3">
                         <div class="p-2"><a href="<?php echo getUrlWhatsapp(); ?>" target="_blank" class="btn-social"><i class='bx bxs-phone-call'></i> <?php echo get_theme_mod('cd_phone_contact'); ?></a></div>
@@ -33,32 +31,29 @@
                 </div>
             </div>
         </div>
-    </div>
+        <div class="footer-bottom clearfix">
 
-    <div class="footer-bottom clearfix">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <?php
-                    if (has_nav_menu('primary')) {
-                        wp_nav_menu(array(
-                            'theme_location' => 'secundary',
-                            'container' => false,
-                            'menu_class' => '',
-                            'fallback_cb' => '__return_false',
-                            'items_wrap' => '<ul id="%1$s" class="navbar-footer me-auto mb-2 mb-md-0 %2$s">%3$s</ul>',
-                            'depth' => 2
-                        ));
-                    }
-                    ?>
-                </div>
-                <div class="col">
-                    <div class="copyright">
-                        &copy; Sitio web elaborado por <strong><span>Tunqui Agencia Creativa EIRL</span></strong>.
+                <div class="row">
+                    <div class="col">
+                        <?php
+                        if (has_nav_menu('primary')) {
+                            wp_nav_menu(array(
+                                'theme_location' => 'secundary',
+                                'container' => false,
+                                'menu_class' => '',
+                                'fallback_cb' => '__return_false',
+                                'items_wrap' => '<ul id="%1$s" class="navbar-footer me-auto mb-2 mb-md-0 %2$s">%3$s</ul>',
+                                'depth' => 2
+                            ));
+                        }
+                        ?>
+                    </div>
+                    <div class="col">
+                        <div class="copyright">
+                            &copy; Sitio web elaborado por <strong><span>Tunqui Agencia Creativa EIRL</span></strong>.
+                        </div>
                     </div>
                 </div>
-            </div>
-
         </div>
     </div>
 </footer><!-- End Footer -->
