@@ -7,7 +7,7 @@
 
 get_header();
 $sliders = tunqui_get_slider();
-
+$oneSlider = count($sliders);
 ?>
 <?php if (is_front_page()) : ?>
     <!-- ======= Hero Section ======= -->
@@ -45,6 +45,7 @@ $sliders = tunqui_get_slider();
                             </div>
                         <?php endforeach; ?>
                     </div>
+                    <?php  if($oneSlider >= 2) : ?>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carousel_slider" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Previous</span>
@@ -53,6 +54,7 @@ $sliders = tunqui_get_slider();
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

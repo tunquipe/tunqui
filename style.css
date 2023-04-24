@@ -19,7 +19,7 @@ License version 2.0 (http://www.gnu.org/licenses/gpl-2.0.html)
 body {
     font-family: 'Nunito', sans-serif;
     color: #444444;
-    background: url("assets/img/background.png") no-repeat center top;
+    background: url("assets/img/background.png") no-repeat center top #F5F5F5;
 }
 
 a {
