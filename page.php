@@ -7,7 +7,7 @@ $imagePage = wp_get_attachment_image_src($thumbID, 'full');
 
 ?>
 <?php while(have_posts()): the_post(); ?>
-    <section id="sub-header" class="page-internal">
+    <section id="sub-header">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
