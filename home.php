@@ -27,6 +27,7 @@ $oneSlider = count($sliders);
                                         <div class="item-content">
                                             <h2><?php echo $item['slider_sub_title']; ?></h2>
                                             <h1><?php echo $item['slider_title']; ?></h1>
+                                            <?php echo $item['slider_description']; ?>
                                             <div class="d-grid gap-2 d-md-flex justify-content-center justify-content-lg-start">
                                                 <?php if ($item['slider_url_target']) : ?>
                                                     <a href="<?php echo $item['slider_url_target']; ?>" class="btn-get-started scrollto">
