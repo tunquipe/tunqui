@@ -21,7 +21,6 @@ function tunqui_register_styles()
     wp_enqueue_style('owlcarousel-css', get_template_directory_uri() . '/assets/vendor/owlcarousel/dist/assets/owl.carousel.min.css', '', $theme_version);
     wp_enqueue_style('owlcarousel-default-css', get_template_directory_uri() . '/assets/vendor/owlcarousel/dist/assets/owl.theme.default.css', '', $theme_version);
     wp_enqueue_style('tunqui-style', get_stylesheet_uri(), array(), $theme_version);
-    wp_enqueue_style('animate-css', get_template_directory_uri() . '/assets/css/animate.min.css', '', $theme_version);
     wp_enqueue_style('hover-css', get_template_directory_uri() . '/assets/vendor/hover/css/hover-min.css', '', $theme_version);
 
     //añadiendo css print
