@@ -38,12 +38,22 @@ function immobilien_customizer_settings($wp_customize)
         'type' => 'text',
     ));
 
-    $wp_customize->add_setting('cd_instagram_contact', array(
+    $wp_customize->add_setting('cd_youtube_contact', array(
         'default' => '',
         'transport' => 'postMessage',
     ));
-    $wp_customize->add_control('cd_instagram_contact', array(
-        'label' => 'URL de Instagram',
+    $wp_customize->add_control('cd_youtube_contact', array(
+        'label' => 'URL de youtube',
+        'section' => 'cd_template',
+        'type' => 'text',
+    ));
+
+    $wp_customize->add_setting('cd_linkedin_contact', array(
+        'default' => '',
+        'transport' => 'postMessage',
+    ));
+    $wp_customize->add_control('cd_linkedin_contact', array(
+        'label' => 'URL de Linkedin',
         'section' => 'cd_template',
         'type' => 'text',
     ));

@@ -10,8 +10,8 @@
                 </div>
                 <div class="col-lg-10 col-md-6 footer-links">
                     <div class="d-lg-flex flex-row mb-3">
-                        <div class="p-2"><a href="<?php echo getUrlWhatsapp(); ?>" target="_blank" class="btn-social"><i class='bx bxs-phone-call'></i> <?php echo get_theme_mod('cd_phone_contact'); ?></a></div>
-                        <div class="p-2"><a href="mailto:<?php echo get_theme_mod('cd_mail_contact'); ?>" class="btn-social"><i class='bx bx-envelope' ></i> <?php echo get_theme_mod('cd_mail_contact'); ?></a></div>
+                        <div class="p-2"><a href="<?php echo getUrlWhatsapp(); ?>" target="_blank" class="btn-social"><i class='bx bxs-phone-call'></i> <span><?php echo get_theme_mod('cd_phone_contact'); ?></span></a></div>
+                        <div class="p-2"><a href="mailto:<?php echo get_theme_mod('cd_mail_contact'); ?>" class="btn-social"><i class='bx bx-envelope' ></i> <span><?php echo get_theme_mod('cd_mail_contact'); ?></span></a></div>
                         <div class="p-2"><a href="<?php echo get_theme_mod('cd_url_book'); ?>" class="btn btn-primary btn-book">Libro de Reclamaciones</a></div>
                         <div class="p-2">
                             <a href="#" class="btn btn-primary btn-quote">
@@ -50,7 +50,7 @@
                     </div>
                     <div class="col">
                         <div class="copyright">
-                            &copy; Sitio web elaborado por <strong><span>Tunqui Agencia Creativa EIRL</span></strong>.
+                            &copy; Sitio web elaborado por <strong><span><a href="https://tunqui.pe" target="_blank">Tunqui Digital</a></span></strong>.
                         </div>
                     </div>
                 </div>
