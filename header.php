@@ -50,15 +50,23 @@ if (is_front_page() && is_page()) {
                     ?>
                     <div class="d-inline-flex mt-2 mt-md-0 ms-auto">
                         <div class="d-flex flex-row">
-                            <div class="p-2"><a target="_blank" href="<?php echo get_theme_mod('cd_linkedin_contact'); ?>" class="btn-social"><i class='bx bxl-linkedin'></i></a></div>
-                            <div class="p-2"><a target="_blank" href="<?php echo get_theme_mod('cd_facebook_contact'); ?>" class="btn-social"><i class='bx bxl-facebook-circle' ></i></a></div>
-                            <div class="p-2"><a target="_blank" href="<?php echo get_theme_mod('cd_youtube_contact'); ?>" class="btn-social"><i class='bx bxl-youtube' ></i></a></div>
+                            <?php if(!empty(get_theme_mod('cd_linkedin_contact'))) : ?>
+                                <div class="p-2"><a target="_blank" href="<?php echo get_theme_mod('cd_linkedin_contact'); ?>" class="btn-social"><i class='bx bxl-linkedin'></i></a></div>
+                            <?php endif; ?>
+                            <?php if(!empty(get_theme_mod('cd_facebook_contact'))) : ?>
+                                <div class="p-2"><a target="_blank" href="<?php echo get_theme_mod('cd_facebook_contact'); ?>" class="btn-social"><i class='bx bxl-facebook-circle' ></i></a></div>
+                            <?php endif; ?>
+                            <?php if(!empty(get_theme_mod('cd_youtube_contact'))) : ?>
+                                <div class="p-2"><a target="_blank" href="<?php echo get_theme_mod('cd_youtube_contact'); ?>" class="btn-social"><i class='bx bxl-youtube' ></i></a></div>
+                            <?php endif; ?>
                         </div>
 
                     </div>
-                    <button type="button" class="btn btn-primary btn-quote" data-bs-toggle="modal" data-bs-target="#modal-quote">
-                        <span> Empieza Ahora </span> <i class='bx bx-right-arrow-alt bx-sm'></i>
-                    </button>
+                    <?php if(!empty(get_theme_mod('cd_popup_elementor'))) : ?>
+                        <a href="<?php echo get_theme_mod('cd_popup_elementor'); ?>" class="btn btn-primary btn-quote">
+                            <span> Empieza Ahora </span> <i class='bx bx-right-arrow-alt bx-sm'></i>
+                        </a>
+                    <?php endif; ?>
                 </div>
             </div>
         </nav>

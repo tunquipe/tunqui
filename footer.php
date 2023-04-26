@@ -10,14 +10,32 @@
                 </div>
                 <div class="col-lg-10 col-md-6 footer-links">
                     <div class="d-lg-flex flex-row mb-3">
-                        <div class="p-2"><a href="<?php echo getUrlWhatsapp(); ?>" target="_blank" class="btn-social"><i class='bx bxs-phone-call'></i> <span><?php echo get_theme_mod('cd_phone_contact'); ?></span></a></div>
-                        <div class="p-2"><a href="mailto:<?php echo get_theme_mod('cd_mail_contact'); ?>" class="btn-social"><i class='bx bx-envelope' ></i> <span><?php echo get_theme_mod('cd_mail_contact'); ?></span></a></div>
-                        <?php if(!empty(get_theme_mod('cd_url_book'))) : ?><div class="p-2"><a href="<?php echo get_theme_mod('cd_url_book'); ?>" class="btn btn-primary btn-book">Libro de Reclamaciones</a></div><?php endif; ?>
+                        <?php if(!empty(get_theme_mod('cd_whatsapp_contact'))) : ?>
+                            <div class="p-2">
+                                <a href="<?php echo getUrlWhatsapp(); ?>" target="_blank" class="btn-social">
+                                    <i class='bx bxs-phone-call'></i> <span><?php echo get_theme_mod('cd_phone_contact'); ?></span>
+                                </a>
+                            </div>
+                        <?php endif; ?>
+                        <?php if(!empty(get_theme_mod('cd_mail_contact'))) : ?>
+                            <div class="p-2">
+                                <a href="mailto:<?php echo get_theme_mod('cd_mail_contact'); ?>" class="btn-social">
+                                    <i class='bx bx-envelope' ></i> <span><?php echo get_theme_mod('cd_mail_contact'); ?></span>
+                                </a>
+                            </div>
+                        <?php endif; ?>
+                        <?php if(!empty(get_theme_mod('cd_url_book'))) : ?>
+                            <div class="p-2">
+                                <a href="<?php echo get_theme_mod('cd_url_book'); ?>" class="btn btn-primary btn-book">Libro de Reclamaciones</a>
+                            </div>
+                        <?php endif; ?>
+                        <?php if(!empty(get_theme_mod('cd_popup_elementor'))) : ?>
                         <div class="p-2">
-                            <a href="#" class="btn btn-primary btn-quote">
+                            <a href="<?php echo get_theme_mod('cd_popup_elementor'); ?>" class="btn btn-primary btn-quote">
                                 <span> Empieza Ahora </span> <i class='bx bx-right-arrow-alt bx-sm'></i>
                             </a>
                         </div>
+                        <?php endif; ?>
                     </div>
                     <div class="d-lg-flex flex-row mb-3">
                         <?php if (is_active_sidebar('footer-schedule')) : ?>
@@ -71,21 +89,6 @@
 
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-<!-- Modal -->
-<div class="modal fade" id="modal-quote" tabindex="-1" aria-labelledby="modal-quote-label" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <?php if (is_active_sidebar('modal-home')) : ?>
-                    <?php dynamic_sidebar('modal-home'); ?>
-                <?php endif; ?>
-            </div>
-        </div>
-    </div>
-</div>
 <?php
 wp_footer();
 ?>
