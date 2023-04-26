@@ -58,13 +58,16 @@
     </div>
 </footer><!-- End Footer -->
 
-
+<?php if(!empty(get_theme_mod('cd_url_brochure'))) : ?>
 <a target="_blank" href="<?php echo get_theme_mod('cd_url_brochure'); ?>" class="download-pdf">
     <img width="100px" src="<?php echo get_template_directory_uri().'/assets/img/brochure.png'; ?>" alt="">
 </a>
+<?php endif; ?>
+<?php if(!empty(get_theme_mod('cd_whatsapp_contact'))) : ?>
 <a target="_blank" href="<?php echo getUrlWhatsapp(); ?>" class="btn-wathsapp">
     <img width="100px" src="<?php echo get_template_directory_uri().'/assets/img/wathsapp.png'; ?>" alt="">
 </a>
+<?php endif; ?>
 
 <!--<div id="preloader">
     <div class="icon-blender">
