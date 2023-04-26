@@ -1,7 +1,7 @@
 /*
 Theme Name: Logifit Theme
 Text Domain: logifif.pe
-Version: 1.10
+Version: 1.11
 Requires PHP: 5.2.4
 Description: Theme para sitio web de Blender Perú
 Author: the WordPress team
@@ -273,11 +273,20 @@ h1, h2, h3, h4, h5, h6 {
     border: 1px solid #F42B27;
 }
 .btn-quote span{
-    top: -4px;
+    top: 0;
     display: inline-block;
     position: relative;
 }
-
+.footer-top .btn-quote span{
+    top: -4px;
+}
+.post-terms .entry-content p,
+.post-terms .entry-content ul,
+.post-terms .entry-content ol{
+    font-size: 16px;
+    line-height: 1.5;
+    color: #939393;
+}
 .navbar .dropdown ul {
     display: block;
     position: absolute;
@@ -694,7 +703,9 @@ h1, h2, h3, h4, h5, h6 {
     width: 100%;
     margin: 0 auto;
 }
-.entry-content p{
+.entry-content p,
+.entry-content ol,
+.entry-content ul{
     font-size: 18px;
     line-height: 1.7;
     color: #939393;
