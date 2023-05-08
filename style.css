@@ -1931,7 +1931,7 @@ section {
 }
 
 #footer .widget {
-    padding: 1rem;
+    padding: 0;
 }
 
 #footer .textwidget {
