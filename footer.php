@@ -21,7 +21,7 @@
 
                 <div class="col-lg-2 col-md-6">
                     <div class="logo-footer">
-                        <img width="120px" src="<?php echo get_template_directory_uri().'/assets/img/mecssol.svg'; ?>" alt="">
+                        <img width="120px" src="<?php echo get_template_directory_uri().'/assets/img/logo_white.svg'; ?>" alt="">
                     </div>
                     <ul class="social">
                         <li><a href="<?php echo get_theme_mod('cd_instagram_contact'); ?>" target="_blank" class="btn-social"><i class='bx bxl-instagram'></i></a></li>

@@ -14,10 +14,6 @@
 
     <?php wp_head(); ?>
 
-    <?php echo getMetaTagsHeader(); ?>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4415260958046016"
-            crossorigin="anonymous"></script>
-
 </head>
 
 <body <?php body_class(); ?>>
