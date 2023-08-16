@@ -315,8 +315,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover > a {
-    color: #0055D4;
-    background-color: #ffcc00;
+    color: var(--color-blue);
+    background-color: var(--color-gris1);
 }
 
 .navbar .dropdown:hover > ul {
