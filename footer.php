@@ -7,13 +7,19 @@
                     <div class="logo-footer">
                         <img width="220px" src="<?php echo get_template_directory_uri().'/assets/img/logo_white.svg'; ?>" alt="">
                     </div>
-
+                    <?php if (is_active_sidebar('footer-01')) : ?>
+                        <?php dynamic_sidebar('footer-01'); ?>
+                    <?php endif; ?>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    sdsds
+                    <?php if (is_active_sidebar('footer-02')) : ?>
+                        <?php dynamic_sidebar('footer-02'); ?>
+                    <?php endif; ?>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    sdsd
+                    <?php if (is_active_sidebar('footer-03')) : ?>
+                        <?php dynamic_sidebar('footer-03'); ?>
+                    <?php endif; ?>
                 </div>
                 <div class="col-lg-3 col-md-6">
 
@@ -21,15 +27,6 @@
                         <div class="p-2"><a href="mailto:<?php echo get_theme_mod('cd_mail_contact'); ?>" class=""><i class='bx bx-envelope' ></i> <?php echo get_theme_mod('cd_mail_contact'); ?></a></div>
 
                     <div class="d-lg-flex flex-row mb-3">
-
-                        <?php if (is_active_sidebar('footer-schedule')) : ?>
-                            <?php dynamic_sidebar('footer-schedule'); ?>
-                        <?php endif; ?>
-
-                        <?php if (is_active_sidebar('footer-address')) : ?>
-                            <?php dynamic_sidebar('footer-address'); ?>
-                        <?php endif; ?>
-
                         <div class="p-2"><a href="<?php echo get_theme_mod('cd_url_book'); ?>" class="btn btn-primary btn-book">Libro de Reclamaciones</a></div>
                     </div>
 
