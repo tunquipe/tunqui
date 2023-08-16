@@ -307,7 +307,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 14px;
     text-transform: none;
     font-weight: 500;
-    color: #0055D4;
+    color: var(--color-blue);
 }
 
 .navbar .dropdown ul a i {
@@ -316,7 +316,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover > a {
     color: var(--color-blue);
-    background-color: var(--color-gris1);
+    background-color: var(--color-gris2);
 }
 
 .navbar .dropdown:hover > ul {
