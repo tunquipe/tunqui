@@ -345,11 +345,17 @@ function getUrlWhatsapp(): string
     return "https://api.whatsapp.com/send?phone=" . $phone . "&text=" . $message;
 }
 
-/*function getCodeGoogleAnalytics(){
-    $code = get_theme_mod('cd_google_tag');
-    echo $code;
-}*/
+function blog_pagination($query) {
+    global $wp_query;
 
+    $big = 999999999; // Número de páginas
+    echo paginate_links(array(
+        'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+        'format' => '?paged=%#%',
+        'current' => max(1, get_query_var('paged')),
+        'total' => $query->max_num_pages,
+    ));
+}
 function getMetaTagsHeader(){
     $idPost = get_the_ID();
     $metaDescription = get_post_meta($idPost, 'meta_description_page', true);
