@@ -176,13 +176,26 @@ h1, h2, h3, h4, h5, h6 {
 /**
 * Desktop Navigation
 */
-.bg-blue {
-    background: var(--color-white);
-}
 
+.social-header a{
+    color: var(--color-white);
+}
+.social-header a:hover{
+    color: var(--color-red);
+}
+.direction{
+    font-size: 14px;
+    color: var(--color-white);
+}
+.direction a{
+    color: var(--color-white);
+}
+.direction a:hover{
+    color: var(--color-red);
+}
 .top-header {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .navbar ul {
@@ -191,6 +204,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     list-style: none;
     align-items: center;
+    height: 80px;
 }
 
 .navbar li {
@@ -202,7 +216,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .navbar-expand-md .navbar-nav .nav-link {
-    padding: 1rem 2.5rem;
+    padding: 1rem 1.8rem;
+    height: 80px;
 }
 
 .navbar-light .navbar-nav .nav-link.active {
@@ -639,15 +654,10 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-webmail {
     color: #fff;
-    background-color: #0055d4;
-    border-color: #0055d4;
-    border-radius: 50px;
     font-weight: 600;
 }
 
 .btn-webmail:hover {
-    background-color: #ffcc00;
-    border-color: #0055d4;
     color: #0055d4;
 }
 
@@ -658,15 +668,6 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
     line-height: 42px;
     font-size: 25px;
-    color: #fff;
-    background: #0055d4;
-    border-radius: 50%;
-}
-
-.btn-social:hover {
-    background-color: #ffcc00;
-    border-color: #ffcc00;
-    color: #0055d4;
 }
 
 .owl-theme .owl-nav {
