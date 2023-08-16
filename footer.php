@@ -1,42 +1,25 @@
 <!-- ======= Footer ======= -->
 <footer id="footer">
-    <?php if (is_front_page()) : ?>
-<!--        <div class="footer-newsletter">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-6">
-                        <h4>Suscríbase a nuestro boletín</h4>
-                        <p>Entérate de todas las novedades de nuestros servicios de educación, negocios y tecnología</p>
-                        <form action="" method="post">
-                            <input type="email" name="email"><input type="submit" value="Suscríbete">
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>-->
-    <?php endif; ?>
     <div class="footer-top">
         <div class="container">
             <div class="row">
-
-                <div class="col-lg-2 col-md-6">
+                <div class="col-lg-3 col-md-6">
                     <div class="logo-footer">
-                        <img width="120px" src="<?php echo get_template_directory_uri().'/assets/img/logo_white.svg'; ?>" alt="">
+                        <img width="220px" src="<?php echo get_template_directory_uri().'/assets/img/logo_white.svg'; ?>" alt="">
                     </div>
-                    <ul class="social">
-                        <li><a href="<?php echo get_theme_mod('cd_instagram_contact'); ?>" target="_blank" class="btn-social"><i class='bx bxl-instagram'></i></a></li>
-                        <li><a href="<?php echo get_theme_mod('cd_facebook_contact'); ?>" target="_blank" class="btn-social"><i class='bx bxl-facebook-circle'></i></a></li>
-                    </ul>
+
                 </div>
+                <div class="col-lg-3 col-md-6">
+                    sdsds
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    sdsd
+                </div>
+                <div class="col-lg-3 col-md-6">
 
-                <div class="col-lg-10 col-md-6 footer-links">
-                    <div class="d-lg-flex flex-row mb-3">
-                        <div class="p-2"><a href="<?php echo getUrlWhatsapp(); ?>" target="_blank" class="btn btn-primary btn-border"><i class='bx bxs-phone-call'></i> <?php echo get_theme_mod('cd_phone_contact'); ?></a></div>
-                        <div class="p-2"><a href="mailto:<?php echo get_theme_mod('cd_mail_contact'); ?>" class="btn btn-primary btn-border"><i class='bx bx-envelope' ></i> <?php echo get_theme_mod('cd_mail_contact'); ?></a></div>
-                        <div class="p-2"><a target="_blank" href="<?php echo get_theme_mod('cd_url_webmail'); ?>" class="btn btn-primary btn-border"><i class='bx bx-mail-send' ></i>Webmail</a></div>
-                        <div class="p-2"><a href="#" class="btn btn-primary btn-quote">Cotizar aqui <i class='bx bxs-arrow-from-left'></i></a></div>
+                        <div class="p-2"><a href="<?php echo getUrlWhatsapp(); ?>" target="_blank" class=""><i class='bx bxs-phone-call'></i> <?php echo get_theme_mod('cd_phone_contact'); ?></a></div>
+                        <div class="p-2"><a href="mailto:<?php echo get_theme_mod('cd_mail_contact'); ?>" class=""><i class='bx bx-envelope' ></i> <?php echo get_theme_mod('cd_mail_contact'); ?></a></div>
 
-                    </div>
                     <div class="d-lg-flex flex-row mb-3">
 
                         <?php if (is_active_sidebar('footer-schedule')) : ?>
@@ -49,9 +32,12 @@
 
                         <div class="p-2"><a href="<?php echo get_theme_mod('cd_url_book'); ?>" class="btn btn-primary btn-book">Libro de Reclamaciones</a></div>
                     </div>
-                    <div class="d-flex flex-row mb-3">
 
-                    </div>
+                    <ul class="social">
+                        <li><a href="<?php echo get_theme_mod('cd_instagram_contact'); ?>" target="_blank" class="btn-social"><i class='bx bxl-instagram'></i></a></li>
+                        <li><a href="<?php echo get_theme_mod('cd_facebook_contact'); ?>" target="_blank" class="btn-social"><i class='bx bxl-facebook-circle'></i></a></li>
+                    </ul>
+
                 </div>
 
             </div>
