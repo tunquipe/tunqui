@@ -48,6 +48,19 @@ function immobilien_customizer_settings($wp_customize)
         'type' => 'text',
     ));
 
+    // Agregar una configuración para la URL de LinkedIn
+    $wp_customize->add_setting('cd_linkedin_url', array(
+        'default' => '',
+        'transport' => 'postMessage',
+    ));
+
+    // Agregar un control de tipo texto para la URL de LinkedIn
+    $wp_customize->add_control('cd_linkedin_url', array(
+        'label' => 'URL de LinkedIn',
+        'section' => 'cd_template', // Asegúrate de usar la ID correcta de la sección
+        'type' => 'text',
+    ));
+
     $wp_customize->add_setting('cd_url_webmail', array(
         'default' => '',
         'transport' => 'postMessage',
@@ -97,10 +110,30 @@ function immobilien_customizer_settings($wp_customize)
         'type' => 'text',
     ));
 
-    /*$wp_customize->add_setting('cd_google_tag', array(
+    $wp_customize->add_setting('cd_color_bar', array(
         'default' => '',
         'transport' => 'postMessage',
     ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'cd_color_bar', array(
+        'label' => 'Color de fondo de la barra del menú',
+        'section' => 'cd_template',
+        'settings' => 'cd_color_bar', // Corresponde al nombre de la configuración
+    )));
+
+    // Agregar una configuración para la dirección
+    $wp_customize->add_setting('cd_address', array(
+        'default' => '',
+        'transport' => 'postMessage',
+    ));
+
+    // Agregar un control de tipo texto para la dirección
+    $wp_customize->add_control('cd_address', array(
+        'label' => 'Dirección',
+        'section' => 'cd_template', // Asegúrate de usar la ID correcta de la sección
+        'type' => 'text',
+    ));
+
+    /*
     $wp_customize->add_control('cd_google_tag', array(
         'label' => 'Código de Google Analytics',
         'section' => 'cd_template',

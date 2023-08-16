@@ -26,6 +26,7 @@ wp_body_open();
 ?>
 <!-- ======= Header ======= -->
 <?php
+$color_bar = get_theme_mod('cd_color_bar', ''); // El segundo argumento es el valor predeterminado
 $css_header = null;
 if (is_front_page() && is_page()) {
     $css_header = 'page-home';
@@ -34,21 +35,34 @@ if (is_front_page() && is_page()) {
 }
 ?>
 <header id="header" class="<?php echo $css_header; ?> block-menu">
-    <div class="top-header">
-        <div class="container d-flex align-items-center">
-            <?php tunqui_site_logo(); ?>
-            <!-- Uncomment below if you prefer to use an image logo -->
-            <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
-            <div class="d-inline-flex mt-2 mt-md-0 ms-auto social-header">
-                <div class="d-flex flex-row mb-3">
+    <div class="black-bar"  style="background-color: <?php echo esc_attr($color_bar); ?>">
+        <div class="container  d-flex align-items-center">
+
+            <div class="direction">
+                <div class="d-flex flex-row">
                     <div class="p-2"><a href="<?php echo get_theme_mod('cd_phone_contact'); ?>" class="btn btn-primary btn-border"><i class='bx bxs-phone-call'></i> <?php echo get_theme_mod('cd_phone_contact'); ?></a></div>
                     <div class="p-2"><a href="mailto:<?php echo get_theme_mod('cd_mail_contact'); ?>" class="btn btn-primary btn-border"><i class='bx bx-envelope' ></i> <?php echo get_theme_mod('cd_mail_contact'); ?></a></div>
+                </div>
+            </div>
+
+            <div class="d-inline-flex mt-2 mt-md-0 ms-auto social-header">
+                <div class="d-flex flex-row">
+
                     <div class="p-2"><a target="_blank" href="<?php echo get_theme_mod('cd_instagram_contact'); ?>" class="btn-social"><i class='bx bxl-instagram' ></i></a></div>
                     <div class="p-2"><a target="_blank" href="<?php echo get_theme_mod('cd_facebook_contact'); ?>" class="btn-social"><i class='bx bxl-facebook-circle' ></i></a></div>
                     <div class="p-2"><a target="_blank" href="<?php echo get_theme_mod('cd_url_webmail'); ?>" class="btn btn-primary btn-webmail"><i class='bx bx-mail-send' ></i>Webmail</a></div>
                 </div>
 
             </div>
+        </div>
+
+    </div>
+    <div class="top-header">
+        <div class="container d-flex align-items-center">
+            <?php tunqui_site_logo(); ?>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
         </div>
     </div>
 
