@@ -51,8 +51,8 @@ function tunqui_menus()
 {
     $locations = array(
         'primary'  => __('Menu Header', 'tunqui'),
-        'menu-movil' => __('Menu Movil', 'tunqui'),
-        'menu-footer'   => __('Menu Footer', 'tunqui'),
+        'menu-footer'   => __('Menu Footer 01', 'tunqui'),
+        'menu-footer02' => __('Menu Footer 02', 'tunqui'),
     );
     register_nav_menus($locations);
 }
