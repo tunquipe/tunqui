@@ -62,18 +62,18 @@ add_action('init', 'tunqui_menus');
 add_theme_support('custom-logo');
 
 register_sidebar(array(
-    'name'          => __('Direccion', 'tunqui'),
-    'id'            => 'footer-address',
-    'description'   => 'Aqui escribe la direccion de la empresa',
+    'name'          => __('Footer 01', 'tunqui'),
+    'id'            => 'footer-01',
+    'description'   => 'Agrega contenido para la columna 01',
     'before_widget' => '<div id="footer-%1$s" class="widget box-img %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h4 class="title-section">',
     'after_title'   => '</h4>',
 ));
 register_sidebar(array(
-    'name'          => __('Horarios', 'tunqui'),
-    'id'            => 'footer-schedule',
-    'description'   => 'Aca escribe el horario de la empresa',
+    'name'          => __('Footer 02', 'tunqui'),
+    'id'            => 'footer-02',
+    'description'   => 'Agrega contenido para la columna 02',
     'before_widget' => '<div id="footer-%1$s" class="widget box-img %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h4 class="title-section">',
@@ -81,15 +81,23 @@ register_sidebar(array(
 ));
 
 register_sidebar(array(
-    'name'          => __('Modal Home', 'tunqui'),
-    'id'            => 'modal-home',
-    'description'   => 'Coloca el contenido del modal para el home',
+    'name'          => __('Footer 03', 'tunqui'),
+    'id'            => 'footer-03',
+    'description'   => 'Agrega contenido para la columna 03',
     'before_widget' => '<div id="footer-%1$s" class="widget box-img %2$s">',
     'after_widget'  => '</div>',
     'before_title'  => '<h4 class="title-section">',
     'after_title'   => '</h4>',
 ));
-
+register_sidebar(array(
+    'name'          => __('Footer 04', 'tunqui'),
+    'id'            => 'footer-04',
+    'description'   => 'Agrega contenido para la columna 04',
+    'before_widget' => '<div id="footer-%1$s" class="widget box-img %2$s">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h4 class="title-section">',
+    'after_title'   => '</h4>',
+));
 
 // bootstrap 5 wp_nav_menu walker
 class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu

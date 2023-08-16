@@ -2,7 +2,6 @@
 
 get_header();
 $idPost = get_the_ID();
-/*$thumbID = get_post_thumbnail_id($idPost);*/
 
 $gradient_start_color = get_theme_mod('cd_gradient_start_color', '#ff0000');
 $gradient_end_color = get_theme_mod('cd_gradient_end_color', '#0000ff');
@@ -25,7 +24,7 @@ $gradient = "linear-gradient(to right,".esc_attr($gradient_start_color)."8a,".es
         left: 0;
         width: 100%;
         height: 100%;
-        background: <?php echo $gradient; ?>; /* Cambia el valor de alfa para ajustar la opacidad */
+        background: <?php echo $gradient; ?>;
         z-index: 2; /* Colocar la superposición detrás del contenido */
     }
 </style>
