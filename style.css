@@ -107,7 +107,7 @@ h1, h2, h3, h4, h5, h6 {
     visibility: hidden;
     opacity: 0;
     right: 15px;
-    bottom: 15px;
+    bottom: 70px;
     z-index: 996;
     background: var(--color-red);
     width: 40px;
@@ -1862,6 +1862,9 @@ section {
 #footer a{
     color: var(--color-white);
 }
+#footer a:hover{
+    color: var(--color-red);
+}
 .footer-top .menu{
     list-style: none;
     text-transform: uppercase;
@@ -1885,52 +1888,11 @@ section {
     margin: 0 5px;
 }
 
-#footer .footer-top .social li .btn-social {
-    display: block;
-    width: 38px;
-    height: 38px;
-    text-align: center;
-    line-height: 42px;
-    font-size: 25px;
-    color: #0055d4;
-    background: #ffffff;
-    border-radius: 50%;
-}
-
-#footer .footer-top .social li .btn-social:hover {
-    background: #ffcc00;
-}
-
 #footer .footer-bottom {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     color: #fff;
     background: var(--color-red);
-}
-
-#footer .btn-border {
-    color: #ffffff;
-    background-color: #0055d4;
-    border-color: #ffffff;
-    border-radius: 50px;
-    font-weight: 600;
-}
-
-#footer .btn-border:hover {
-    color: #ffcc00;
-    border-color: #ffcc00;
-}
-
-#footer .btn-quote {
-    color: #0055d4;
-    background-color: #ffcc00;
-    border-color: #0055d4;
-    border-radius: 8px;
-    font-weight: 600;
-}
-
-#footer .footer-links {
-    color: #FFF;
 }
 
 #footer .widget {
@@ -1942,24 +1904,14 @@ section {
 }
 
 #footer .title-section {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 800;
-    color: #fc0;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    text-align: center;
 }
-
-#footer .btn-book {
-    color: #fc0;
-    background-color: transparent;
-    border-color: #fc0;
-    border-radius: 10px;
-    font-weight: 600;
-    font-size: 14px;
-}
-
-#footer .btn-book:hover {
-    color: #FFF;
-    background-color: transparent;
-    border-color: #FFF;
+#footer .widget_media_image .image{
+    margin:auto;
 }
 
 #footer .copyright {
