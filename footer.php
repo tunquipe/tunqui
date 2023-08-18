@@ -54,7 +54,13 @@ $address_contact = get_theme_mod('cd_address', '');
                         <div class="p-2"><i class='bx bxs-map' ></i> <?php echo esc_html($address_contact); ?></div>
                     <?php endif; ?>
                 </div>
-
+            </div>
+            <div class="row">
+                <div class="col-lg-12 col-md-12">
+                    <?php if (is_active_sidebar('footer-04')) : ?>
+                        <?php dynamic_sidebar('footer-04'); ?>
+                    <?php endif; ?>
+                </div>
             </div>
         </div>
     </div>
