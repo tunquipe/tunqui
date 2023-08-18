@@ -598,14 +598,14 @@ h1, h2, h3, h4, h5, h6 {
     left: initial;
     right: 60px;
 }
-.btn-action{
+.btn-action a{
     background: var(--color-red);
     padding: 1rem 1.8rem;
     height: 40px;
     border-radius: 50px;
     color: #FFF;
 }
-.btn-action:hover{
+.btn-action a:hover{
     background: var(--color-gris1);
 }
 .download-pdf {
