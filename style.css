@@ -1859,7 +1859,7 @@ section {
     font-size: 14px;
     background: #3E299E;
 }
-#footer {
+#footer a{
     color: var(--color-white);
 }
 .footer-top .menu{
