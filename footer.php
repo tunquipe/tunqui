@@ -22,13 +22,19 @@
                     <?php endif; ?>
                 </div>
                 <div class="col-lg-3 col-md-6">
+                    <div class="d-flex flex-row">
+                        <?php if (!empty($instagram_url)): ?>
+                            <div class="p-2"><a target="_blank" href="<?php echo esc_url($instagram_url); ?>" class="btn-social"><i class='bx bxl-instagram' ></i></a></div>
+                        <?php endif; ?>
+                        <?php if (!empty($facebook_url)): ?>
+                            <div class="p-2"><a target="_blank" href="<?php echo esc_url($facebook_url); ?>" class="btn-social"><i class='bx bxl-facebook-circle' ></i></a></div>
+                        <?php endif; ?>
+                        <?php if (!empty($linkedin_url)): ?>
+                            <div class="p-2"><a target="_blank" href="<?php echo esc_url($linkedin_url); ?>" class="btn-social"><i class='bx bxl-linkedin' ></i></a></div>
+                        <?php endif; ?>
+                    </div>
                     <div class="p-2"><a href="<?php echo getUrlWhatsapp(); ?>" target="_blank" class=""><i class='bx bxs-phone-call'></i> <?php echo get_theme_mod('cd_phone_contact'); ?></a></div>
                     <div class="p-2"><a href="mailto:<?php echo get_theme_mod('cd_mail_contact'); ?>" class=""><i class='bx bx-envelope' ></i> <?php echo get_theme_mod('cd_mail_contact'); ?></a></div>
-                    <ul class="social">
-                        <li><a href="<?php echo get_theme_mod('cd_instagram_contact'); ?>" target="_blank" class="btn-social"><i class='bx bxl-instagram'></i></a></li>
-                        <li><a href="<?php echo get_theme_mod('cd_facebook_contact'); ?>" target="_blank" class="btn-social"><i class='bx bxl-facebook-circle'></i></a></li>
-                    </ul>
-
                 </div>
 
             </div>
