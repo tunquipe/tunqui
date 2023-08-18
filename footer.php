@@ -22,14 +22,8 @@
                     <?php endif; ?>
                 </div>
                 <div class="col-lg-3 col-md-6">
-
-                        <div class="p-2"><a href="<?php echo getUrlWhatsapp(); ?>" target="_blank" class=""><i class='bx bxs-phone-call'></i> <?php echo get_theme_mod('cd_phone_contact'); ?></a></div>
-                        <div class="p-2"><a href="mailto:<?php echo get_theme_mod('cd_mail_contact'); ?>" class=""><i class='bx bx-envelope' ></i> <?php echo get_theme_mod('cd_mail_contact'); ?></a></div>
-
-                    <div class="d-lg-flex flex-row mb-3">
-                        <div class="p-2"><a href="<?php echo get_theme_mod('cd_url_book'); ?>" class="btn btn-primary btn-book">Libro de Reclamaciones</a></div>
-                    </div>
-
+                    <div class="p-2"><a href="<?php echo getUrlWhatsapp(); ?>" target="_blank" class=""><i class='bx bxs-phone-call'></i> <?php echo get_theme_mod('cd_phone_contact'); ?></a></div>
+                    <div class="p-2"><a href="mailto:<?php echo get_theme_mod('cd_mail_contact'); ?>" class=""><i class='bx bx-envelope' ></i> <?php echo get_theme_mod('cd_mail_contact'); ?></a></div>
                     <ul class="social">
                         <li><a href="<?php echo get_theme_mod('cd_instagram_contact'); ?>" target="_blank" class="btn-social"><i class='bx bxl-instagram'></i></a></li>
                         <li><a href="<?php echo get_theme_mod('cd_facebook_contact'); ?>" target="_blank" class="btn-social"><i class='bx bxl-facebook-circle'></i></a></li>
