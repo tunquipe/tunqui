@@ -600,7 +600,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .download-pdf {
-    background: #EB0244;
+    background: var(--color-red);
     width: 150px;
     display: block;
     padding: 0.5rem 1rem;
@@ -608,14 +608,14 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom-left-radius: 40px;
     margin-top: .5rem;
     margin-bottom: .5rem;
-    position: absolute;
+    position: fixed;
     top: 50vh;
     right: 0;
     z-index: 99;
 }
 
 .download-pdf:hover {
-    background: #0055D4;
+    background: var(--color-blue);
 }
 
 .btn-wathsapp {
@@ -627,14 +627,14 @@ h1, h2, h3, h4, h5, h6 {
     border-bottom-left-radius: 40px;
     margin-top: .5rem;
     margin-bottom: .5rem;
-    position: absolute;
+    position: fixed;
     top: 58vh;
     right: 0;
     z-index: 99;
 }
 
 .btn-wathsapp:hover {
-    background: #0055D4;
+    background: var(--color-blue);
 }
 
 .btn-border {
@@ -741,7 +741,7 @@ h1, h2, h3, h4, h5, h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-    padding: 25px 0;
+    padding: 0;
     overflow: hidden;
 }
 #sub-header.page-internal {
