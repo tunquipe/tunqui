@@ -44,8 +44,15 @@ $address_contact = get_theme_mod('cd_address', '');
                             <div class="p-2"><a target="_blank" href="<?php echo esc_url($linkedin_url); ?>" class="btn-social"><i class='bx bxl-linkedin' ></i></a></div>
                         <?php endif; ?>
                     </div>
-                    <div class="p-2"><a href="<?php echo getUrlWhatsapp(); ?>" target="_blank" class=""><i class='bx bxs-phone-call'></i> <?php echo get_theme_mod('cd_phone_contact'); ?></a></div>
-                    <div class="p-2"><a href="mailto:<?php echo get_theme_mod('cd_mail_contact'); ?>" class=""><i class='bx bx-envelope' ></i> <?php echo get_theme_mod('cd_mail_contact'); ?></a></div>
+                    <?php if (!empty($phone_contact)): ?>
+                        <div class="p-2"><a href="<?php echo esc_html($phone_contact); ?>" class=""><i class='bx bxs-phone-call'></i> <?php echo esc_html($phone_contact); ?></a></div>
+                    <?php endif; ?>
+                    <?php if (!empty($email_contact)): ?>
+                        <div class="p-2"><a href="mailto:<?php echo esc_html($email_contact); ?>" class=""><i class='bx bx-envelope' ></i> <?php echo esc_html($email_contact); ?></a></div>
+                    <?php endif; ?>
+                    <?php if (!empty($address_contact)): ?>
+                        <div class="p-2"><i class='bx bxs-map' ></i> <?php echo esc_html($address_contact); ?></div>
+                    <?php endif; ?>
                 </div>
 
             </div>
