@@ -598,7 +598,16 @@ h1, h2, h3, h4, h5, h6 {
     left: initial;
     right: 60px;
 }
-
+.btn-action{
+    background: var(--color-red);
+    padding: 1rem 1.8rem;
+    height: 40px;
+    border-radius: 50px;
+    color: #FFF;
+}
+.btn-action:hover{
+    background: var(--color-gris1);
+}
 .download-pdf {
     background: var(--color-red);
     width: 150px;
@@ -637,29 +646,6 @@ h1, h2, h3, h4, h5, h6 {
     background: var(--color-blue);
 }
 
-.btn-border {
-    color: #0055d4;
-    background-color: #ffffff;
-    border-color: #0055d4;
-    border-radius: 50px;
-    font-weight: 600;
-}
-
-.btn-border:hover {
-    background-color: #ffcc00;
-    border-color: #0055d4;
-    color: #0055d4;
-}
-
-.btn-webmail {
-    color: #fff;
-    font-weight: 600;
-}
-
-.btn-webmail:hover {
-    color: #0055d4;
-}
-
 .btn-social {
     display: block;
     width: 38px;
@@ -692,7 +678,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .current_page_item .dropdown-item.active, .current_page_item .dropdown-item:active {
-    background-color: #fc0;
+    background-color: var(--color-gris2);
 }
 
 .page-title-404 {
