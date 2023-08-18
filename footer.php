@@ -1,4 +1,15 @@
 <!-- ======= Footer ======= -->
+<?php
+
+$linkedin_url = get_theme_mod('cd_linkedin_url', '');
+$facebook_url = get_theme_mod('cd_facebook_contact', '');
+$instagram_url = get_theme_mod('cd_instagram_contact', '');
+
+$email_contact = get_theme_mod('cd_mail_contact', '');
+$phone_contact = get_theme_mod('cd_phone_contact', '');
+$address_contact = get_theme_mod('cd_address', '');
+
+?>
 <footer id="footer">
     <div class="footer-top">
         <div class="container">
