@@ -600,13 +600,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 .btn-action a{
     background: var(--color-red);
-    padding: 1rem 1.8rem;
-    height: 40px;
-    border-radius: 50px;
-    color: #FFF;
+    padding: 1rem 1.8rem !important;
+    height: 40px !important;
+    border-radius: 50px !important;
+    color: #FFF !important;
 }
 .btn-action a:hover{
-    background: var(--color-gris1);
+    background: var(--color-gris1) !important;
 }
 .download-pdf {
     background: var(--color-red);
