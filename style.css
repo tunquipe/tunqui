@@ -1857,7 +1857,7 @@ section {
 --------------------------------------------------------------*/
 #footer {
     font-size: 14px;
-    background: #3E299E;
+    color: var(--color-white);
 }
 #footer a{
     color: var(--color-white);
