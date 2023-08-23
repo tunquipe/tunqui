@@ -8,7 +8,8 @@ $instagram_url = get_theme_mod('cd_instagram_contact', '');
 $email_contact = get_theme_mod('cd_mail_contact', '');
 $phone_contact = get_theme_mod('cd_phone_contact', '');
 $address_contact = get_theme_mod('cd_address', '');
-
+$show_copyright = get_theme_mod('show_copyright', true);
+$text_copyright= get_theme_mod('cd_copyright', '');
 ?>
 <footer id="footer">
     <div class="footer-top">
@@ -64,14 +65,15 @@ $address_contact = get_theme_mod('cd_address', '');
             </div>
         </div>
     </div>
-
+    <?php if($show_copyright): ?>
     <div class="footer-bottom clearfix">
         <div class="container">
             <div class="copyright">
-                &copy; Sitio web elaborado por <strong><span>Tunqui Agencia Creativa EIRL</span></strong>.
+                <?php echo $text_copyright; ?>
             </div>
         </div>
     </div>
+    <?php endif; ?>
 </footer><!-- End Footer -->
 
 
@@ -89,21 +91,6 @@ $address_contact = get_theme_mod('cd_address', '');
 </div>-->
 <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-<!-- Modal -->
-<div class="modal fade" id="modal-quote" tabindex="-1" aria-labelledby="modal-quote-label" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <?php if (is_active_sidebar('modal-home')) : ?>
-                    <?php dynamic_sidebar('modal-home'); ?>
-                <?php endif; ?>
-            </div>
-        </div>
-    </div>
-</div>
 
 <?php
 wp_footer();

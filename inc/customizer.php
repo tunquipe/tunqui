@@ -190,4 +190,26 @@ function immobilien_customizer_settings($wp_customize)
         'section' => 'cd_main_section', // Asegúrate de usar la sección correcta
     )));
 
+    $wp_customize->add_setting('show_copyright', array(
+        'default' => true,
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('show_copyright', array(
+        'type' => 'checkbox',
+        'label' => 'Mostrar el copyright',
+        'section' => 'cd_main_section',
+    ));
+
+    $wp_customize->add_setting('cd_copyright', array(
+        'default' => '',
+        'transport' => 'postMessage',
+    ));
+
+    $wp_customize->add_control('cd_copyright', array(
+        'label' => 'Texto del copyright',
+        'section' => 'cd_main_section',
+        'type' => 'text',
+    ));
+
 }
