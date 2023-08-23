@@ -6,12 +6,14 @@
  */
 
 get_header();
-$sliders = tunqui_get_slider();
+$show_hero_slider = get_theme_mod('show_hero_slider', true);
 
 ?>
-<?php if (is_front_page()) : ?>
-    <!-- ======= Hero Section ======= -->
-
+<?php
+    if (is_front_page()) :
+    if($show_hero_slider):
+        $sliders = tunqui_get_slider();
+    ?>
     <section id="hero" class="d-flex align-items-center">
         <div class="container">
             <div class="row">
@@ -65,10 +67,12 @@ $sliders = tunqui_get_slider();
             </div>
         </div>
     </section><!-- End Hero -->
-
-<?php endif; ?>
+    <?php
+    endif;
+    endif;
+    ?>
     <main id="main">
-        <div class="container">
+        <div class="container-fluid">
             <section id="page-home" class="page-home">
                 <?php while (have_posts()) : the_post(); ?>
                     <?php the_content(); ?>

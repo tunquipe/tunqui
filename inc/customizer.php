@@ -46,6 +46,17 @@ function immobilien_customizer_settings($wp_customize)
         'section' => 'cd_main_section',
     ));
 
+    $wp_customize->add_setting('show_hero_slider', array(
+        'default' => true,
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('show_hero_slider', array(
+        'type' => 'checkbox',
+        'label' => 'Mostrar el hero slider',
+        'section' => 'cd_main_section',
+    ));
+
     $wp_customize->add_setting('cd_phone_contact', array(
         'default' => '',
         'transport' => 'postMessage',
