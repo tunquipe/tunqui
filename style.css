@@ -1288,4 +1288,11 @@ section {
     .navbar ul{
         margin-top: 2rem;
     }
+    #sub-header.page-internal {
+        padding-top: 1.8rem;
+        padding-bottom: 1.8rem;
+    }
+    #sub-header .page-title{
+        font-size: 1.44rem;
+    }
 }

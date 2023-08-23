@@ -32,6 +32,9 @@ $email_contact = get_theme_mod('cd_mail_contact', '');
 $phone_contact = get_theme_mod('cd_phone_contact', '');
 $address_contact = get_theme_mod('cd_address', '');
 
+$selected_style = get_theme_mod('header_style', 'header-style-1');
+$show_top_bar = get_theme_mod('show_top_bar', true);
+
 $css_header = null;
 if (is_front_page() && is_page()) {
     $css_header = 'page-home';
@@ -41,44 +44,59 @@ if (is_front_page() && is_page()) {
 ?>
 
 <header id="header" class="<?php echo $css_header; ?> block-menu">
-
-    <div class="black-bar d-none d-lg-block" style="background-color: <?php echo esc_attr($color_bar); ?>">
-        <div class="container  d-flex align-items-center">
-            <div class="direction">
-                <div class="d-flex flex-row">
-                    <?php if (!empty($phone_contact)): ?>
-                        <div class="p-2"><a href="<?php echo esc_html($phone_contact); ?>" class=""><i
-                                        class='bx bxs-phone-call'></i> <?php echo esc_html($phone_contact); ?></a></div>
-                    <?php endif; ?>
-                    <?php if (!empty($email_contact)): ?>
-                        <div class="p-2"><a href="mailto:<?php echo esc_html($email_contact); ?>" class=""><i
-                                        class='bx bx-envelope'></i> <?php echo esc_html($email_contact); ?></a></div>
-                    <?php endif; ?>
-                    <?php if (!empty($address_contact)): ?>
-                        <div class="p-2"><i class='bx bxs-map'></i> <?php echo esc_html($address_contact); ?></div>
-                    <?php endif; ?>
+    <?php if ($show_top_bar) : ?>
+        <div class="black-bar d-none d-lg-block" style="background-color: <?php echo esc_attr($color_bar); ?>">
+            <div class="container  d-flex align-items-center">
+                <div class="direction">
+                    <div class="d-flex flex-row">
+                        <?php if (!empty($phone_contact)): ?>
+                            <div class="p-2"><a href="<?php echo esc_html($phone_contact); ?>" class=""><i
+                                            class='bx bxs-phone-call'></i> <?php echo esc_html($phone_contact); ?></a>
+                            </div>
+                        <?php endif; ?>
+                        <?php if (!empty($email_contact)): ?>
+                            <div class="p-2"><a href="mailto:<?php echo esc_html($email_contact); ?>" class=""><i
+                                            class='bx bx-envelope'></i> <?php echo esc_html($email_contact); ?></a>
+                            </div>
+                        <?php endif; ?>
+                        <?php if (!empty($address_contact)): ?>
+                            <div class="p-2"><i class='bx bxs-map'></i> <?php echo esc_html($address_contact); ?></div>
+                        <?php endif; ?>
+                    </div>
                 </div>
-            </div>
-            <div class="d-inline-flex mt-2 mt-md-0 ms-auto social-header">
-                <div class="d-flex flex-row">
-                    <?php if (!empty($instagram_url)): ?>
-                        <div class="p-2"><a target="_blank" href="<?php echo esc_url($instagram_url); ?>"
-                                            class="btn-social"><i class='bx bxl-instagram'></i></a></div>
-                    <?php endif; ?>
-                    <?php if (!empty($facebook_url)): ?>
-                        <div class="p-2"><a target="_blank" href="<?php echo esc_url($facebook_url); ?>"
-                                            class="btn-social"><i class='bx bxl-facebook-circle'></i></a></div>
-                    <?php endif; ?>
-                    <?php if (!empty($linkedin_url)): ?>
-                        <div class="p-2"><a target="_blank" href="<?php echo esc_url($linkedin_url); ?>"
-                                            class="btn-social"><i class='bx bxl-linkedin'></i></a></div>
-                    <?php endif; ?>
-                </div>
+                <div class="d-inline-flex mt-2 mt-md-0 ms-auto social-header">
+                    <div class="d-flex flex-row">
+                        <?php if (!empty($instagram_url)): ?>
+                            <div class="p-2"><a target="_blank" href="<?php echo esc_url($instagram_url); ?>"
+                                                class="btn-social"><i class='bx bxl-instagram'></i></a></div>
+                        <?php endif; ?>
+                        <?php if (!empty($facebook_url)): ?>
+                            <div class="p-2"><a target="_blank" href="<?php echo esc_url($facebook_url); ?>"
+                                                class="btn-social"><i class='bx bxl-facebook-circle'></i></a></div>
+                        <?php endif; ?>
+                        <?php if (!empty($linkedin_url)): ?>
+                            <div class="p-2"><a target="_blank" href="<?php echo esc_url($linkedin_url); ?>"
+                                                class="btn-social"><i class='bx bxl-linkedin'></i></a></div>
+                        <?php endif; ?>
+                    </div>
 
+                </div>
             </div>
         </div>
-    </div>
+    <?php endif; ?>
 
-    <?php get_template_part('templates/header', '1'); ?>
+    <?php
+
+    if ($selected_style === 'header-style-1') {
+        get_template_part('templates/header', '1');
+    } elseif ($selected_style === 'header-style-2') {
+        get_template_part('templates/header', '2');
+    } elseif ($selected_style === 'header-style-3') {
+        echo 'no existe';
+    } else {
+        get_template_part('templates/header', '1');
+    }
+    ?>
+
 </header>
 

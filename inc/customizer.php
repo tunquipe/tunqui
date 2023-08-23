@@ -16,13 +16,34 @@ function immobilien_customizer_settings($wp_customize)
 
     $wp_customize->add_control('header_style', array(
         'type' => 'radio',
-        'label' => 'Seleccionar estilo de encabezado',
+        'label' => 'Seleccionar estilo de encabezado (Menú principal)',
         'section' => 'cd_main_section',
         'choices' => array(
             'header-style-1' => 'Estilo 1',
             'header-style-2' => 'Estilo 2',
             'header-style-3' => 'Estilo 3',
         ),
+    ));
+
+    $wp_customize->add_setting('cd_color_menu', array(
+        'default' => '',
+        'transport' => 'postMessage',
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'cd_color_menu', array(
+        'label' => 'Color de fondo del menú principal',
+        'section' => 'cd_main_section',
+        'settings' => 'cd_color_menu', // Corresponde al nombre de la configuración
+    )));
+
+    $wp_customize->add_setting('show_sub_header', array(
+        'default' => true,
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('show_sub_header', array(
+        'type' => 'checkbox',
+        'label' => 'Mostrar la sub barra de las páginas',
+        'section' => 'cd_main_section',
     ));
 
     $wp_customize->add_setting('cd_phone_contact', array(
@@ -117,6 +138,17 @@ function immobilien_customizer_settings($wp_customize)
         'type' => 'text',
     ));
 
+    $wp_customize->add_setting('show_top_bar', array(
+        'default' => true,
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('show_top_bar', array(
+        'type' => 'checkbox',
+        'label' => 'Mostrar Barra Superior',
+        'section' => 'cd_main_section',
+    ));
+
     $wp_customize->add_setting('cd_color_bar', array(
         'default' => '',
         'transport' => 'postMessage',
@@ -125,16 +157,6 @@ function immobilien_customizer_settings($wp_customize)
         'label' => 'Color de fondo de la barra superior del menú',
         'section' => 'cd_main_section',
         'settings' => 'cd_color_bar', // Corresponde al nombre de la configuración
-    )));
-
-    $wp_customize->add_setting('cd_color_menu', array(
-        'default' => '',
-        'transport' => 'postMessage',
-    ));
-    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'cd_color_menu', array(
-        'label' => 'Color de fondo del menú',
-        'section' => 'cd_main_section',
-        'settings' => 'cd_color_menu', // Corresponde al nombre de la configuración
     )));
 
     // Agregar una configuración para la dirección
