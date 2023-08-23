@@ -8,6 +8,23 @@ function immobilien_customizer_settings($wp_customize)
         'priority' => 20,
     ));
 
+    // Agregar control de radio button
+    $wp_customize->add_setting('header_style', array(
+        'default' => 'header-style-1', // Valor predeterminado
+        'transport' => 'refresh', // Actualizar en tiempo real
+    ));
+
+    $wp_customize->add_control('header_style', array(
+        'type' => 'radio',
+        'label' => 'Seleccionar estilo de encabezado',
+        'section' => 'cd_main_section',
+        'choices' => array(
+            'header-style-1' => 'Estilo 1',
+            'header-style-2' => 'Estilo 2',
+            'header-style-3' => 'Estilo 3',
+        ),
+    ));
+
     $wp_customize->add_setting('cd_phone_contact', array(
         'default' => '',
         'transport' => 'postMessage',
