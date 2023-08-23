@@ -1225,6 +1225,9 @@ section {
     border: 1px solid #0055D4;
     color: #FFF;
 }
+.container{
+    max-width: 1140px;
+}
 /* Large desktop */
 @media (min-width: 1200px) {
 }
