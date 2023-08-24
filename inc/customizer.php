@@ -25,6 +25,24 @@ function immobilien_customizer_settings($wp_customize)
         ),
     ));
 
+    // Agregar control de número
+    $wp_customize->add_setting('logo_width', array(
+        'default' => 240, // Valor predeterminado
+        'transport' => 'refresh', // Actualizar en tiempo real
+        'sanitize_callback' => 'absint', // Sanitizar el valor como un entero positivo
+    ));
+
+    $wp_customize->add_control('logo_width', array(
+        'type' => 'number',
+        'label' => 'Ancho del Logo',
+        'section' => 'cd_main_section',
+        'input_attrs' => array(
+            'min' => 50, // Valor mínimo permitido
+            'max' => 500, // Valor máximo permitido
+            'step' => 10, // Paso de incremento/decremento
+        ),
+    ));
+
     $wp_customize->add_setting('cd_color_menu', array(
         'default' => '',
         'transport' => 'postMessage',
@@ -55,6 +73,21 @@ function immobilien_customizer_settings($wp_customize)
         'type' => 'checkbox',
         'label' => 'Mostrar el hero slider',
         'section' => 'cd_main_section',
+    ));
+
+    $wp_customize->add_setting('container_type', array(
+        'default' => 'container',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('container_type', array(
+        'type' => 'radio',
+        'section' => 'cd_main_section',
+        'label' => 'Tipo de contenedor para la página inicio.',
+        'choices' => array(
+            'container-fluid' => 'Contenedor ancho de página completo (container-fluid)',
+            'container' => 'Contenedor ancho de página centrado (container)',
+        ),
     ));
 
     $wp_customize->add_setting('cd_phone_contact', array(

@@ -72,7 +72,7 @@ $show_hero_slider = get_theme_mod('show_hero_slider', true);
     endif;
     ?>
     <main id="main">
-        <div class="container-fluid">
+        <div class="<?php echo get_theme_mod('container_type', 'container'); ?>">
             <section id="page-home" class="page-home">
                 <?php while (have_posts()) : the_post(); ?>
                     <?php the_content(); ?>
