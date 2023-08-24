@@ -17,9 +17,9 @@ $color_footer = get_theme_mod('cd_color_footer', '#000000');
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6">
-                    <div class="logo-footer">
-                        <img width="220px" src="<?php echo get_template_directory_uri().'/assets/img/logo_white.svg'; ?>" alt="">
-                    </div>
+                    <!--<div class="logo-footer">
+                        <img width="220px" src="<?php /*echo get_template_directory_uri().'/assets/img/logo_white.svg'; */?>" alt="">
+                    </div>-->
                     <?php if (is_active_sidebar('footer-01')) : ?>
                         <?php dynamic_sidebar('footer-01'); ?>
                     <?php endif; ?>
