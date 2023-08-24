@@ -223,4 +223,14 @@ function immobilien_customizer_settings($wp_customize)
         'type' => 'text',
     ));
 
+    $wp_customize->add_setting('cd_color_footer', array(
+        'default' => '#000000',
+        'transport' => 'postMessage',
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'cd_color_footer', array(
+        'label' => 'Color de fondo del footer',
+        'section' => 'cd_main_section',
+        'settings' => 'cd_color_footer',
+    )));
+
 }

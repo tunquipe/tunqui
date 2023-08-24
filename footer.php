@@ -10,9 +10,10 @@ $phone_contact = get_theme_mod('cd_phone_contact', '');
 $address_contact = get_theme_mod('cd_address', '');
 $show_copyright = get_theme_mod('show_copyright', true);
 $text_copyright= get_theme_mod('cd_copyright', '');
+$color_footer = get_theme_mod('cd_color_footer', '#000000');
 ?>
 <footer id="footer">
-    <div class="footer-top">
+    <div class="footer-top" style="background-color: <?php echo esc_attr($color_footer); ?>">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6">
