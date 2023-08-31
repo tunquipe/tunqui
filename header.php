@@ -78,6 +78,15 @@ if (is_front_page() && is_page()) {
     #header.page-internal {
         background-color: <?php echo $color_fixed; ?>;
     }
+    @media (max-width: 480px) {
+        .navbar-light .navbar-toggler {
+            background:  <?php echo $color_one; ?>;
+        }
+        #header .top-header {
+            background-color: <?php echo $color_fixed; ?> !important;
+        }
+    }
+
 </style>
 
 <header id="header" class="<?php echo $css_header.' '.$fixed; ?> block-menu">

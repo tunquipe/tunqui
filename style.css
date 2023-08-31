@@ -1249,10 +1249,6 @@ section {
         width: 100%;
     }
 
-    .navbar-light .navbar-toggler {
-        background: #fc0;
-    }
-
     .navbar {
         padding-top: 1.5rem;
         padding-bottom: 1.5rem;
