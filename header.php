@@ -34,6 +34,19 @@ $address_contact = get_theme_mod('cd_address', '');
 
 $selected_style = get_theme_mod('header_style', 'header-style-1');
 $show_top_bar = get_theme_mod('show_top_bar', true);
+$fixed_menu = get_theme_mod('fixed_navbar');
+$fixed = '';
+
+//colors
+$color_one = get_theme_mod('cd_color_one', '');
+$color_two = get_theme_mod('cd_color_two', '');
+$color_three = get_theme_mod('cd_color_three', '');
+$color_four = get_theme_mod('cd_color_four', '');
+$color_five = get_theme_mod('cd_color_five', '');
+
+if($fixed_menu){
+    $fixed = 'fixed-top';
+}
 
 $css_header = null;
 if (is_front_page() && is_page()) {
@@ -43,7 +56,17 @@ if (is_front_page() && is_page()) {
 }
 ?>
 
-<header id="header" class="<?php echo $css_header; ?> block-menu">
+<style>
+    :root{
+        --color-one: <?php echo $color_one; ?>;
+        --color-two: <?php echo $color_two; ?>;
+        --color-three: <?php echo $color_three; ?>;
+        --color-four: <?php echo $color_four; ?>;
+        --color-five: <?php echo $color_five; ?>;
+    }
+</style>
+
+<header id="header" class="<?php echo $css_header.' '.$fixed; ?> block-menu">
     <?php if ($show_top_bar) : ?>
         <div class="black-bar d-none d-lg-block" style="background-color: <?php echo esc_attr($color_bar); ?>">
             <div class="container  d-flex align-items-center">

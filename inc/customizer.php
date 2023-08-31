@@ -8,6 +8,56 @@ function immobilien_customizer_settings($wp_customize)
         'priority' => 20,
     ));
 
+    $wp_customize->add_setting('cd_color_one', array(
+        'default' => '#AF2A31',
+        'transport' => 'postMessage',
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'cd_color_one', array(
+        'label' => 'Color principal uno',
+        'section' => 'cd_main_section',
+        'settings' => 'cd_color_one',
+    )));
+
+    $wp_customize->add_setting('cd_color_two', array(
+        'default' => '#13110C',
+        'transport' => 'postMessage',
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'cd_color_two', array(
+        'label' => 'Color principal dos',
+        'section' => 'cd_main_section',
+        'settings' => 'cd_color_two',
+    )));
+
+    $wp_customize->add_setting('cd_color_three', array(
+        'default' => '#FFFFFF',
+        'transport' => 'postMessage',
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'cd_color_three', array(
+        'label' => 'Color principal tres',
+        'section' => 'cd_main_section',
+        'settings' => 'cd_color_three',
+    )));
+
+    $wp_customize->add_setting('cd_color_four', array(
+        'default' => '#3A3C3C',
+        'transport' => 'postMessage',
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'cd_color_four', array(
+        'label' => 'Color principal cuatro',
+        'section' => 'cd_main_section',
+        'settings' => 'cd_color_four',
+    )));
+
+    $wp_customize->add_setting('cd_color_five', array(
+        'default' => '#78797D',
+        'transport' => 'postMessage',
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'cd_color_five', array(
+        'label' => 'Color principal cinco',
+        'section' => 'cd_main_section',
+        'settings' => 'cd_color_five',
+    )));
+
     // Agregar control de radio button
     $wp_customize->add_setting('header_style', array(
         'default' => 'header-style-1', // Valor predeterminado
@@ -41,6 +91,17 @@ function immobilien_customizer_settings($wp_customize)
             'max' => 500, // Valor máximo permitido
             'step' => 10, // Paso de incremento/decremento
         ),
+    ));
+
+    $wp_customize->add_setting('fixed_navbar', array(
+        'default' => false,
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('fixed_navbar', array(
+        'type' => 'checkbox',
+        'label' => 'Volver menu fixed',
+        'section' => 'cd_main_section',
     ));
 
     $wp_customize->add_setting('cd_color_menu', array(

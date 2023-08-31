@@ -10,8 +10,8 @@ $show_hero_slider = get_theme_mod('show_hero_slider', true);
 
 ?>
 <?php
-    if (is_front_page()) :
     if($show_hero_slider):
+    if (is_front_page()) :
         $sliders = tunqui_get_slider();
     ?>
     <section id="hero" class="d-flex align-items-center">
