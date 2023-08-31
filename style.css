@@ -1250,8 +1250,8 @@ section {
     }
 
     .navbar {
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
         width: 100%
     }
     .navbar li {
