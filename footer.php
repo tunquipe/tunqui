@@ -101,9 +101,13 @@ wp_footer();
         $(document).ready(function() {
             // Calcular la altura del wpadminbar si existe
             let adminBarHeight = $('#wpadminbar').height() || 0;
+            let header = $('#header.page-internal').height() || 0;
+
+            let paddingTotal = adminBarHeight + header;
             //console.log(adminBarHeight);
             // Añadir padding-top al contenido
             $('#header').css('padding-top', adminBarHeight + 'px');
+            $('#main').css('padding-top', paddingTotal + 'px');
         });
     })(jQuery);
 </script>
