@@ -104,6 +104,17 @@ function immobilien_customizer_settings($wp_customize)
         'section' => 'cd_main_section',
     ));
 
+    $wp_customize->add_setting('transparent_navbar', array(
+        'default' => false,
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('transparent_navbar', array(
+        'type' => 'checkbox',
+        'label' => 'Fondo transparente en el menú',
+        'section' => 'cd_main_section',
+    ));
+
     $wp_customize->add_setting('cd_color_menu', array(
         'default' => '',
         'transport' => 'postMessage',

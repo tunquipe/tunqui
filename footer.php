@@ -96,7 +96,17 @@ $color_footer = get_theme_mod('cd_color_footer', '#000000');
 <?php
 wp_footer();
 ?>
-
+<script>
+    (function($) {
+        $(document).ready(function() {
+            // Calcular la altura del wpadminbar si existe
+            let adminBarHeight = $('#wpadminbar').height() || 0;
+            //console.log(adminBarHeight);
+            // Añadir padding-top al contenido
+            $('#header').css('padding-top', adminBarHeight + 'px');
+        });
+    })(jQuery);
+</script>
 </body>
 
 </html>
