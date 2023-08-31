@@ -136,10 +136,6 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 997;
 }
 
-#header.header-scrolled, #header.header-inner-pages {
-    background: rgba(5, 37, 94);
-}
-
 #header .logo {
     font-size: 30px;
     margin: 0;

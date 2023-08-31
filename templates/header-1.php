@@ -1,5 +1,9 @@
 <?php
+$transparent = get_theme_mod('transparent_navbar');
 $color_menu = get_theme_mod('cd_color_menu', '');
+if($transparent==true){
+    $color_menu = 'transparent';
+}
 ?>
 
 <div class="top-header" style="background-color: <?php echo esc_attr($color_menu); ?>">

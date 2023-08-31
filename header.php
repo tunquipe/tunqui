@@ -22,7 +22,15 @@ wp_body_open();
 ?>
 <!-- ======= Header ======= -->
 <?php
+
+$color_fixed = 'transparent';
+$transparent = get_theme_mod('transparent_navbar');
 $color_bar = get_theme_mod('cd_color_bar', '');
+
+if($transparent==true){
+    $color_fixed = $color_bar;
+    $color_bar = 'transparent';
+}
 
 $linkedin_url = get_theme_mod('cd_linkedin_url', '');
 $facebook_url = get_theme_mod('cd_facebook_contact', '');
@@ -63,6 +71,9 @@ if (is_front_page() && is_page()) {
         --color-three: <?php echo $color_three; ?>;
         --color-four: <?php echo $color_four; ?>;
         --color-five: <?php echo $color_five; ?>;
+    }
+    #header.header-scrolled, #header.header-inner-pages{
+        background: <?php echo $color_fixed; ?>;
     }
 </style>
 
