@@ -75,6 +75,9 @@ if (is_front_page() && is_page()) {
     #header.header-scrolled, #header.header-inner-pages{
         background: <?php echo $color_fixed; ?>;
     }
+    #header.page-internal {
+        background-color: <?php echo $color_fixed; ?>;
+    }
 </style>
 
 <header id="header" class="<?php echo $css_header.' '.$fixed; ?> block-menu">
