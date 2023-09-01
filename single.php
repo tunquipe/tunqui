@@ -55,20 +55,22 @@ if($fixed_menu){
     <?php endif; ?>
     <main id="main">
         <div class="container">
-            <div class="col-md-9">
-                <section id="page-single" class="page-single">
-                    <div class="page-title">
-                        <h1><?php the_title(); ?></h1>
-                    </div>
-                    <?php the_content(); ?>
-                </section>
-            </div>
-            <div class="col-md-3">
-                <?php if ( is_active_sidebar( 'sidebar-blog' ) ) : ?>
-                    <?php dynamic_sidebar( 'sidebar-blog' ); ?>
-                <?php else : ?>
-                    <!-- Aquí puedes agregar contenido predeterminado si no hay widgets en el sidebar -->
-                <?php endif; ?>
+            <div class="row">
+                <div class="col-md-9">
+                    <section id="page-single" class="page-single">
+                        <div class="page-title">
+                            <h1><?php the_title(); ?></h1>
+                        </div>
+                        <?php the_content(); ?>
+                    </section>
+                </div>
+                <div class="col-md-3">
+                    <?php if ( is_active_sidebar( 'sidebar-blog' ) ) : ?>
+                        <?php dynamic_sidebar( 'sidebar-blog' ); ?>
+                    <?php else : ?>
+                        <!-- Aquí puedes agregar contenido predeterminado si no hay widgets en el sidebar -->
+                    <?php endif; ?>
+                </div>
             </div>
         </div>
     </main><!-- End #main -->
