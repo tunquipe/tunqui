@@ -356,6 +356,23 @@ function immobilien_customizer_settings($wp_customize)
         'settings' => 'cd_color_footer',
     )));
 
+    $wp_customize->add_setting('border-radius-btn', array(
+        'default' => 50, // Valor predeterminado
+        'transport' => 'refresh', // Actualizar en tiempo real
+        'sanitize_callback' => 'absint', // Sanitizar el valor como un entero positivo
+    ));
+
+    $wp_customize->add_control('border-radius-btn', array(
+        'type' => 'number',
+        'label' => 'Radio de border de botón de subida',
+        'section' => 'cd_main_section',
+        'input_attrs' => array(
+            'min' => 0, // Valor mínimo permitido
+            'max' => 60, // Valor máximo permitido
+            'step' => 10, // Paso de incremento/decremento
+        ),
+    ));
+
     $wp_customize->add_setting('background_page', array(
         'default' => '',
         'transport' => 'refresh',
