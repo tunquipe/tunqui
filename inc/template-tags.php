@@ -9,7 +9,7 @@ function tunqui_site_logo() {
 
         if ($custom_logo) {
             $logo_url = $custom_logo[0];
-            $output = '<a href="'.$urlHome.'"><img src="' . esc_url($logo_url) . '" alt="' . get_bloginfo('name') . '" width="' . esc_attr($width) . '" ></a>';
+            $output = '<a class="logo" href="'.$urlHome.'"><img src="' . esc_url($logo_url) . '" alt="' . get_bloginfo('name') . '" width="' . esc_attr($width) . '" ></a>';
             echo $output;
         }
     }

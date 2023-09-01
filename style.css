@@ -145,15 +145,6 @@ h1, h2, h3, h4, h5, h6 {
     letter-spacing: 2px;
     text-transform: uppercase;
 }
-
-#header .logo a {
-    color: #fff;
-}
-
-#header .logo img {
-    max-height: 40px;
-}
-
 .carousel-indicators [data-bs-target] {
     border-radius: 0;
 }
@@ -623,17 +614,23 @@ section {
 #sub-header.page-internal {
     padding-top: 2.8rem;
     padding-bottom: 2.8rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+#sub-header.page-internal.fixed-bar {
+    padding-top: 4.5rem;
+    padding-bottom: 2rem;
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 #sub-header .page-title {
     color: #FFF;
-    text-transform: uppercase;
-    text-align: center;
     margin: 0;
     padding: 0;
     z-index: 2;
     position: relative;
-    font-weight: 600;
-    font-size: 2.44rem;
 }
 
 #sub-header .page-title h1 {

@@ -75,9 +75,7 @@ if (is_front_page() && is_page()) {
     #header.header-scrolled, #header.header-inner-pages{
         background: <?php echo $color_fixed; ?>;
     }
-    #header.page-internal {
-        background-color: <?php echo $color_fixed; ?>;
-    }
+
     @media (max-width: 480px) {
         .navbar-light .navbar-toggler {
             background:  <?php echo $color_one; ?>;

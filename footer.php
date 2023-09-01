@@ -101,7 +101,10 @@ $color_footer = get_theme_mod('cd_color_footer', '#000000');
 
 <?php
 wp_footer();
+$fixed_menu = get_theme_mod('fixed_navbar');
+
 ?>
+<?php if($fixed_menu): ?>
 <script>
     (function($) {
         $(document).ready(function() {
@@ -113,10 +116,11 @@ wp_footer();
             //console.log(adminBarHeight);
             // Añadir padding-top al contenido
             $('#header').css('padding-top', adminBarHeight + 'px');
-            $('#main').css('padding-top', paddingTotal + 'px');
+            //$('#main').css('padding-top', paddingTotal + 'px');
         });
     })(jQuery);
 </script>
+<?php endif; ?>
 </body>
 
 </html>

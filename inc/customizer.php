@@ -132,9 +132,27 @@ function immobilien_customizer_settings($wp_customize)
 
     $wp_customize->add_control('show_sub_header', array(
         'type' => 'checkbox',
-        'label' => 'Mostrar la sub barra de las páginas',
+        'label' => 'Mostrar la barra de páginas internas',
         'section' => 'cd_main_section',
     ));
+
+    $wp_customize->add_setting('height_sub_bar', array(
+        'default' => 150, // Valor predeterminado
+        'transport' => 'refresh', // Actualizar en tiempo real
+        'sanitize_callback' => 'absint', // Sanitizar el valor como un entero positivo
+    ));
+
+    $wp_customize->add_control('height_sub_bar', array(
+        'type' => 'number',
+        'label' => 'Altura de la barra página internas',
+        'section' => 'cd_main_section',
+        'input_attrs' => array(
+            'min' => 50, // Valor mínimo permitido
+            'max' => 500, // Valor máximo permitido
+            'step' => 10, // Paso de incremento/decremento
+        ),
+    ));
+
 
     $wp_customize->add_setting('show_hero_slider', array(
         'default' => true,
