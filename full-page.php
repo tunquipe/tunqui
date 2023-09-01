@@ -46,6 +46,9 @@ if($fixed_menu){
         background-position: top center;
         background-repeat: no-repeat;
     }*/
+    .nf-field-element textarea.ninja-forms-field {
+        border: 1px solid #c4c4c4 !important;
+    }
 </style>
 <?php while(have_posts()): the_post(); ?>
     <?php if ($show_sub_bar) :  ?>
