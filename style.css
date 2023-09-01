@@ -1211,6 +1211,7 @@ section {
 }
 .container{
     max-width: 1140px;
+    padding: 0;
 }
 /* Large desktop */
 @media (min-width: 1200px) {
