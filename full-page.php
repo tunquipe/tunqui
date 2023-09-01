@@ -16,7 +16,7 @@ $imageID = get_post_meta($idPost,'sub_image_page', true);
 $imagePage = wp_get_attachment_image_src($imageID, 'full');
 $gradient = "linear-gradient(to right,".esc_attr($gradient_start_color)."8a,".esc_attr($gradient_end_color)."d4)";
 $show_sub_bar = get_theme_mod('show_sub_header', true);
-$height_sub_bar = get_theme_mod('height_sub_bar', '150');
+
 $fixed_menu = get_theme_mod('fixed_navbar');
 $fixed = '';
 if($fixed_menu){
@@ -42,7 +42,7 @@ if($fixed_menu){
 </style>
 <?php while(have_posts()): the_post(); ?>
     <?php if ($show_sub_bar) :  ?>
-    <section id="sub-header" class="page-internal <?php echo $fixed; ?> overlay-container" style="background-image: url(<?php echo $imagePage[0]; ?>); height: <?php echo $height_sub_bar.'px'; ?>">
+    <section id="sub-header" class="page-internal <?php echo $fixed; ?> overlay-container" style="background-image: url(<?php echo $imagePage[0]; ?>); ">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">

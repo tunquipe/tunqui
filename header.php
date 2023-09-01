@@ -51,7 +51,7 @@ $color_two = get_theme_mod('cd_color_two', '');
 $color_three = get_theme_mod('cd_color_three', '');
 $color_four = get_theme_mod('cd_color_four', '');
 $color_five = get_theme_mod('cd_color_five', '');
-
+$height_sub_bar = get_theme_mod('height_sub_bar', '150');
 if($fixed_menu){
     $fixed = 'fixed-top';
 }
@@ -75,6 +75,9 @@ if (is_front_page() && is_page()) {
     #header.header-scrolled, #header.header-inner-pages{
         background: <?php echo $color_fixed; ?>;
     }
+    #sub-header.page-internal.fixed-bar{
+        height: <?php echo $height_sub_bar.'px'; ?>
+    }
 
     @media (max-width: 480px) {
         .navbar-light .navbar-toggler {
@@ -82,6 +85,9 @@ if (is_front_page() && is_page()) {
         }
         #header .top-header {
             background-color: <?php echo $color_fixed; ?> !important;
+        }
+        #sub-header.page-internal.fixed-bar{
+            height: 200px;
         }
     }
 
