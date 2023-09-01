@@ -64,7 +64,11 @@ if($fixed_menu){
                 </section>
             </div>
             <div class="col-md-3">
-
+                <?php if ( is_active_sidebar( 'sidebar-blog' ) ) : ?>
+                    <?php dynamic_sidebar( 'sidebar-blog' ); ?>
+                <?php else : ?>
+                    <!-- Aquí puedes agregar contenido predeterminado si no hay widgets en el sidebar -->
+                <?php endif; ?>
             </div>
         </div>
     </main><!-- End #main -->

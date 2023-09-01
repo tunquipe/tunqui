@@ -99,6 +99,18 @@ register_sidebar(array(
     'after_title'   => '</h4>',
 ));
 
+function mi_sidebar() {
+    register_sidebar( array(
+        'name'          => __( 'Sidebar Blog', 'tunqui' ), // Cambia 'tu-tema' al nombre de tu tema
+        'id'            => 'sidebar-blog',
+        'description'   => __( 'Este es el área de widgets de mi sitio.', 'tu-tema' ),
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h2 class="widget-title">',
+        'after_title'   => '</h2>',
+    ) );
+}
+
 // bootstrap 5 wp_nav_menu walker
 class bootstrap_5_wp_nav_menu_walker extends Walker_Nav_menu
 {
