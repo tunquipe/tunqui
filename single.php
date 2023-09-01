@@ -6,11 +6,17 @@ $idPost = get_the_ID();
 $gradient_start_color = get_theme_mod('cd_gradient_start_color', '#ff0000');
 $gradient_end_color = get_theme_mod('cd_gradient_end_color', '#0000ff');
 
-$subTitle = get_post_meta($idPost,'sub_title', true);
-$imageID = get_post_meta($idPost,'sub_image_page', true);
-$imagePage = wp_get_attachment_image_src($imageID, 'full');
+$subTitle = get_theme_mod('cd_single_text', '');
+$imagePage = get_theme_mod( 'background_page_single','');
 $gradient = "linear-gradient(to right,".esc_attr($gradient_start_color)."8a,".esc_attr($gradient_end_color)."d4)";
 $show_sub_bar = get_theme_mod('show_sub_header', true);
+
+$fixed_menu = get_theme_mod('fixed_navbar');
+$fixed = '';
+if($fixed_menu){
+    $fixed = 'fixed-bar';
+}
+
 ?>
     <style>
         .overlay-container{
@@ -32,7 +38,7 @@ $show_sub_bar = get_theme_mod('show_sub_header', true);
 
 <?php while(have_posts()): the_post(); ?>
     <?php if ($show_sub_bar) :  ?>
-        <section id="sub-header" class="page-internal overlay-container" style="background-image: url(<?php echo $imagePage[0]; ?>);">
+        <section id="sub-header" class="page-internal <?php echo $fixed; ?> overlay-container" style="background-image: url(<?php echo $imagePage; ?>);">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">

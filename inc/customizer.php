@@ -373,15 +373,26 @@ function immobilien_customizer_settings($wp_customize)
         ),
     ));
 
-    $wp_customize->add_setting('background_page', array(
+    $wp_customize->add_setting('background_page_single', array(
         'default' => '',
         'transport' => 'refresh',
     ));
 
     $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'background_image_control', array(
-        'label' => 'Selecciona una imagen de fondo',
+        'label' => 'Imagen de fondo del blog',
         'section' => 'cd_main_section',
-        'settings' => 'background_page',
+        'settings' => 'background_page_single',
     )));
+
+    $wp_customize->add_setting('cd_single_text', array(
+        'default' => '',
+        'transport' => 'postMessage',
+    ));
+
+    $wp_customize->add_control('cd_single_text', array(
+        'label' => 'Texto del titulo del blog',
+        'section' => 'cd_main_section',
+        'type' => 'text',
+    ));
 
 }
