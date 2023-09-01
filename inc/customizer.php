@@ -356,4 +356,15 @@ function immobilien_customizer_settings($wp_customize)
         'settings' => 'cd_color_footer',
     )));
 
+    $wp_customize->add_setting('background_page', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'background_image_control', array(
+        'label' => 'Selecciona una imagen de fondo',
+        'section' => 'cd_main_section',
+        'settings' => 'background_page',
+    )));
+
 }

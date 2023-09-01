@@ -16,6 +16,7 @@ $imageID = get_post_meta($idPost,'sub_image_page', true);
 $imagePage = wp_get_attachment_image_src($imageID, 'full');
 $gradient = "linear-gradient(to right,".esc_attr($gradient_start_color)."8a,".esc_attr($gradient_end_color)."d4)";
 $show_sub_bar = get_theme_mod('show_sub_header', true);
+$bg_page = get_theme_mod('background_page');
 
 $fixed_menu = get_theme_mod('fixed_navbar');
 $fixed = '';
@@ -39,6 +40,12 @@ if($fixed_menu){
         background: <?php echo $gradient; ?>;
         z-index: 2; /* Colocar la superposición detrás del contenido */
     }
+
+    /*#main {
+        background-image: url("<?php echo $bg_page; ?>");
+        background-position: top center;
+        background-repeat: no-repeat;
+    }*/
 </style>
 <?php while(have_posts()): the_post(); ?>
     <?php if ($show_sub_bar) :  ?>
