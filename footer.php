@@ -80,6 +80,7 @@ $color_footer = get_theme_mod('cd_color_footer', '#000000');
 <?php
     $brochure =  get_theme_mod('cd_url_brochure', '');
     $phone = get_theme_mod('cd_whatsapp_contact', '');
+    $border = get_theme_mod('border-radius-btn', '0');
 ?>
 <?php if(empty(!$brochure)): ?>
 <a target="_blank" href="<?php echo get_theme_mod('cd_url_brochure'); ?>" class="download-pdf">
@@ -91,12 +92,8 @@ $color_footer = get_theme_mod('cd_color_footer', '#000000');
     <img width="100px" src="<?php echo get_template_directory_uri().'/assets/img/wathsapp.png'; ?>" alt="">
 </a>
 <?php endif; ?>
-<!--<div id="preloader">
-    <div class="icon-blender">
-        <img width="64px" height="64px" src="<?php /*echo get_template_directory_uri().'/assets/img/icon_mecssol.svg'; */?>">
-    </div>
-</div>-->
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+<a href="#" class="back-to-top d-flex align-items-center justify-content-center" style="border-radius: <?php echo $border; ?>px;"><i class="bi bi-arrow-up-short"></i></a>
 
 
 <?php
