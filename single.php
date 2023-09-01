@@ -8,12 +8,10 @@ $idPost = get_the_ID();
     <main id="main">
         <div class="container">
             <section id="page-single" class="page-single">
-                <div class="container">
-                    <div class="page-title">
-                        <h1><?php the_title(); ?></h1>
-                    </div>
-                    <?php the_content(); ?>
+                <div class="page-title">
+                    <h1><?php the_title(); ?></h1>
                 </div>
+                <?php the_content(); ?>
             </section>
         </div>
     </main><!-- End #main -->
