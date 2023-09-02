@@ -375,7 +375,7 @@ class LatestPostsWidget extends WP_Widget {
     public function __construct() {
         parent::__construct(
             'latest-posts-widget',
-            'Últimas Entradas 2',
+            'Últimas Entradas Blog',
             array( 'description' => 'Muestra las últimas 5 entradas con miniatura, título y fecha.' )
         );
     }
@@ -441,3 +441,79 @@ function record_last_entries_widget() {
 }
 add_action( 'widgets_init', 'record_last_entries_widget' );
 
+class RelatedPostsWidget extends WP_Widget {
+
+    // Constructor del widget
+    public function __construct() {
+        parent::__construct(
+            'related_post_widget',
+            'Entradas Relacionadas del blog',
+            array( 'description' => 'Muestra las entradas relacionadas con la entrada actual.' )
+        );
+    }
+
+    // Función para mostrar el contenido del widget
+    public function widget( $args, $instance ) {
+        global $post;
+        $title = apply_filters( 'widget_title', $instance['title'] );
+        $count = 5;
+
+        echo $args['before_widget'];
+
+        if ( ! empty( $title ) ) {
+            echo $args['before_title'] . $title . $args['after_title'];
+        }
+
+        // Consulta para obtener las entradas relacionadas
+        $related_posts = get_posts( array(
+            'posts_per_page' => $count,
+            'post__not_in'   => array( $post->ID ),
+            'orderby'        => 'rand',
+            'category__in'   => wp_get_post_categories( $post->ID ),
+        ) );
+
+        if ( $related_posts ) :
+            echo '<ul>';
+            foreach ( $related_posts as $related_post ) {
+                setup_postdata( $related_post );
+                echo '<li>';
+                if ( has_post_thumbnail( $related_post->ID ) ) {
+                    echo '<div class="widget-entry-thumbnail">' . get_the_post_thumbnail( $related_post->ID, 'thumbnail' ) . '</div>';
+                }
+                echo '<h4><a href="' . get_permalink( $related_post->ID ) . '">' . get_the_title( $related_post->ID ) . '</a></h4>';
+                echo '<span class="widget-entry-date">' . get_the_date( '', $related_post->ID ) . '</span>';
+                echo '</li>';
+            }
+            echo '</ul>';
+            wp_reset_postdata();
+        else :
+            echo 'No hay entradas relacionadas disponibles.';
+        endif;
+
+        echo $args['after_widget'];
+    }
+
+    // Función para el formulario de configuración en el panel de administración
+    public function form( $instance ) {
+        $title = ! empty( $instance['title'] ) ? $instance['title'] : '';
+        ?>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>">Título:</label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+        </p>
+        <?php
+    }
+
+    // Función para actualizar la configuración del widget
+    public function update( $new_instance, $old_instance ) {
+        $instance = array();
+        $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+        return $instance;
+    }
+}
+
+// Registra el widget
+function log_related_posts_widget() {
+    register_widget( 'RelatedPostsWidget' );
+}
+add_action( 'widgets_init', 'log_related_posts_widget' );
