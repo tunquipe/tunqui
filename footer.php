@@ -17,12 +17,20 @@ $color_footer = get_theme_mod('cd_color_footer', '#000000');
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-6">
-                    <!--<div class="logo-footer">
-                        <img width="220px" src="<?php /*echo get_template_directory_uri().'/assets/img/logo_white.svg'; */?>" alt="">
-                    </div>-->
                     <?php if (is_active_sidebar('footer-01')) : ?>
                         <?php dynamic_sidebar('footer-01'); ?>
                     <?php endif; ?>
+                    <div class="d-flex flex-row">
+                        <?php if (!empty($instagram_url)): ?>
+                            <div class="p-2"><a target="_blank" href="<?php echo esc_url($instagram_url); ?>" class="btn-social"><i class='bx bxl-instagram' ></i></a></div>
+                        <?php endif; ?>
+                        <?php if (!empty($facebook_url)): ?>
+                            <div class="p-2"><a target="_blank" href="<?php echo esc_url($facebook_url); ?>" class="btn-social"><i class='bx bxl-facebook-circle' ></i></a></div>
+                        <?php endif; ?>
+                        <?php if (!empty($linkedin_url)): ?>
+                            <div class="p-2"><a target="_blank" href="<?php echo esc_url($linkedin_url); ?>" class="btn-social"><i class='bx bxl-linkedin' ></i></a></div>
+                        <?php endif; ?>
+                    </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <?php if (is_active_sidebar('footer-02')) : ?>
@@ -35,17 +43,7 @@ $color_footer = get_theme_mod('cd_color_footer', '#000000');
                     <?php endif; ?>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <div class="d-flex flex-row">
-                        <?php if (!empty($instagram_url)): ?>
-                            <div class="p-2"><a target="_blank" href="<?php echo esc_url($instagram_url); ?>" class="btn-social"><i class='bx bxl-instagram' ></i></a></div>
-                        <?php endif; ?>
-                        <?php if (!empty($facebook_url)): ?>
-                            <div class="p-2"><a target="_blank" href="<?php echo esc_url($facebook_url); ?>" class="btn-social"><i class='bx bxl-facebook-circle' ></i></a></div>
-                        <?php endif; ?>
-                        <?php if (!empty($linkedin_url)): ?>
-                            <div class="p-2"><a target="_blank" href="<?php echo esc_url($linkedin_url); ?>" class="btn-social"><i class='bx bxl-linkedin' ></i></a></div>
-                        <?php endif; ?>
-                    </div>
+
                     <?php if (!empty($phone_contact)): ?>
                         <div class="p-2"><a href="<?php echo esc_html($phone_contact); ?>" class=""><i class='bx bxs-phone-call'></i> <?php echo esc_html($phone_contact); ?></a></div>
                     <?php endif; ?>
