@@ -34,6 +34,18 @@ if($fixed_menu){
             background: <?php echo $gradient; ?>;
             z-index: 2; /* Colocar la superposición detrás del contenido */
         }
+        .widget{
+            padding: 2rem 0;
+        }
+        .widget ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .widget ul li {
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
     </style>
 
 <?php while(have_posts()): the_post(); ?>

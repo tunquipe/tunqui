@@ -400,11 +400,13 @@ class LatestPostsWidget extends WP_Widget {
             echo '<ul>';
             while ( $recent_posts->have_posts() ) : $recent_posts->the_post();
                 echo '<li>';
+                echo '<div class="d-flex flex-row mb-3">';
                 if ( has_post_thumbnail() ) {
                     echo '<div class="widget-entry-thumbnail">' . get_the_post_thumbnail( get_the_ID(), 'thumbnail' ) . '</div>';
                 }
-                echo '<h4><a href="' . get_permalink() . '">' . get_the_title() . '</a></h4>';
-                echo '<span class="widget-entry-date">' . get_the_date() . '</span>';
+                echo '<div class="description"><h4><a href="' . get_permalink() . '">' . get_the_title() . '</a></h4>';
+                echo '<span class="widget-entry-date">' . get_the_date() . '</span></div>';
+                echo  '</div>';
                 echo '</li>';
             endwhile;
             echo '</ul>';
@@ -477,11 +479,13 @@ class RelatedPostsWidget extends WP_Widget {
             foreach ( $related_posts as $related_post ) {
                 setup_postdata( $related_post );
                 echo '<li>';
+                echo '<div class="d-flex flex-row mb-3">';
                 if ( has_post_thumbnail( $related_post->ID ) ) {
                     echo '<div class="widget-entry-thumbnail">' . get_the_post_thumbnail( $related_post->ID, 'thumbnail' ) . '</div>';
                 }
-                echo '<h4><a href="' . get_permalink( $related_post->ID ) . '">' . get_the_title( $related_post->ID ) . '</a></h4>';
-                echo '<span class="widget-entry-date">' . get_the_date( '', $related_post->ID ) . '</span>';
+                echo '<div class="description"><h4><a href="' . get_permalink( $related_post->ID ) . '">' . get_the_title( $related_post->ID ) . '</a></h4>';
+                echo '<span class="widget-entry-date">' . get_the_date( '', $related_post->ID ) . '</span></div>';
+                echo '</div>';
                 echo '</li>';
             }
             echo '</ul>';
