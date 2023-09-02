@@ -368,47 +368,76 @@ function blog_pagination($query) {
         'total' => $query->max_num_pages,
     ));
 }
-function getMetaTagsHeader(){
-    $idPost = get_the_ID();
-    $metaDescription = get_post_meta($idPost, 'meta_description_page', true);
-    $metaTitleSocial = get_post_meta($idPost, 'meta_title_social', true);
-    $metaUrlSocial = get_post_meta($idPost, 'meta_url_social', true);
-    $metaImageSocial = get_post_meta($idPost, 'meta_image_social', true);
 
-    $maxlength = 160;
+class LatestPostsWidget extends WP_Widget {
 
-    if(empty($metaDescription)){
-        $description = get_bloginfo('description');
-        // description of article or page
-        if (is_page() || is_single()) {
-            $description = get_the_excerpt();
-        }
-        // clean description
-        $description = strip_tags($description);
-        $description = trim($description);
-        // limit description to max characters
-        if (strlen($description) > $maxlength) {
-            $subtext = substr($description, 0, $maxlength - 3);
-            $endspace = strrpos($subtext, ' ');
-            $description = substr($subtext, 0, $endspace) . '...';
-        }
-    } else {
-        $description = strip_tags($metaDescription);
-        $description = trim($description);
+    // Constructor del widget
+    public function __construct() {
+        parent::__construct(
+            'latest-posts-widget',
+            'Últimas Entradas 2',
+            array( 'description' => 'Muestra las últimas 5 entradas con miniatura, título y fecha.' )
+        );
     }
 
-    return '
-        <meta name="description" content="'.$description.'" />
-        <meta name="twitter:card" content="summary">
-        <meta name="twitter:site" content="@publisher_handle">
-        <meta name="twitter:title" content="'.$metaTitleSocial.'">
-        <meta name="twitter:description" content="'.$description.'">
-        <meta name="twitter:creator" content="@author_handle">
-        <meta property="og:title" content="'.$metaTitleSocial.'" />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content="'.$metaUrlSocial.'" />
-        <meta property="og:image" content="'.$metaImageSocial.'" />
-        <meta property="og:description" content="'.$description.'" />
-            
-    ';
+    // Función para mostrar el contenido del widget
+    public function widget( $args, $instance ) {
+        $title = apply_filters( 'widget_title', $instance['title'] );
+        $count = 5;
+
+        echo $args['before_widget'];
+
+        if ( ! empty( $title ) ) {
+            echo $args['before_title'] . $title . $args['after_title'];
+        }
+
+        // Consulta para obtener las últimas entradas
+        $recent_posts = new WP_Query( array(
+            'posts_per_page' => $count,
+        ) );
+
+        if ( $recent_posts->have_posts() ) :
+            echo '<ul>';
+            while ( $recent_posts->have_posts() ) : $recent_posts->the_post();
+                echo '<li>';
+                if ( has_post_thumbnail() ) {
+                    echo '<div class="widget-entry-thumbnail">' . get_the_post_thumbnail( get_the_ID(), 'thumbnail' ) . '</div>';
+                }
+                echo '<h4><a href="' . get_permalink() . '">' . get_the_title() . '</a></h4>';
+                echo '<span class="widget-entry-date">' . get_the_date() . '</span>';
+                echo '</li>';
+            endwhile;
+            echo '</ul>';
+            wp_reset_postdata();
+        else :
+            echo 'No hay entradas disponibles.';
+        endif;
+
+        echo $args['after_widget'];
+    }
+
+    // Función para el formulario de configuración en el panel de administración
+    public function form( $instance ) {
+        $title = ! empty( $instance['title'] ) ? $instance['title'] : '';
+        ?>
+        <p>
+            <label for="<?php echo $this->get_field_id( 'title' ); ?>">Título:</label>
+            <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
+        </p>
+        <?php
+    }
+
+    // Función para actualizar la configuración del widget
+    public function update( $new_instance, $old_instance ) {
+        $instance = array();
+        $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
+        return $instance;
+    }
 }
+
+// Registra el widget
+function record_last_entries_widget() {
+    register_widget( 'LatestPostsWidget' );
+}
+add_action( 'widgets_init', 'record_last_entries_widget' );
+
