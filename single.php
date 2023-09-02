@@ -10,6 +10,7 @@ $subTitle = get_theme_mod('cd_single_text', '');
 $imagePage = get_theme_mod( 'background_page_single','');
 $gradient = "linear-gradient(to right,".esc_attr($gradient_start_color)."8a,".esc_attr($gradient_end_color)."d4)";
 $show_sub_bar = get_theme_mod('show_sub_header', true);
+$color_two = get_theme_mod('cd_color_two', '#000000');
 
 $fixed_menu = get_theme_mod('fixed_navbar');
 $fixed = '';
@@ -57,13 +58,17 @@ if($fixed_menu){
             font-size: 14px;
             font-weight: 800;
         }
+        .widget .description h4 a{
+            color: <?php echo $color_two; ?>;
+        }
         .widget h2.widget-title {
             font-size: 18px;
             padding: 0.5rem;
             margin-bottom: 1rem;
-            background: #001a6e;
+            background: <?php echo $color_two; ?>;
             color: #fff;
         }
+
     </style>
 
 <?php while(have_posts()): the_post(); ?>
