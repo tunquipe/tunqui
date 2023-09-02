@@ -191,10 +191,6 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
 }
 
-.navbar-light .navbar-nav .nav-link {
-    color: var(--color-two);
-}
-
 .navbar-expand-lg .navbar-nav .nav-link {
     padding: 1rem 1.8rem;
     height: 80px;

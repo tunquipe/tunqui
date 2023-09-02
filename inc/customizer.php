@@ -125,6 +125,16 @@ function immobilien_customizer_settings($wp_customize)
         'settings' => 'cd_color_menu', // Corresponde al nombre de la configuración
     )));
 
+    $wp_customize->add_setting('cd_color_text_menu', array(
+        'default' => '#FFFFFF',
+        'transport' => 'postMessage',
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'cd_color_text_menu', array(
+        'label' => 'Color de texto del menú principal',
+        'section' => 'cd_main_section',
+        'settings' => 'cd_color_text_menu', // Corresponde al nombre de la configuración
+    )));
+
     $wp_customize->add_setting('show_sub_header', array(
         'default' => true,
         'transport' => 'refresh',
