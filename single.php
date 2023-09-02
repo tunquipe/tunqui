@@ -46,6 +46,24 @@ if($fixed_menu){
             display: inline-block;
             margin-bottom: 1rem;
         }
+        .widget-entry-thumbnail img {
+            width: 80px;
+            height: 80px;
+        }
+        .widget .description {
+            padding: 0 1rem;
+        }
+        .widget .description h4 {
+            font-size: 14px;
+            font-weight: 800;
+        }
+        .widget h2.widget-title {
+            font-size: 18px;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            background: #001a6e;
+            color: #fff;
+        }
     </style>
 
 <?php while(have_posts()): the_post(); ?>
