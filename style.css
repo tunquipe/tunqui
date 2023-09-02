@@ -1126,7 +1126,6 @@ section {
 }
 .footer-top .menu{
     list-style: none;
-    text-transform: uppercase;
     padding: 0;
     margin: 0;
 }
@@ -1160,6 +1159,10 @@ section {
 
 #footer .textwidget {
     font-size: 14px;
+}
+
+#footer .textwidget p {
+    margin: 0;
 }
 
 #footer .title-section {
