@@ -68,7 +68,10 @@ if($fixed_menu){
             background: <?php echo $color_two; ?>;
             color: #fff;
         }
-
+        .widget .description .widget-entry-date{
+            font-size: 12px;
+            text-transform: capitalize;
+        }
     </style>
 
 <?php while(have_posts()): the_post(); ?>
