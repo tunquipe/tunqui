@@ -11,6 +11,10 @@ $imageID = get_post_meta($idPost,'sub_image_page', true);
 $imagePage = wp_get_attachment_image_src($imageID, 'full');
 $gradient = "linear-gradient(to right,".esc_attr($gradient_start_color)."8a,".esc_attr($gradient_end_color)."d4)";
 $show_sub_bar = get_theme_mod('show_sub_header', true);
+$alignment = get_theme_mod('text_alignment_setting', 'left');
+$text_formatting = get_theme_mod('text_formatting_setting', 'left');
+
+
 ?>
 <style>
     .overlay-container{
@@ -26,7 +30,11 @@ $show_sub_bar = get_theme_mod('show_sub_header', true);
         width: 100%;
         height: 100%;
         background: <?php echo $gradient; ?>;
-        z-index: 2; /* Colocar la superposición detrás del contenido */
+        z-index: 2;
+    }
+    #sub-header .page-title{
+        text-align: <?php echo $alignment; ?>;
+        text-transform: <?php echo $text_formatting; ?>;
     }
 </style>
 <?php while(have_posts()): the_post(); ?>

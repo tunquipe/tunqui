@@ -1,7 +1,8 @@
 <?php
 
-add_action('customize_register', 'immobilien_customizer_settings');
-function immobilien_customizer_settings($wp_customize)
+add_action('customize_register', 'tunqui_customizer_settings');
+
+function tunqui_customizer_settings($wp_customize)
 {
     $wp_customize->add_section('cd_main_section', array(
         'title' => 'Personalización General',
@@ -146,6 +147,45 @@ function immobilien_customizer_settings($wp_customize)
         'section' => 'cd_main_section',
     ));
 
+    // Configuración de alineación de texto
+    $wp_customize->add_setting('text_alignment_setting', array(
+        'default' => 'left', // Valor predeterminado: izquierda
+        'transport' => 'refresh',
+    ));
+
+    // Control de selección de alineación de texto
+    $wp_customize->add_control('text_alignment_control', array(
+        'label' => 'Alineación de Texto',
+        'section' => 'cd_main_section',
+        'settings' => 'text_alignment_setting',
+        'type' => 'radio',
+        'choices' => array(
+            'left' => 'Izquierda',
+            'center' => 'Centro',
+            'right' => 'Derecha',
+        ),
+    ));
+
+    // Configuración del formato de texto
+    $wp_customize->add_setting('text_formatting_setting', array(
+        'default' => 'normal', // Valor predeterminado: no aplicar cambios
+        'transport' => 'refresh',
+    ));
+
+    // Control del formato de texto (radio button)
+    $wp_customize->add_control('text_formatting_control', array(
+        'label' => 'Formato de Texto',
+        'section' => 'cd_main_section',
+        'settings' => 'text_formatting_setting',
+        'type' => 'radio',
+        'choices' => array(
+            'normal' => 'Normal',
+            'uppercase' => 'Mayúsculas',
+            'lowercase' => 'Minúsculas',
+            'capitalize' => 'Capitalizar',
+        ),
+    ));
+
     $wp_customize->add_setting('height_sub_bar', array(
         'default' => 150, // Valor predeterminado
         'transport' => 'refresh', // Actualizar en tiempo real
@@ -163,6 +203,23 @@ function immobilien_customizer_settings($wp_customize)
         ),
     ));
 
+    $wp_customize->add_setting('cd_gradient_start_color', array(
+        'default' => '#ff0000', // Color de inicio predeterminado
+        'transport' => 'postMessage',
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'cd_gradient_start_color', array(
+        'label' => 'Color de inicio del degradado',
+        'section' => 'cd_main_section', // Asegúrate de usar la sección correcta
+    )));
+
+    $wp_customize->add_setting('cd_gradient_end_color', array(
+        'default' => '#0000ff', // Color de inicio predeterminado
+        'transport' => 'postMessage',
+    ));
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'cd_gradient_end_color', array(
+        'label' => 'Color de fin del degradado',
+        'section' => 'cd_main_section', // Asegúrate de usar la sección correcta
+    )));
 
     $wp_customize->add_setting('show_hero_slider', array(
         'default' => true,
@@ -315,24 +372,6 @@ function immobilien_customizer_settings($wp_customize)
         'section' => 'cd_main_section', // Asegúrate de usar la ID correcta de la sección
         'type' => 'text',
     ));
-
-    $wp_customize->add_setting('cd_gradient_start_color', array(
-        'default' => '#ff0000', // Color de inicio predeterminado
-        'transport' => 'postMessage',
-    ));
-    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'cd_gradient_start_color', array(
-        'label' => 'Color de fin del degradado',
-        'section' => 'cd_main_section', // Asegúrate de usar la sección correcta
-    )));
-
-    $wp_customize->add_setting('cd_gradient_end_color', array(
-        'default' => '#0000ff', // Color de inicio predeterminado
-        'transport' => 'postMessage',
-    ));
-    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'cd_gradient_end_color', array(
-        'label' => 'Color de fin del degradado',
-        'section' => 'cd_main_section', // Asegúrate de usar la sección correcta
-    )));
 
     $wp_customize->add_setting('show_copyright', array(
         'default' => true,

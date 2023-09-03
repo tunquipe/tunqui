@@ -17,12 +17,15 @@ $imagePage = wp_get_attachment_image_src($imageID, 'full');
 $gradient = "linear-gradient(to right,".esc_attr($gradient_start_color)."8a,".esc_attr($gradient_end_color)."d4)";
 $show_sub_bar = get_theme_mod('show_sub_header', true);
 $bg_page = get_theme_mod('background_page');
+$alignment = get_theme_mod('text_alignment_setting', 'left');
+$text_formatting = get_theme_mod('text_formatting_setting', 'left');
 
 $fixed_menu = get_theme_mod('fixed_navbar');
 $fixed = '';
 if($fixed_menu){
     $fixed = 'fixed-bar';
 }
+
 ?>
 <style>
     .overlay-container{
@@ -40,7 +43,10 @@ if($fixed_menu){
         background: <?php echo $gradient; ?>;
         z-index: 2; /* Colocar la superposición detrás del contenido */
     }
-
+    #sub-header .page-title{
+        text-align: <?php echo $alignment; ?>;
+        text-transform: <?php echo $text_formatting; ?>;
+    }
     /*#main {
         background-image: url("<?php echo $bg_page; ?>");
         background-position: top center;
