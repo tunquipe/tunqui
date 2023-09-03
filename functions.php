@@ -18,7 +18,7 @@ function tunqui_register_styles()
     wp_enqueue_style('glightbox-css', get_template_directory_uri() . '/assets/vendor/glightbox/css/glightbox.min.css', '', $theme_version);
     wp_enqueue_style('remixicon-css', get_template_directory_uri() . '/assets/vendor/remixicon/remixicon.css', '', $theme_version);
     wp_enqueue_style('swiper-bundle-css', get_template_directory_uri() . '/assets/vendor/swiper/swiper-bundle.min.css', '', $theme_version);
-    wp_enqueue_style('owlcarousel-css', get_template_directory_uri() . '/assets/vendor/owlcarousel/dist/assets/owl.carousel.min.css', '', $theme_version);
+    //wp_enqueue_style('owlcarousel-css', get_template_directory_uri() . '/assets/vendor/owlcarousel/dist/assets/owl.carousel.min.css', '', $theme_version);
     wp_enqueue_style('owlcarousel-default-css', get_template_directory_uri() . '/assets/vendor/owlcarousel/dist/assets/owl.theme.default.css', '', $theme_version);
     wp_enqueue_style('tunqui-style', get_stylesheet_uri(), array(), $theme_version);
     wp_enqueue_style('animate-css', get_template_directory_uri() . '/assets/css/animate.min.css', '', $theme_version);
@@ -40,7 +40,7 @@ function tunqui_register_scripts()
     wp_enqueue_script('swiper-js', get_template_directory_uri() . '/assets/vendor/swiper/swiper-bundle.min.js', array(), $theme_version, true);
     wp_enqueue_script('noframework-waypoints-js', get_template_directory_uri() . '/assets/vendor/waypoints/noframework.waypoints.js', array(), $theme_version, true);
     wp_enqueue_script('validate-js', get_template_directory_uri() . '/assets/vendor/php-email-form/validate.js', array(), $theme_version, true);
-    wp_enqueue_script('owlcarousel-js', get_template_directory_uri() . '/assets/vendor/owlcarousel/dist/owl.carousel.min.js', array(), $theme_version, true);
+    //wp_enqueue_script('owlcarousel-js', get_template_directory_uri() . '/assets/vendor/owlcarousel/dist/owl.carousel.min.js', array(), $theme_version, true);
     wp_enqueue_script('youtube-background', get_template_directory_uri() . '/assets/vendor/youtube-background/jquery.youtube-background.js', array(), $theme_version, true);
     wp_enqueue_script('tunqui-js', get_template_directory_uri() . '/assets/js/main.js', array(), $theme_version, true);
 }
