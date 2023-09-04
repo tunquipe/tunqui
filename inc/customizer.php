@@ -94,15 +94,20 @@ function tunqui_customizer_settings($wp_customize)
         ),
     ));
 
-    $wp_customize->add_setting('fixed_navbar', array(
-        'default' => false,
-        'transport' => 'refresh',
+    $wp_customize->add_setting('position_menu', array(
+        'default' => 'fixed', // Valor predeterminado
+        'sanitize_callback' => 'sanitize_text_field', // Sanitización
     ));
 
-    $wp_customize->add_control('fixed_navbar', array(
-        'type' => 'checkbox',
-        'label' => 'Volver menu fixed',
+    $wp_customize->add_control('position_menu', array(
+        'label' => 'Selecciona la posición del menú:',
         'section' => 'cd_main_section',
+        'type' => 'radio',
+        'choices' => array(
+            'fixed' => 'Fixed',
+            'absolute' => 'Absolute',
+            'relative' => 'Relative',
+        ),
     ));
 
     $wp_customize->add_setting('transparent_navbar', array(

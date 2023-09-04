@@ -42,9 +42,7 @@ $address_contact = get_theme_mod('cd_address', '');
 
 $selected_style = get_theme_mod('header_style', 'header-style-1');
 $show_top_bar = get_theme_mod('show_top_bar', true);
-$fixed_menu = get_theme_mod('fixed_navbar');
-$fixed = '';
-
+$position_menu = get_theme_mod('position_menu', 'relative');
 //colors
 $color_one = get_theme_mod('cd_color_one', '');
 $color_two = get_theme_mod('cd_color_two', '');
@@ -53,9 +51,7 @@ $color_four = get_theme_mod('cd_color_four', '');
 $color_five = get_theme_mod('cd_color_five', '');
 $color_text_menu = get_theme_mod('cd_color_text_menu', '#FFFFFF');
 $height_sub_bar = get_theme_mod('height_sub_bar', '150');
-if($fixed_menu){
-    $fixed = 'fixed-top';
-}
+
 
 $css_header = null;
 if (is_front_page() && is_page()) {
@@ -83,6 +79,14 @@ if (is_front_page() && is_page()) {
     .navbar-light .navbar-nav .nav-link {
         color:  <?php echo $color_text_menu; ?>;
     }
+    #header {
+        transition: all 0.5s;
+        z-index: 997;
+        position: <?php echo $position_menu; ?>;
+        top: 0;
+        right: 0;
+        left: 0;
+    }
 
     @media (max-width: 480px) {
         .navbar-light .navbar-toggler {
@@ -98,7 +102,7 @@ if (is_front_page() && is_page()) {
 
 </style>
 
-<header id="header" class="<?php echo $css_header.' '.$fixed; ?> block-menu">
+<header id="header" class="<?php echo $css_header ?> block-menu">
     <?php if ($show_top_bar) : ?>
         <div class="black-bar d-none d-lg-block" style="background-color: <?php echo esc_attr($color_bar); ?>">
             <div class="container  d-flex align-items-center">
