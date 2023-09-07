@@ -449,4 +449,26 @@ function tunqui_customizer_settings($wp_customize)
         'type' => 'text',
     ));
 
+    $wp_customize->add_setting('logo_color', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'logo_color_image', array(
+        'label' => 'Logo color',
+        'section' => 'cd_main_section',
+        'settings' => 'logo_color',
+    )));
+
+    $wp_customize->add_setting('image_page_404', array(
+        'default' => '',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'background_image_404', array(
+        'label' => 'Imagen de error 404',
+        'section' => 'cd_main_section',
+        'settings' => 'image_page_404',
+    )));
+
 }
