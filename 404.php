@@ -24,7 +24,7 @@ wp_body_open();
 ?>
 <main id="main">
     <div class="container">
-        <section id="page-single" class="page-single">
+        <section id="page-404" class="page-404">
             <div class="container">
                 <?php if($logo_color): ?>
                     <div class="logo-404">
